@@ -14,12 +14,6 @@
   to = "/admin/:splat"
   status = 200
 
-# Git Gateway for CMS authentication
-[[redirects]]
-  from = "/.netlify/identity/*"
-  to = "/.netlify/identity/:splat"
-  status = 200
-
 # Environment variables for production
 [context.production.environment]
   NEXT_PUBLIC_SITE_URL = "https://market-ia.fr"
