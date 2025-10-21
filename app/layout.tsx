@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { CustomCursor } from '@/components/CustomCursor'
+import { ParticleBackground } from '@/components/ParticleBackground'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -34,9 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col relative">
+        <CustomCursor />
+        <ParticleBackground />
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10">
           {children}
         </main>
         <Footer />
