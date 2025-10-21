@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/abonnements/growth-plus/page": "app/abonnements/growth-plus/page.js",
+  "/abonnements/ecommerce/page": "app/abonnements/ecommerce/page.js",
+  "/abonnements/business/page": "app/abonnements/business/page.js",
+  "/abonnements/essentiel/page": "app/abonnements/essentiel/page.js",
+  "/abonnements/page": "app/abonnements/page.js",
+  "/about/page": "app/about/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/devis/route": "app/api/devis/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/automatisations/page": "app/services/automatisations/page.js",
+  "/confidentialite/page": "app/confidentialite/page.js",
+  "/page": "app/page.js",
+  "/cgv/page": "app/cgv/page.js",
+  "/services/formations/page": "app/services/formations/page.js",
+  "/services/site-web/page": "app/services/site-web/page.js",
+  "/mentions-legales/page": "app/mentions-legales/page.js",
+  "/services/marque-blanche/page": "app/services/marque-blanche/page.js",
+  "/services/saas-personnalise/page": "app/services/saas-personnalise/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js"
+}
