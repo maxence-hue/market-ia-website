@@ -1,0 +1,23 @@
+{
+  "hero_title": "Votre site web, sans les soucis techniques",
+  "hero_subtitle": "Abonnement tout-inclus : création, hébergement, maintenance et évolutions. Automatisations IA pour booster votre productivité.",
+  "cta_primary": "Découvrir les abonnements",
+  "cta_secondary": "Parler à un expert",
+  "testimonials": [
+    {
+      "name": "Sophie Martin",
+      "company": "Atelier Bien-Être",
+      "quote": "En 3 mois, mon site génère 40% de mes nouveaux clients. Le système de prise de RDV automatique me fait gagner 10h/semaine."
+    },
+    {
+      "name": "Thomas Dubois",
+      "company": "TD Conseil",
+      "quote": "L'abonnement Business est parfait. Je paie moins cher qu'avant pour la maintenance, et j'ai des évolutions incluses chaque mois."
+    },
+    {
+      "name": "Marie Lambert",
+      "company": "Boutique Éthique",
+      "quote": "Ma boutique en ligne tourne sans problème. Support réactif, gestion simple. Je me concentre enfin sur mes produits."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "fr"
+
+collections:
+  # ABONNEMENTS
+  - name: "subscriptions"
+    label: "Abonnements"
+    folder: "content/subscriptions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "title", widget: "string"}
+      - {label: "Prix mensuel (€)", name: "price", widget: "number"}
+      - {label: "Frais d'activation (€)", name: "activation", widget: "number"}
+      - {label: "Description courte", name: "description", widget: "text"}
+      - {label: "Icône", name: "icon", widget: "string"}
+      - {label: "Ordre", name: "order", widget: "number"}
+      - {label: "Populaire", name: "popular", widget: "boolean", default: false}
+      - label: "Fonctionnalités"
+        name: "features"
+        widget: "list"
+        fields:
+          - {label: "Texte", name: "text", widget: "string"}
+          - {label: "Inclus", name: "included", widget: "boolean", default: true}
+      - {label: "Temps modifs inclus", name: "time_included", widget: "string"}
+      - {label: "SLA (heures)", name: "sla", widget: "string"}
+      - {label: "Description détaillée", name: "body", widget: "markdown"}
+
+  # ADD-ONS / OPTIONS
+  - name: "addons"
+    label: "Options & Add-ons"
+    folder: "content/add-ons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "title", widget: "string"}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["Croissance & SEO", "Fonctionnel", "Technique & Conformité"]}
+      - {label: "Prix setup (€)", name: "setup_price", widget: "number", required: false}
+      - {label: "Prix mensuel (€)", name: "monthly_price", widget: "number", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icône", name: "icon", widget: "string"}
+
+  # SERVICES
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Prix à partir de (€)", name: "starting_price", widget: "number", required: false}
+      - {label: "Description courte", name: "excerpt", widget: "text"}
+      - {label: "Icône", name: "icon", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # BLOG
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string", default: "Maxence Alehause"}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["IA", "Marketing", "Automatisation", "Business", "Tutoriel"]}
+      - {label: "Image de couverture", name: "cover_image", widget: "image"}
+      - {label: "Extrait", name: "excerpt", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # ÉQUIPE
+  - name: "team"
+    label: "Équipe"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "name", widget: "string"}
+      - {label: "Rôle", name: "role", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Ordre", name: "order", widget: "number"}
+
+  # SETTINGS GÉNÉRAUX
+  - name: "settings"
+    label: "Réglages"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "content/settings/general.json"
+        fields:
+          - {label: "Nom du site", name: "site_name", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Téléphone", name: "phone", widget: "string"}
+          - {label: "Adresse", name: "address", widget: "text"}
+          - label: "Réseaux sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "LinkedIn", name: "linkedin", widget: "string"}
+              - {label: "Twitter", name: "twitter", widget: "string"}
+              - {label: "Instagram", name: "instagram", widget: "string"}
+
+      - label: "Page d'accueil"
+        name: "homepage"
+        file: "content/settings/homepage.json"
+        fields:
+          - {label: "Titre Hero", name: "hero_title", widget: "string"}
+          - {label: "Sous-titre Hero", name: "hero_subtitle", widget: "text"}
+          - {label: "CTA Principal", name: "cta_primary", widget: "string"}
+          - {label: "CTA Secondaire", name: "cta_secondary", widget: "string"}
+          - label: "Témoignages"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Entreprise", name: "company", widget: "string"}
+              - {label: "Citation", name: "quote", widget: "text"}
+              - {label: "Avatar", name: "avatar", widget: "image", required: false}
