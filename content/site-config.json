@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Market-IA",
+    "tagline": "Sites Web & Automatisations IA pour Entreprises",
+    "description": "Abonnements tout-inclus pour votre site web professionnel. Création, hébergement, maintenance et évolutions. Automatisations IA sur mesure.",
+    "url": "https://market-ia.vercel.app",
+    "email": "contact@market-ia.com",
+    "phone": "+33 6 XX XX XX XX"
+  },
+  "hero": {
+    "title": "Votre Site Web Professionnel",
+    "subtitle": "Sans Engagement, Sans Surprise",
+    "description": "Abonnement tout-inclus : création, hébergement, maintenance et évolutions illimitées. Votre site web clé en main dès 99€/mois.",
+    "ctaPrimary": "Découvrir nos offres",
+    "ctaSecondary": "Voir nos réalisations"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/market-ia",
+    "twitter": "https://twitter.com/marketia",
+    "facebook": "https://facebook.com/marketia",
+    "instagram": "https://instagram.com/marketia"
+  },
+  "seo": {
+    "defaultTitle": "Market-IA | Sites Web & Automatisations IA",
+    "defaultDescription": "Abonnements tout-inclus pour votre site web professionnel. Automatisations IA sur mesure.",
+    "keywords": ["site web abonnement", "automatisation IA", "marketing automation", "création site web", "SaaS personnalisé"]
+  }
+}
