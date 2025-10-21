@@ -178,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* Section Nos Offres - Composant OfferSection */}
-      <div id="offres" className="bg-dark">
+      <div id="offres">
         <div className="text-center py-20 px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ export default function Home() {
       </div>
 
       {/* CTA Final */}
-      <section className="py-24 bg-dark-surface">
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -79,7 +79,7 @@ export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section - Design Figma */}
       <section className="relative py-24 overflow-hidden">
         {/* Background */}
@@ -116,7 +116,7 @@ export default function BlogPage() {
                 placeholder="Rechercher un article..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-14 pr-6 py-4 bg-dark-surface/80 backdrop-blur-xl border border-white/10 rounded-2xl focus:border-primary focus:outline-none text-light text-lg"
+                className="w-full pl-14 pr-6 py-4 glass border-white/10 rounded-2xl focus:border-primary focus:outline-none text-light text-lg"
               />
             </div>
 
@@ -129,7 +129,7 @@ export default function BlogPage() {
                   className={`px-6 py-2 rounded-full font-medium transition-all ${
                     selectedCategory === category
                       ? 'bg-primary text-white shadow-glow'
-                      : 'bg-dark-surface/50 border border-white/10 text-light/70 hover:border-primary hover:text-primary'
+                      : 'glass border border-white/10 text-light/70 hover:border-primary hover:text-primary'
                   }`}
                 >
                   {category}
@@ -141,7 +141,7 @@ export default function BlogPage() {
       </section>
 
       {/* Article Featured */}
-      <section className="py-12 bg-dark-surface/50">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,7 +217,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-dark-surface/50">
+      <section className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,7 +238,7 @@ export default function BlogPage() {
                 <input
                   type="email"
                   placeholder="votre@email.com"
-                  className="flex-1 px-6 py-4 bg-dark-surface border border-white/10 rounded-xl focus:border-primary focus:outline-none text-light"
+                  className="flex-1 px-6 py-4 glass border-white/10 rounded-xl focus:border-primary focus:outline-none text-light"
                 />
                 <button className="btn-primary whitespace-nowrap px-8 py-4">
                   S&apos;abonner
