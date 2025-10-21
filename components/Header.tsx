@@ -43,7 +43,7 @@ export default function Header() {
                 <div 
                   className="absolute top-full left-0 pt-2 w-72"
                 >
-                  <div className="glass rounded-xl p-2 shadow-glow">
+                  <div className="bg-[#1C1C1E]/95 backdrop-blur-xl border border-primary/30 rounded-xl p-2 shadow-glow">
                     <Link href="/services/site-web" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">Sites Web</div>
                       <div className="text-xs text-light/60">Design moderne et performant</div>

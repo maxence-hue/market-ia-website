@@ -118,15 +118,17 @@
   filter: drop-shadow(0 0 20px rgba(123, 97, 255, 0.5));
 }
 
-/* Button glow effects */
-button, .btn-primary, .btn-secondary, a[class*="btn"] {
+/* Button glow effects - Sans rectangles */
+.glow {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4),
+              0 0 40px rgba(123, 97, 255, 0.2);
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(123, 97, 255, 0.3);
 }
 
-button:hover, .btn-primary:hover, a[class*="btn"]:hover {
+.glow:hover {
   box-shadow: 0 0 30px rgba(123, 97, 255, 0.6),
-              0 0 60px rgba(123, 97, 255, 0.4);
+              0 0 60px rgba(123, 97, 255, 0.4),
+              0 0 90px rgba(123, 97, 255, 0.2);
   transform: translateY(-2px);
 }
 
