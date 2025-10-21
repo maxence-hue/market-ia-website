@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Space+Grotesk:wght@200;300;400;500&display=swap');
 
 @layer base {
   * {
@@ -11,18 +11,24 @@
   
   body {
     @apply bg-dark text-light font-sans antialiased;
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-weight: 200;
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 300;
+    letter-spacing: -0.03em;
   }
   
-  p, span, div {
-    font-weight: 300;
+  p, span, div, a {
+    font-weight: 200;
+  }
+  
+  strong, b {
+    font-weight: 400;
   }
 }
 
@@ -71,17 +77,48 @@
   border: 1px solid rgba(123, 97, 255, 0.2);
 }
 
-/* Glow effect */
+/* Glow effect - Renforcé */
 .glow {
-  box-shadow: 0 0 20px rgba(123, 97, 255, 0.5), 0 0 40px rgba(123, 97, 255, 0.3);
+  box-shadow: 0 0 30px rgba(123, 97, 255, 0.6), 
+              0 0 60px rgba(123, 97, 255, 0.4),
+              0 0 90px rgba(123, 97, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 40px rgba(123, 97, 255, 0.8), 
+              0 0 80px rgba(123, 97, 255, 0.5),
+              0 0 120px rgba(123, 97, 255, 0.3);
 }
 
 .shadow-glow {
-  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+  box-shadow: 0 0 25px rgba(123, 97, 255, 0.5),
+              0 0 50px rgba(123, 97, 255, 0.3);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(123, 97, 255, 0.5);
+  text-shadow: 0 0 30px rgba(123, 97, 255, 0.8),
+               0 0 60px rgba(123, 97, 255, 0.5);
+}
+
+/* Gradient text with glow */
+.gradient-text {
+  background: linear-gradient(135deg, #7B61FF 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(123, 97, 255, 0.5));
+}
+
+/* Button glow effects */
+button, .btn-primary, .btn-secondary {
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn-primary:hover {
+  box-shadow: 0 0 30px rgba(123, 97, 255, 0.6),
+              0 0 60px rgba(123, 97, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Hide default cursor on desktop */

@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { CustomCursor } from '@/components/CustomCursor'
 import { ParticleBackground } from '@/components/ParticleBackground'
+import { FloatingOrbs } from '@/components/FloatingOrbs'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col relative">
         <CustomCursor />
+        <FloatingOrbs />
         <ParticleBackground />
         <Header />
         <main className="flex-grow relative z-10">
