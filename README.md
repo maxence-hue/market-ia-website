@@ -1,6 +1,8 @@
-# 🚀 Market-IA - Site Web Complet
+# 🚀 Market-IA - Site Web Officiel
 
-Site web professionnel avec système d'abonnements et intégration Netlify CMS.
+**Site web professionnel en ligne** - Design Figma 100% intégré
+
+🌐 **EN LIGNE** : https://market-ia.vercel.app
 
 ## ✨ Fonctionnalités
 
