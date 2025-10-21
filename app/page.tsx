@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Check, Sparkles, TrendingUp, Shield, Clock, Users, Globe, Zap, Star } from 'lucide-react'
+import { ArrowRight, Check, Sparkles, TrendingUp, Shield, Clock, Users, Globe, Zap, Star, GraduationCap } from 'lucide-react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { OfferSection } from '@/components/OfferSection'
 
 const offers = [
   {
@@ -177,110 +177,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section Nos Offres - Design Figma */}
-      <section id="offres" className="py-24 bg-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
+      {/* Section Nos Offres - Composant OfferSection */}
+      <div id="offres" className="bg-dark">
+        <div className="text-center py-20 px-4">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-4xl md:text-6xl font-display font-bold mb-4"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Nos <span className="gradient-text">Offres</span>
-            </h2>
-            <p className="text-xl text-light/70 max-w-3xl mx-auto">
-              Des solutions complètes pour propulser votre business dans l&apos;ère de l&apos;IA
-            </p>
-          </motion.div>
-
-          <div className="space-y-32">
-            {offers.map((offer, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative"
-              >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                  {/* Contenu */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    {/* Badge Prix */}
-                    <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/20 to-primary/10 border-2 border-primary rounded-2xl px-6 py-3 mb-6">
-                      <offer.icon className="w-6 h-6 text-primary" />
-                      <span className="text-2xl font-display font-bold text-light">À PARTIR DE</span>
-                      <span className="text-3xl font-display font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-                        {offer.price}
-                      </span>
-                    </div>
-
-                    <h3 className="text-3xl md:text-4xl font-display font-bold text-light mb-4">
-                      {offer.title}
-                    </h3>
-
-                    <p className="text-lg text-light/80 mb-8">
-                      {offer.description}
-                    </p>
-
-                    {/* Features */}
-                    <ul className="space-y-4 mb-8">
-                      {offer.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                          <span className="text-light/90">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Link
-                      href={offer.href}
-                      className="group btn-primary inline-flex items-center gap-2"
-                    >
-                      Découvrir {offer.title}
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-
-                  {/* Image placeholder */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <offer.icon className="w-32 h-32 text-primary/30" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Résultats clients */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="mt-12"
-                >
-                  <div className="card-glass p-8">
-                    <div className="flex items-center gap-2 mb-6">
-                      <Star className="w-5 h-5 text-primary" />
-                      <h4 className="text-xl font-display font-bold text-light">Résultats clients</h4>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {offer.results.map((result, idx) => (
-                        <div key={idx} className="text-center">
-                          <div className="text-sm font-semibold text-light mb-2">{result.name}</div>
-                          <div className="text-primary font-medium">{result.result}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
+            Nos <span className="gradient-text">Offres</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-light/70 max-w-3xl mx-auto"
+          >
+            Des solutions complètes pour propulser votre business dans l&apos;ère de l&apos;IA
+          </motion.p>
         </div>
-      </section>
+
+        <OfferSection
+          icon={Globe}
+          title="Sites Web Personnalisés"
+          description="Créez une présence en ligne qui convertit. Nos sites web sur-mesure allient design moderne et performance technique pour transformer vos visiteurs en clients fidèles."
+          startingPrice="490"
+          benefits={[
+            'Design 100% personnalisé reflétant votre identité',
+            'Optimisation SEO pour être visible sur Google',
+            'Responsive sur tous les appareils (mobile, tablette, desktop)',
+            'Temps de chargement ultra-rapide pour une meilleure expérience',
+            'Formulaires de contact et intégrations sur-mesure',
+          ]}
+          references={[
+            { name: 'Sophie Durand, E-commerce', result: '+250% de conversions en 3 mois' },
+            { name: 'Marc Lefebvre, Coach', result: '1er sur Google en 6 semaines' },
+            { name: 'Julie Martin, Consultante', result: '40 leads qualifiés par mois' },
+          ]}
+          servicePage="/services/site-web"
+        />
+
+        <OfferSection
+          icon={Zap}
+          title="Automatisations & Agents IA"
+          description="Gagnez jusqu'à 20h par semaine en automatisant vos tâches répétitives. Guide complet des meilleurs outils et stratégies d'automatisation."
+          startingPrice="790"
+          benefits={[
+            'Audit complet de vos processus actuels',
+            'Identification des tâches automatisables',
+            'Mise en place d\'automatisations sur-mesure',
+            'Formation de votre équipe aux nouveaux outils',
+            'Support continu et optimisations',
+          ]}
+          references={[
+            { name: 'Thomas B., Agence', result: '15h/semaine économisées' },
+            { name: 'Laura K., SaaS', result: '80% de tâches automatisées' },
+            { name: 'David M., E-commerce', result: 'ROI de 400% en 6 mois' },
+          ]}
+          servicePage="/services/automatisations"
+          reversed
+        />
+
+        <OfferSection
+          icon={GraduationCap}
+          title="Formations IA & Digital"
+          description="Devenez autonome avec l'IA. Nos formations pratiques vous permettent de maîtriser les outils IA et digitaux pour développer votre activité sans dépendre de personne."
+          startingPrice="290"
+          benefits={[
+            'Formation 100% pratique avec cas réels',
+            'Accès à vie aux contenus et mises à jour',
+            'Groupe privé et support personnalisé',
+            'Certificat de réussite',
+            'Templates et outils prêts à l\'emploi',
+          ]}
+          references={[
+            { name: 'Marie Laurent, Entrepreneure', result: 'Site créé en autonomie en 1 semaine' },
+            { name: 'David Chen, Consultant', result: '5 automatisations déployées' },
+            { name: 'Emma Petit, Marketing', result: 'Productivité x3 avec l\'IA' },
+          ]}
+          servicePage="/services/formations"
+        />
+      </div>
 
       {/* CTA Final */}
       <section className="py-24 bg-dark-surface">
