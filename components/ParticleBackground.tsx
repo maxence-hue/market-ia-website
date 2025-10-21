@@ -29,15 +29,21 @@ export function ParticleBackground() {
       opacity: number
     }> = []
 
-    // Create particles - Plus de particules pour un effet plus dense
-    for (let i = 0; i < 150; i++) {
+    // Create particles - Moins de particules, mouvement divergent
+    const centerX = canvas.width / 2
+    const centerY = canvas.height / 2
+    
+    for (let i = 0; i < 80; i++) {
+      const angle = (Math.PI * 2 * i) / 80
+      const distance = Math.random() * Math.min(canvas.width, canvas.height) / 2
+      
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1.5,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random() * 0.6 + 0.4,
+        x: centerX + Math.cos(angle) * distance,
+        y: centerY + Math.sin(angle) * distance,
+        size: Math.random() * 2.5 + 1,
+        speedX: Math.cos(angle) * 0.3,
+        speedY: Math.sin(angle) * 0.3,
+        opacity: Math.random() * 0.5 + 0.3,
       })
     }
 

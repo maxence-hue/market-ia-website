@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Nouveau design Figma */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background avec particules */}
         <div className="absolute inset-0 bg-stars opacity-50" />
         <div className="absolute inset-0">
