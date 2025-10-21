@@ -29,15 +29,15 @@ export function ParticleBackground() {
       opacity: number
     }> = []
 
-    // Create particles
-    for (let i = 0; i < 50; i++) {
+    // Create particles - Plus de particules pour un effet plus dense
+    for (let i = 0; i < 100; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.5 + 0.2,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.5 + 0.3,
       })
     }
 
@@ -61,18 +61,18 @@ export function ParticleBackground() {
         ctx.fill()
       })
 
-      // Draw connections
+      // Draw connections - Distance augmentée pour plus de connexions
       particles.forEach((particleA, indexA) => {
         particles.slice(indexA + 1).forEach((particleB) => {
           const dx = particleA.x - particleB.x
           const dy = particleA.y - particleB.y
           const distance = Math.sqrt(dx * dx + dy * dy)
 
-          if (distance < 120) {
+          if (distance < 150) {
             ctx.beginPath()
             ctx.moveTo(particleA.x, particleA.y)
             ctx.lineTo(particleB.x, particleB.y)
-            const opacity = (1 - distance / 120) * 0.15
+            const opacity = (1 - distance / 150) * 0.2
             ctx.strokeStyle = `rgba(123, 97, 255, ${opacity})`
             ctx.lineWidth = 1
             ctx.stroke()
@@ -93,7 +93,7 @@ export function ParticleBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-30"
+      className="fixed inset-0 pointer-events-none z-0"
     />
   )
 }

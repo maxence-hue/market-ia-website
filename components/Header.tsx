@@ -27,11 +27,13 @@ export default function Header() {
             </Link>
             
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative group"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <button 
-                className="text-light hover:text-primary transition-colors flex items-center gap-1"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                className="text-light hover:text-primary transition-colors flex items-center gap-1 py-2"
               >
                 Services
                 <ChevronDown className="w-4 h-4" />
@@ -39,30 +41,30 @@ export default function Header() {
               
               {servicesOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-72 glass rounded-xl p-2 shadow-glow"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
+                  className="absolute top-full left-0 pt-2 w-72"
                 >
-                  <Link href="/services/site-web" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                    <div className="font-semibold text-light group-hover:text-primary transition-colors">Sites Web</div>
-                    <div className="text-xs text-light/60">Design moderne et performant</div>
-                  </Link>
-                  <Link href="/services/automatisations" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                    <div className="font-semibold text-light group-hover:text-primary transition-colors">Automatisations IA</div>
-                    <div className="text-xs text-light/60">Gagnez du temps avec l&apos;IA</div>
-                  </Link>
-                  <Link href="/services/saas-personnalise" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                    <div className="font-semibold text-light group-hover:text-primary transition-colors">SaaS Personnalisé</div>
-                    <div className="text-xs text-light/60">Votre logiciel sur-mesure</div>
-                  </Link>
-                  <Link href="/services/formations" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                    <div className="font-semibold text-light group-hover:text-primary transition-colors">Formations</div>
-                    <div className="text-xs text-light/60">Devenez autonome avec l&apos;IA</div>
-                  </Link>
-                  <Link href="/services/marque-blanche" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                    <div className="font-semibold text-light group-hover:text-primary transition-colors">Marque Blanche</div>
-                    <div className="text-xs text-light/60">Revendez nos services</div>
-                  </Link>
+                  <div className="glass rounded-xl p-2 shadow-glow">
+                    <Link href="/services/site-web" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Sites Web</div>
+                      <div className="text-xs text-light/60">Design moderne et performant</div>
+                    </Link>
+                    <Link href="/services/automatisations" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Automatisations IA</div>
+                      <div className="text-xs text-light/60">Gagnez du temps avec l&apos;IA</div>
+                    </Link>
+                    <Link href="/services/saas-personnalise" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">SaaS Personnalisé</div>
+                      <div className="text-xs text-light/60">Votre logiciel sur-mesure</div>
+                    </Link>
+                    <Link href="/services/formations" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Formations</div>
+                      <div className="text-xs text-light/60">Devenez autonome avec l&apos;IA</div>
+                    </Link>
+                    <Link href="/services/marque-blanche" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Marque Blanche</div>
+                      <div className="text-xs text-light/60">Revendez nos services</div>
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
