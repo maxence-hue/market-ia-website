@@ -30,14 +30,14 @@ export function ParticleBackground() {
     }> = []
 
     // Create particles - Plus de particules pour un effet plus dense
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
+        size: Math.random() * 3 + 1.5,
         speedX: (Math.random() - 0.5) * 0.5,
         speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
+        opacity: Math.random() * 0.6 + 0.4,
       })
     }
 
@@ -72,9 +72,9 @@ export function ParticleBackground() {
             ctx.beginPath()
             ctx.moveTo(particleA.x, particleA.y)
             ctx.lineTo(particleB.x, particleB.y)
-            const opacity = (1 - distance / 150) * 0.2
+            const opacity = (1 - distance / 150) * 0.4
             ctx.strokeStyle = `rgba(123, 97, 255, ${opacity})`
-            ctx.lineWidth = 1
+            ctx.lineWidth = 1.5
             ctx.stroke()
           }
         })

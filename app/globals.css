@@ -111,14 +111,42 @@
 }
 
 /* Button glow effects */
-button, .btn-primary, .btn-secondary {
+button, .btn-primary, .btn-secondary, a[class*="btn"] {
   transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.3);
 }
 
-button:hover, .btn-primary:hover {
+button:hover, .btn-primary:hover, a[class*="btn"]:hover {
   box-shadow: 0 0 30px rgba(123, 97, 255, 0.6),
               0 0 60px rgba(123, 97, 255, 0.4);
   transform: translateY(-2px);
+}
+
+/* Card glow effects */
+.card-glass, .glass {
+  transition: all 0.3s ease;
+}
+
+.card-glass:hover, .glass:hover {
+  border-color: rgba(123, 97, 255, 0.4);
+  box-shadow: 0 0 25px rgba(123, 97, 255, 0.3),
+              0 0 50px rgba(123, 97, 255, 0.2);
+}
+
+/* Link glow on hover */
+a:hover {
+  text-shadow: 0 0 10px rgba(123, 97, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Badge et prix glow */
+.bg-primary, .bg-\[#7B61FF\], [class*="bg-primary"] {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
+
+/* Titres avec glow subtil */
+h1, h2 {
+  text-shadow: 0 0 30px rgba(123, 97, 255, 0.2);
 }
 
 /* Hide default cursor on desktop */
