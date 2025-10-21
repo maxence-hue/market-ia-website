@@ -37,10 +37,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="min-h-screen flex flex-col relative">
+      <body className="min-h-screen flex flex-col relative overflow-x-hidden">
         <CustomCursor />
-        <FloatingOrbs />
-        <ParticleBackground />
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <FloatingOrbs />
+          <ParticleBackground />
+        </div>
         <Header />
         <main className="flex-grow relative z-10">
           {children}

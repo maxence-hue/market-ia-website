@@ -9,7 +9,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-dark/95 backdrop-blur-lg border-b border-white/10">
+    <header className="sticky top-0 z-[100] bg-dark/95 backdrop-blur-lg border-b border-white/10">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
