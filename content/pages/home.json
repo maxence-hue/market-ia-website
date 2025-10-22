@@ -1,0 +1,37 @@
+{
+  "page": "home",
+  "hero": {
+    "title": "L'alliance parfaite entre humain et intelligence artificielle",
+    "subtitle": "Des sites, automatisations et formations qui travaillent à votre place",
+    "ctaText": "Démarrer un projet",
+    "ctaLink": "/contact",
+    "backgroundImage": "/images/hero-bg.jpg"
+  },
+  "about": {
+    "title": "Qui sommes-nous ?",
+    "content": "Market-IA est une agence spécialisée dans l'intégration de l'intelligence artificielle au service de votre business. Nous créons des solutions digitales qui automatisent vos processus et boostent votre productivité.",
+    "image": "/images/about.jpg",
+    "imageAlt": "Équipe Market-IA"
+  },
+  "stats": [
+    {
+      "value": "50+",
+      "label": "Projets réalisés"
+    },
+    {
+      "value": "98%",
+      "label": "Clients satisfaits"
+    },
+    {
+      "value": "5 ans",
+      "label": "D'expérience"
+    }
+  ],
+  "cta": {
+    "title": "Prêt à transformer votre business ?",
+    "subtitle": "Discutons de votre projet et trouvons ensemble la meilleure solution",
+    "ctaText": "Contactez-nous",
+    "ctaLink": "/contact"
+  },
+  "updatedAt": "2025-01-22T19:30:00.000Z"
+}

@@ -2,17 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { readJSON, writeJSON } from '@/lib/db/file-manager'
 import { getSession } from '@/lib/auth/session'
 
-interface SubscriptionPlan {
-  id: string
-  name: string
-  monthlyPrice: number
-  setupFee: number
-  popular: boolean
-  timeIncluded: string
-  sla: string
-  features: string[]
-}
-
 interface Service {
   id: string
   title: string
@@ -23,7 +12,8 @@ interface Service {
   imageAlt: string
   content: string
   features: string[]
-  subscriptionPlans: SubscriptionPlan[]
+  ctaText: string
+  ctaLink: string
   order: number
   active: boolean
 }

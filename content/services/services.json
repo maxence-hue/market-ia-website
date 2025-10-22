@@ -17,62 +17,8 @@
         "Maintenance et support inclus",
         "Analytics et tracking"
       ],
-      "subscriptionPlans": [
-        {
-          "id": "starter",
-          "name": "Starter",
-          "monthlyPrice": 297,
-          "setupFee": 500,
-          "popular": false,
-          "timeIncluded": "2h",
-          "sla": "72h",
-          "features": [
-            "Site vitrine jusqu'à 5 pages",
-            "Design responsive mobile-first",
-            "Optimisation SEO de base",
-            "Formulaire de contact",
-            "2h de modifications/mois",
-            "Support par email"
-          ]
-        },
-        {
-          "id": "business",
-          "name": "Business",
-          "monthlyPrice": 597,
-          "setupFee": 1000,
-          "popular": true,
-          "timeIncluded": "4h",
-          "sla": "48h",
-          "features": [
-            "Site jusqu'à 10 pages",
-            "Blog intégré avec CMS",
-            "SEO avancé et analytics",
-            "Intégrations API tierces",
-            "Automatisations personnalisées",
-            "4h de modifications/mois",
-            "Support prioritaire"
-          ]
-        },
-        {
-          "id": "enterprise",
-          "name": "Enterprise",
-          "monthlyPrice": 1497,
-          "setupFee": 2500,
-          "popular": false,
-          "timeIncluded": "10h",
-          "sla": "24h",
-          "features": [
-            "SaaS ou application complexe",
-            "Fonctionnalités illimitées",
-            "Infrastructure scalable",
-            "IA et automatisations avancées",
-            "Intégrations multiples",
-            "10h de développement/mois",
-            "Support dédié 24/7",
-            "Consulting stratégique inclus"
-          ]
-        }
-      ],
+      "ctaText": "Demander un devis",
+      "ctaLink": "/contact",
       "order": 0,
       "active": true
     },
@@ -93,59 +39,8 @@
         "Monitoring et optimisation",
         "Formation de votre équipe"
       ],
-      "subscriptionPlans": [
-        {
-          "id": "essential",
-          "name": "Essential",
-          "monthlyPrice": 397,
-          "setupFee": 800,
-          "popular": false,
-          "timeIncluded": "3h",
-          "sla": "48h",
-          "features": [
-            "3 automatisations incluses",
-            "Intégrations basiques (Email, CRM)",
-            "Dashboard de monitoring",
-            "3h d'optimisation/mois",
-            "Support par email"
-          ]
-        },
-        {
-          "id": "pro",
-          "name": "Pro",
-          "monthlyPrice": 797,
-          "setupFee": 1500,
-          "popular": true,
-          "timeIncluded": "6h",
-          "sla": "24h",
-          "features": [
-            "Automatisations illimitées",
-            "IA pour tâches complexes",
-            "Intégrations avancées (APIs)",
-            "Workflows personnalisés",
-            "6h d'optimisation/mois",
-            "Analytics détaillés",
-            "Support prioritaire"
-          ]
-        },
-        {
-          "id": "custom",
-          "name": "Sur-mesure",
-          "monthlyPrice": 0,
-          "setupFee": 0,
-          "popular": false,
-          "timeIncluded": "Sur devis",
-          "sla": "Sur devis",
-          "features": [
-            "Solution 100% personnalisée",
-            "Architecture complexe",
-            "Multiple systèmes",
-            "IA avancée",
-            "Support dédié",
-            "Consulting inclus"
-          ]
-        }
-      ],
+      "ctaText": "Discuter de mon projet",
+      "ctaLink": "/contact",
       "order": 1,
       "active": true
     },
@@ -166,64 +61,12 @@
         "Certification disponible",
         "Groupe ou individuel"
       ],
-      "subscriptionPlans": [
-        {
-          "id": "discovery",
-          "name": "Découverte",
-          "monthlyPrice": 197,
-          "setupFee": 0,
-          "popular": false,
-          "timeIncluded": "2h",
-          "sla": "N/A",
-          "features": [
-            "1 session de formation/mois",
-            "Accès plateforme e-learning",
-            "Ressources et templates",
-            "Groupe jusqu'à 10 personnes",
-            "Support par email"
-          ]
-        },
-        {
-          "id": "accelerator",
-          "name": "Accelerator",
-          "monthlyPrice": 497,
-          "setupFee": 0,
-          "popular": true,
-          "timeIncluded": "4h",
-          "sla": "N/A",
-          "features": [
-            "2 sessions de formation/mois",
-            "Formation personnalisée",
-            "Cas d'usage spécifiques",
-            "Coaching individuel",
-            "Suivi de progression",
-            "Certificat de formation",
-            "Support prioritaire"
-          ]
-        },
-        {
-          "id": "enterprise-training",
-          "name": "Entreprise",
-          "monthlyPrice": 1297,
-          "setupFee": 500,
-          "popular": false,
-          "timeIncluded": "10h",
-          "sla": "N/A",
-          "features": [
-            "Programme sur-mesure",
-            "Formations illimitées",
-            "Jusqu'à 50 participants",
-            "Implementation avec votre équipe",
-            "Audit et consulting",
-            "Certification équipe complète",
-            "Support dédié"
-          ]
-        }
-      ],
+      "ctaText": "En savoir plus",
+      "ctaLink": "/contact",
       "order": 2,
       "active": true
     }
   ],
-  "updatedAt": "2025-01-22T19:00:00.000Z",
-  "updatedBy": "system"
+  "updatedAt": "2025-01-22T19:30:00.000Z",
+  "updatedBy": "admin"
 }
