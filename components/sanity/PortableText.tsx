@@ -97,22 +97,6 @@ const components = {
         </figure>
       )
     },
-
-    // Blocs de code
-    code: ({ value }: any) => {
-      return (
-        <div className="my-8 rounded-xl overflow-hidden bg-dark-surface border border-light/10">
-          <div className="px-4 py-2 bg-dark-surface/50 border-b border-light/10 text-sm text-light/60">
-            {value.language || 'code'}
-          </div>
-          <pre className="p-4 overflow-x-auto">
-            <code className="text-sm font-mono text-light/90">
-              {value.code}
-            </code>
-          </pre>
-        </div>
-      )
-    },
   },
 
   // Listes
