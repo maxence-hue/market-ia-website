@@ -122,10 +122,10 @@ export default function AdminDashboard() {
           💡 Besoin d&apos;aide ?
         </h2>
         <div className="space-y-3 text-light/70">
-          <p><strong className="text-light">• Pour modifier une page :</strong> Allez dans "Modifier les Pages", sélectionnez une page, modifiez les champs et cliquez "Sauvegarder"</p>
-          <p><strong className="text-light">• Pour créer un article :</strong> Cliquez sur "Créer un Article", remplissez le formulaire et publiez</p>
-          <p><strong className="text-light">• Pour uploader une image :</strong> Allez dans "Gérer les Images" et glissez-déposez vos fichiers</p>
-          <p><strong className="text-light">• Pour modifier un service :</strong> Rendez-vous dans "Gérer les Services" et cliquez sur un service</p>
+          <p><strong className="text-light">• Pour modifier une page :</strong> Allez dans &quot;Modifier les Pages&quot;, sélectionnez une page, modifiez les champs et cliquez &quot;Sauvegarder&quot;</p>
+          <p><strong className="text-light">• Pour créer un article :</strong> Cliquez sur &quot;Créer un Article&quot;, remplissez le formulaire et publiez</p>
+          <p><strong className="text-light">• Pour uploader une image :</strong> Allez dans &quot;Gérer les Images&quot; et glissez-déposez vos fichiers</p>
+          <p><strong className="text-light">• Pour modifier un service :</strong> Rendez-vous dans &quot;Gérer les Services&quot; et cliquez sur un service</p>
         </div>
       </div>
     </div>
