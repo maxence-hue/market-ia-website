@@ -1,100 +1,131 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { FileText, Newspaper, Package, Users, MessageSquare, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
+import { FileText, Image, Settings, BookOpen, Users, MessageSquare, LayoutGrid } from 'lucide-react'
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState({
-    pages: 0,
-    articles: 0,
-    services: 0,
-    team: 0
-  })
-
-  useEffect(() => {
-    // Charger les stats
-    loadStats()
-  }, [])
-
-  const loadStats = async () => {
-    // TODO: Implémenter le chargement des stats
-    setStats({
-      pages: 5,
-      articles: 12,
-      services: 5,
-      team: 3
-    })
-  }
-
   const cards = [
-    { title: 'Pages', value: stats.pages, icon: FileText, href: '/admin/pages', color: 'bg-blue-500' },
-    { title: 'Articles', value: stats.articles, icon: Newspaper, href: '/admin/blog', color: 'bg-green-500' },
-    { title: 'Services', value: stats.services, icon: Package, href: '/admin/services', color: 'bg-purple-500' },
-    { title: 'Équipe', value: stats.team, icon: Users, href: '/admin/equipe', color: 'bg-orange-500' },
+    {
+      title: 'Modifier les Pages',
+      description: 'Éditez les textes et images de votre site',
+      icon: FileText,
+      href: '/admin/pages',
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-500/10',
+      borderColor: 'border-blue-500/30',
+    },
+    {
+      title: 'Créer un Article',
+      description: 'Rédigez et publiez des articles de blog',
+      icon: BookOpen,
+      href: '/admin/blog',
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'bg-purple-500/10',
+      borderColor: 'border-purple-500/30',
+    },
+    {
+      title: 'Gérer les Images',
+      description: 'Uploadez et organisez vos photos',
+      icon: Image,
+      href: '/admin/media',
+      color: 'from-green-500 to-emerald-500',
+      bgColor: 'bg-green-500/10',
+      borderColor: 'border-green-500/30',
+    },
+    {
+      title: 'Gérer les Services',
+      description: 'Modifiez vos offres et tarifs',
+      icon: LayoutGrid,
+      href: '/admin/services',
+      color: 'from-orange-500 to-yellow-500',
+      bgColor: 'bg-orange-500/10',
+      borderColor: 'border-orange-500/30',
+    },
+    {
+      title: 'Équipe',
+      description: 'Ajoutez ou modifiez les membres',
+      icon: Users,
+      href: '/admin/equipe',
+      color: 'from-indigo-500 to-blue-500',
+      bgColor: 'bg-indigo-500/10',
+      borderColor: 'border-indigo-500/30',
+    },
+    {
+      title: 'Témoignages',
+      description: 'Gérez les avis clients',
+      icon: MessageSquare,
+      href: '/admin/temoignages',
+      color: 'from-pink-500 to-rose-500',
+      bgColor: 'bg-pink-500/10',
+      borderColor: 'border-pink-500/30',
+    },
+    {
+      title: 'Paramètres',
+      description: 'Configurez les infos du site',
+      icon: Settings,
+      href: '/admin/settings',
+      color: 'from-gray-500 to-slate-500',
+      bgColor: 'bg-gray-500/10',
+      borderColor: 'border-gray-500/30',
+    },
   ]
 
   return (
     <div className="p-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-display font-bold text-light mb-2">
-          Dashboard Admin
-        </h1>
-        <p className="text-light/60">
-          Bienvenue dans l&apos;interface d&apos;administration Market-IA
-        </p>
+      {/* Welcome Banner */}
+      <div className="mb-12 relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 p-8">
+        <div className="relative z-10">
+          <h1 className="text-4xl font-display font-bold text-light mb-3">
+            👋 Bienvenue dans votre Admin
+          </h1>
+          <p className="text-light/70 text-lg max-w-2xl">
+            Gérez facilement tout le contenu de votre site. Cliquez sur une carte ci-dessous pour commencer.
+          </p>
+        </div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      {/* Quick Actions Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card) => {
           const Icon = card.icon
           return (
             <Link
-              key={card.title}
+              key={card.href}
               href={card.href}
-              className="bg-dark-surface p-6 rounded-lg border border-light/10 hover:border-primary/50 transition-all"
+              className={`group relative p-6 rounded-xl border ${card.borderColor} ${card.bgColor} 
+                       hover:scale-105 transition-all duration-300 hover:shadow-glow`}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className={`${card.color} p-3 rounded-lg`}>
-                  <Icon className="text-white" size={24} />
-                </div>
-                <TrendingUp className="text-green-400" size={20} />
+              <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${card.color} mb-4`}>
+                <Icon className="text-white" size={24} />
               </div>
-              <h3 className="text-light/60 text-sm mb-1">{card.title}</h3>
-              <p className="text-3xl font-bold text-light">{card.value}</p>
+              
+              <h3 className="text-xl font-display font-bold text-light mb-2 group-hover:text-primary transition-colors">
+                {card.title}
+              </h3>
+              
+              <p className="text-light/60 text-sm">
+                {card.description}
+              </p>
+
+              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="text-primary">→</div>
+              </div>
             </Link>
           )
         })}
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-dark-surface p-6 rounded-lg border border-light/10">
-        <h2 className="text-xl font-display font-bold text-light mb-4">
-          Actions rapides
+      {/* Help Section */}
+      <div className="mt-12 p-6 bg-dark-surface rounded-xl border border-light/10">
+        <h2 className="text-xl font-display font-bold text-light mb-4 flex items-center gap-2">
+          💡 Besoin d&apos;aide ?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link
-            href="/admin/blog/new"
-            className="p-4 border border-light/10 rounded-lg hover:border-primary/50 transition-all text-center"
-          >
-            <Newspaper className="mx-auto mb-2 text-primary" size={32} />
-            <p className="text-light font-medium">Nouvel article</p>
-          </Link>
-          <Link
-            href="/admin/services"
-            className="p-4 border border-light/10 rounded-lg hover:border-primary/50 transition-all text-center"
-          >
-            <Package className="mx-auto mb-2 text-primary" size={32} />
-            <p className="text-light font-medium">Gérer services</p>
-          </Link>
-          <Link
-            href="/admin/settings"
-            className="p-4 border border-light/10 rounded-lg hover:border-primary/50 transition-all text-center"
-          >
-            <MessageSquare className="mx-auto mb-2 text-primary" size={32} />
-            <p className="text-light font-medium">Paramètres</p>
-          </Link>
+        <div className="space-y-3 text-light/70">
+          <p><strong className="text-light">• Pour modifier une page :</strong> Allez dans "Modifier les Pages", sélectionnez une page, modifiez les champs et cliquez "Sauvegarder"</p>
+          <p><strong className="text-light">• Pour créer un article :</strong> Cliquez sur "Créer un Article", remplissez le formulaire et publiez</p>
+          <p><strong className="text-light">• Pour uploader une image :</strong> Allez dans "Gérer les Images" et glissez-déposez vos fichiers</p>
+          <p><strong className="text-light">• Pour modifier un service :</strong> Rendez-vous dans "Gérer les Services" et cliquez sur un service</p>
         </div>
       </div>
     </div>
