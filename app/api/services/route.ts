@@ -2,23 +2,32 @@ import { NextRequest, NextResponse } from 'next/server'
 import { readJSON, writeJSON } from '@/lib/db/file-manager'
 import { getSession } from '@/lib/auth/session'
 
+interface SubscriptionPlan {
+  id: string
+  name: string
+  monthlyPrice: number
+  setupFee: number
+  popular: boolean
+  timeIncluded: string
+  sla: string
+  features: string[]
+}
+
 interface Service {
   id: string
   title: string
   slug: string
   icon: string
-  startingPrice: number
-  priceLabel: string
   excerpt: string
   image: string
   imageAlt: string
-  features: string[]
   content: string
+  features: string[]
+  subscriptionPlans: SubscriptionPlan[]
   order: number
   active: boolean
 }
 
-// GET - Liste tous les services
 export async function GET() {
   try {
     const data = await readJSON<{ services: Service[] }>('services/services.json')
@@ -34,7 +43,6 @@ export async function GET() {
   }
 }
 
-// POST - Créer ou mettre à jour les services
 export async function POST(request: NextRequest) {
   try {
     const session = await getSession()
