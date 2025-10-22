@@ -2,71 +2,216 @@
   "services": [
     {
       "id": "1",
-      "title": "Sites Web & SaaS",
-      "slug": "site-web",
+      "title": "Site Internet",
+      "slug": "site-internet",
       "icon": "Globe",
-      "excerpt": "Des sites web performants et des SaaS personnalisés qui travaillent pour vous 24/7",
+      "price": "à partir de 99 €/mois",
+      "excerpt": "Un site moderne, rapide et sécurisé, pensé pour convertir. Hébergement, maintenance et support inclus.",
       "image": "/images/services/website.jpg",
-      "imageAlt": "Développement de sites web et SaaS personnalisés",
-      "content": "Nous créons des sites web et des applications SaaS sur-mesure qui allient design moderne et performance technique.\n\nChaque projet est conçu pour convertir vos visiteurs en clients et automatiser vos processus métier. Notre approche combine l'expertise technique et la compréhension de vos objectifs business pour créer des solutions qui génèrent des résultats mesurables.\n\nNos sites sont optimisés pour le SEO, la vitesse de chargement et l'expérience utilisateur. Ils sont également conçus pour évoluer avec votre entreprise.",
+      "imageAlt": "Site Internet professionnel",
+      "content": "Dès 99 €/mois, vous disposez d'un site rapide, sécurisé et évolutif. Nous gérons la technique, vous concentrez vos efforts sur le business.\n\nUn site performant vit et s'optimise dans le temps. L'abonnement couvre maintenance, sécurité, mises à jour et support, pour rester serein toute l'année.",
       "features": [
-        "Design moderne et responsive",
-        "Optimisation SEO avancée",
-        "Performance et vitesse optimales",
-        "Intégration CRM et outils",
-        "Maintenance et support inclus",
-        "Analytics et tracking"
+        "Design moderne et responsive (mobile-first)",
+        "Structure orientée conversion (proposition de valeur, preuves, CTA)",
+        "SEO technique de base (balises, sitemap, performance)",
+        "Hébergement, SSL, sauvegardes, maintenance",
+        "Formulaire de contact connecté (email/CRM) avec anti-spam",
+        "Support et petites évolutions inclus dans l'abonnement"
       ],
-      "ctaText": "Demander un devis",
+      "options": [
+        "Blog & contenus SEO",
+        "Prise de rendez-vous (Calendly/Google)",
+        "Intégration CRM (HubSpot/Notion)",
+        "Chatbot/FAQ IA",
+        "E-commerce léger",
+        "Analytics & reporting mensuel",
+        "Netlinking, suivi de mots-clés"
+      ],
+      "process": "Brief & contenus → Maquette → Intégration → Mise en ligne → Ajustements + mini-formation",
+      "timeline": "5 à 10 jours ouvrés après validation des contenus",
+      "results": "Image pro crédible, capture de leads améliorée, temps gagné sur la gestion technique",
+      "faq": [
+        {
+          "question": "Engagement ?",
+          "answer": "12 mois, puis mensuel."
+        },
+        {
+          "question": "Migration d'un site existant ?",
+          "answer": "Oui, audit gratuit."
+        },
+        {
+          "question": "Nom de domaine ?",
+          "answer": "Vous restez propriétaire."
+        },
+        {
+          "question": "Textes & photos ?",
+          "answer": "Nous pouvons produire ou retravailler vos contenus (option)."
+        }
+      ],
+      "ctaText": "Démarrer mon site à 99 €/mois",
       "ctaLink": "/contact",
       "order": 0,
       "active": true
     },
     {
       "id": "2",
-      "title": "Automatisations",
-      "slug": "automatisations",
-      "icon": "Zap",
-      "excerpt": "Automatisez vos tâches répétitives et gagnez un temps précieux avec l'IA",
-      "image": "/images/services/automation.jpg",
-      "imageAlt": "Automatisations intelligentes avec IA",
-      "content": "Libérez votre équipe des tâches répétitives grâce à nos automatisations intelligentes.\n\nNous analysons vos processus métier pour identifier les opportunités d'automatisation et créons des solutions sur-mesure qui s'intègrent parfaitement à vos outils existants.\n\nDe la qualification de leads à la gestion administrative, nos automatisations vous font gagner des heures chaque semaine tout en réduisant les erreurs humaines.",
+      "title": "Landing Pages",
+      "slug": "landing-pages",
+      "icon": "FileText",
+      "price": "à partir de 199 € / landing",
+      "excerpt": "Des pages d'acquisition prêtes pour Meta/Google Ads, structurées pour la conversion et le suivi des performances.",
+      "image": "/images/services/landing.jpg",
+      "imageAlt": "Landing pages à haute conversion",
+      "content": "Pensées pour Meta/Google Ads et l'emailing, nos landings appliquent une structure de copywriting éprouvée, un chargement rapide et un tracking précis.\n\nConçues pour transformer vos clics en clients avec une structure optimisée et un suivi précis de la performance.",
       "features": [
-        "Analyse de vos processus",
-        "Automatisations sur-mesure",
-        "Intégration avec vos outils",
-        "IA pour tâches complexes",
-        "Monitoring et optimisation",
-        "Formation de votre équipe"
+        "Conception + intégration d'une landing à forte conversion",
+        "Structure : promesse claire, bénéfices, preuves, FAQ, CTA visibles",
+        "Formulaire web-to-lead (ou formulaire instantané) relié à vos outils",
+        "Pixels & événements (Meta/Google) correctement paramétrés",
+        "Version mobile optimisée et tests de vitesse"
       ],
-      "ctaText": "Discuter de mon projet",
+      "options": [
+        "Pack A/B : variante titre/hero/CTA pour optimiser le taux de conversion",
+        "Pack 3 landings : TOFU/MOFU/BOFU pour vos tunnels d'acquisition",
+        "Séquences emails de nurturing et relance (copy & intégration)"
+      ],
+      "process": "Brief objectif/offre → Wireframe & copy → Intégration → Mise en prod & tracking → Itérations selon données réelles",
+      "timeline": "48–72 h ouvrées après brief validé",
+      "results": "Coût par lead réduit, meilleurs taux de conversion, visibilité claire sur la performance des campagnes",
+      "faq": [
+        {
+          "question": "Délais ?",
+          "answer": "48–72 h ouvrées après brief validé."
+        },
+        {
+          "question": "Intégrations CRM ?",
+          "answer": "Oui (Zapier/Make/HubSpot/Notion)."
+        },
+        {
+          "question": "Rédaction ?",
+          "answer": "Incluse (structure conversion). Contenu expert sectoriel en option."
+        }
+      ],
+      "ctaText": "Commander ma landing dès 199 €",
       "ctaLink": "/contact",
       "order": 1,
       "active": true
     },
     {
       "id": "3",
-      "title": "Formations IA",
-      "slug": "formations",
+      "title": "Formation IA",
+      "slug": "formation-ia",
       "icon": "GraduationCap",
-      "excerpt": "Formez vos équipes à l'IA et aux outils qui boostent la productivité",
+      "price": "3 jours 2 790 € + module Boarding 390 €",
+      "excerpt": "Finançable via OPCO/CPF par organisme partenaire certifié Qualiopi* — reste à charge estimé 100 €. Du concret et des cas d'usage adaptés à votre métier.",
       "image": "/images/services/training.jpg",
-      "imageAlt": "Formations professionnelles en intelligence artificielle",
-      "content": "L'IA transforme le monde du travail. Ne restez pas en arrière.\n\nNos formations pratiques vous apprennent à utiliser l'IA dans votre quotidien professionnel. Pas de théorie inutile, que des cas d'usage concrets et applicables immédiatement.\n\nQue vous soyez débutant ou avancé, nos programmes s'adaptent à votre niveau et vos objectifs pour vous rendre autonome avec les outils d'IA.",
+      "imageAlt": "Formation IA professionnelle",
+      "content": "Un programme intensif de 3 jours (2 790 €) finançable via OPCO/CPF par organisme partenaire certifié Qualiopi — reste à charge estimé 100 € (selon éligibilité). En complément, un module Boarding de 4 h (390 €) pour amorcer rapidement.\n\n* Financements via un organisme partenaire certifié Qualiopi (éligibilité variable selon dossier).",
       "features": [
-        "Formations sur-mesure",
-        "Cas d'usage concrets",
-        "Outils IA professionnels",
-        "Support post-formation",
-        "Certification disponible",
-        "Groupe ou individuel"
+        "Comprendre les capacités et limites des LLM et de l'automatisation",
+        "Savoir prompt-designer, documenter et standardiser les usages",
+        "Construire des workflows IA utiles (doc, email, CRM, reporting)",
+        "Déployer une gouvernance : sécurité, conformité, traçabilité"
       ],
-      "ctaText": "En savoir plus",
+      "program": [
+        {
+          "day": "Jour 1 : Bases & sécurité",
+          "content": "Panorama IA, bons prompts, confidentialité, risques et cadre d'usage."
+        },
+        {
+          "day": "Jour 2 : Productivité & automatisations",
+          "content": "Rédaction assistée, synthèse documentaire, workflows (mails/RDV/CRM)."
+        },
+        {
+          "day": "Jour 3 : Cas d'usage métier & plan d'action",
+          "content": "Prototypage guidé, KPI, déploiement et adoption en équipe."
+        }
+      ],
+      "boarding": "Session d'introduction pour dirigeants/équipes : démonstrations, quick wins, sélection des 3 cas d'usage prioritaires et feuille de route d'amorçage.",
+      "public": "Dirigeants, managers, équipes métiers et support. Aucun prérequis technique.",
+      "results": "Cas d'usage opérationnels, modèles réutilisables, plan d'action à 30 jours, indicateurs de suivi",
+      "financing": "Prise en charge OPCO/CPF via organisme partenaire certifié Qualiopi (selon éligibilité). Nous vous accompagnons dans les démarches administratives.",
+      "modalities": "Présentiel (intra/inter) ou distanciel. Groupes de 6 à 10 personnes recommandés.",
+      "faq": [
+        {
+          "question": "Reste à charge exact ?",
+          "answer": "Variable selon votre dossier (estimé 100 €)."
+        },
+        {
+          "question": "Personnalisation par métier ?",
+          "answer": "Oui, cas d'usage adaptés."
+        },
+        {
+          "question": "Supports & replays ?",
+          "answer": "Supports fournis, replays possibles en distanciel."
+        }
+      ],
+      "ctaText": "Recevoir le programme détaillé et vérifier mon éligibilité",
       "ctaLink": "/contact",
       "order": 2,
       "active": true
+    },
+    {
+      "id": "4",
+      "title": "SaaS & Automatisations",
+      "slug": "saas-automatisations",
+      "icon": "Zap",
+      "price": "sur devis",
+      "excerpt": "Agents IA et intégrations sur-mesure : veille d'appels d'offres, analyse documentaire, scoring, reporting et workflows connectés à vos outils.",
+      "image": "/images/services/automation.jpg",
+      "imageAlt": "SaaS personnalisé et automatisations IA",
+      "content": "Nous concevons des applications métier adaptées à vos processus : veille d'appels d'offres, analyse de CCTP/CCAP, synthèses & scoring go/no-go, génération de mémoires, reporting, le tout connecté à vos outils.\n\nMettez en place des workflows fiables : réponses automatiques, synchronisations, reporting, veille, extraction/structuration documentaire, scoring et intégrations CRM/ERP.",
+      "features": [
+        "Interfaces web claires (rôles & droits, multi-utilisateurs)",
+        "Ingestion de documents (PDF/Word) et analyse assistée par IA",
+        "Workflows métiers : extraction, contrôles, validation, export (Word/PDF/CSV)",
+        "Connecteurs : messagerie, agendas, Drive/SharePoint, CRM, APIs publiques/privées",
+        "Journaux d'activité, audit, alertes et notifications"
+      ],
+      "examples": [
+        "Réputation & avis : réponses 5★ automatisées, escalade <3★",
+        "Transcription & comptes-rendus : réunions, brief, relances automatiques",
+        "Veille de marché : détection, résumé et priorisation des opportunités",
+        "Analyse documentaire : extraction de champs clés, conformité, alerte risques",
+        "Back-office : qualification leads, prospection, enrichissement, dédoublonnage"
+      ],
+      "integrations": "Gmail/Outlook, Google/Microsoft 365, Drive/SharePoint, Slack/Teams, HubSpot/Notion, Zapier/Make, Supabase, APIs sectorielles.",
+      "process": "Atelier de cadrage (objectifs, risques, données) → Prototype / POC avec vos vrais documents → Développement itératif → Recette & formation → Support & évolutions",
+      "deliverables": "Application prête à l'emploi, documentation d'usage, tutoriels, supports de formation, plan de montée en charge",
+      "security": "Hébergement cloud sécurisé, sauvegardes, monitoring, chiffrement en transit/au repos, gestion des accès et des journaux",
+      "results": "Réduction des délais d'analyse, standardisation de la qualité, décisions plus fiables, pilotage par les données",
+      "faq": [
+        {
+          "question": "Délais ?",
+          "answer": "Selon périmètre (POC en quelques semaines)."
+        },
+        {
+          "question": "Données sensibles ?",
+          "answer": "Conception privacy-by-design, cloisonnement des espaces."
+        },
+        {
+          "question": "Clés API & coûts tokens ?",
+          "answer": "Possible d'utiliser vos clés ou un forfait géré."
+        },
+        {
+          "question": "Compatibilité outil ?",
+          "answer": "Oui, via connecteurs/API ou adaptation."
+        },
+        {
+          "question": "Supervision & logs ?",
+          "answer": "Tableau de bord, alertes et journal d'exécution."
+        },
+        {
+          "question": "Évolutions ?",
+          "answer": "Roadmap mensuelle possible (forfait ou au ticket)."
+        }
+      ],
+      "ctaText": "Parler de votre besoin et obtenir un POC",
+      "ctaLink": "/contact",
+      "order": 3,
+      "active": true
     }
   ],
-  "updatedAt": "2025-01-22T19:30:00.000Z",
+  "updatedAt": "2025-01-22T22:30:00.000Z",
   "updatedBy": "admin"
 }

@@ -1,37 +1,48 @@
 {
   "page": "home",
   "hero": {
-    "title": "L'alliance parfaite entre humain et intelligence artificielle",
-    "subtitle": "Des sites, automatisations et formations qui travaillent à votre place",
-    "ctaText": "Démarrer un projet",
+    "title": "Accélérez votre business avec des sites, des landing pages et des agents IA prêts à performer",
+    "subtitle": "Quatre offres claires pour aller vite et bien : Site Internet dès 99 €/mois, Landing Page dès 199 €, Formation IA finançable (reste à charge estimé 100 €) et développements sur-mesure (SaaS & automatisations) adaptés à vos processus.",
+    "ctaText": "Planifiez une démo de 15 minutes",
     "ctaLink": "/contact",
     "backgroundImage": "/images/hero-bg.jpg"
   },
-  "about": {
-    "title": "Qui sommes-nous ?",
-    "content": "Market-IA est une agence spécialisée dans l'intégration de l'intelligence artificielle au service de votre business. Nous créons des solutions digitales qui automatisent vos processus et boostent votre productivité.",
-    "image": "/images/about.jpg",
-    "imageAlt": "Équipe Market-IA"
+  "proof": {
+    "text": "Déjà choisis par des entrepreneurs exigeants dans le BTP, l'ingénierie, la rénovation et les services. Résultats concrets, déploiements rapides, impact mesurable."
   },
-  "stats": [
-    {
-      "value": "50+",
-      "label": "Projets réalisés"
-    },
-    {
-      "value": "98%",
-      "label": "Clients satisfaits"
-    },
-    {
-      "value": "5 ans",
-      "label": "D'expérience"
-    }
-  ],
+  "process": {
+    "title": "Comment on travaille",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Audit express",
+        "description": "Audit express de vos objectifs et de votre contexte."
+      },
+      {
+        "number": "2",
+        "title": "Prototype rapide",
+        "description": "Prototype rapide (maquette ou POC fonctionnel)."
+      },
+      {
+        "number": "3",
+        "title": "Mise en production",
+        "description": "Mise en production + itérations guidées par vos résultats."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Bénéfices clés",
+    "items": [
+      "Délai court de mise en ligne et prise en main simple",
+      "Gains de temps mesurables sur les tâches répétitives",
+      "Accompagnement pragmatique, orienté résultats"
+    ]
+  },
   "cta": {
-    "title": "Prêt à transformer votre business ?",
-    "subtitle": "Discutons de votre projet et trouvons ensemble la meilleure solution",
-    "ctaText": "Contactez-nous",
+    "title": "Prêt à accélérer votre business ?",
+    "subtitle": "Planifiez une démo de 15 minutes et obtenez un plan d'action concret.",
+    "ctaText": "Planifier ma démo",
     "ctaLink": "/contact"
   },
-  "updatedAt": "2025-01-22T19:30:00.000Z"
+  "updatedAt": "2025-01-22T22:30:00.000Z"
 }
