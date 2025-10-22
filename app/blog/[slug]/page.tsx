@@ -1,118 +1,245 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Calendar, User, ArrowLeft } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { getAllBlogPosts, getBlogPostBySlug, BlogPost } from '@/lib/contentful'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { Calendar, User, ArrowLeft, Tag } from 'lucide-react'
 
-// Mock data - will be replaced by actual MDX loading
-const blogPosts: Record<string, any> = {
-  'abonnement-vs-projet': {
-    title: 'Site web en abonnement vs projet unique : quel modèle choisir ?',
-    date: '2025-10-15',
-    author: 'Maxence Alehause',
-    category: 'Business',
-    content: `
-      <p>Le modèle d'abonnement mensuel pour les sites web révolutionne l'accès aux technologies digitales...</p>
-      <p>Cette page affichera le contenu complet de l'article depuis le fichier MDX.</p>
-      <p><strong>Note:</strong> Pour charger dynamiquement les articles MDX, vous pouvez utiliser next-mdx-remote ou mdx-bundler.</p>
-    `
-  },
-  'automatisation-marketing': {
-    title: '5 automatisations marketing qui font gagner 20h/semaine',
-    date: '2025-10-10',
-    author: 'Maxence Alehause',
-    category: 'Automatisation',
-    content: `
-      <p>Le temps, c'est de l'argent. En marketing, on passe souvent trop de temps sur des tâches répétitives...</p>
-      <p>Cette page affichera le contenu complet de l'article depuis le fichier MDX.</p>
-    `
-  },
-  'diagnostic-automatisation': {
-    title: 'Comment identifier les processus à automatiser dans votre entreprise',
-    date: '2025-10-05',
-    author: 'Maxence Alehause',
-    category: 'IA',
-    content: `
-      <p>Vous savez que l'automatisation peut vous faire gagner du temps. Mais par où commencer ?</p>
-      <p>Cette page affichera le contenu complet de l'article depuis le fichier MDX.</p>
-    `
+/**
+ * Génère les métadonnées pour chaque article
+ */
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = await getBlogPostBySlug(params.slug)
+
+  if (!post) {
+    return {
+      title: 'Article non trouvé',
+    }
+  }
+
+  return {
+    title: `${post.fields.title} | Market-IA Blog`,
+    description: post.fields.excerpt || '',
+    openGraph: {
+      title: post.fields.title,
+      description: post.fields.excerpt || '',
+      images: post.fields.coverImage
+        ? [`https:${post.fields.coverImage.fields.file.url}`]
+        : [],
+    },
   }
 }
 
-export async function generateStaticParams() {
-  return Object.keys(blogPosts).map((slug) => ({
-    slug: slug,
-  }))
+/**
+ * Génère les chemins statiques pour tous les articles
+ * Désactivé pour l'instant - sera activé après configuration Contentful
+ */
+// export async function generateStaticParams() {
+//   const posts = await getAllBlogPosts()
+//   return posts.map((post) => ({
+//     slug: post.fields.slug,
+//   }))
+// }
+
+// Rendu dynamique pour l'instant
+export const dynamic = 'force-dynamic'
+
+/**
+ * Options de rendu pour le contenu Rich Text de Contentful
+ */
+const renderOptions = {
+  renderNode: {
+    // Paragraphes
+    [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+      <p className="mb-6 text-light/80 leading-relaxed text-lg">{children}</p>
+    ),
+    // Titres
+    [BLOCKS.HEADING_2]: (node: any, children: any) => (
+      <h2 className="text-3xl font-display font-bold text-light mt-12 mb-6">{children}</h2>
+    ),
+    [BLOCKS.HEADING_3]: (node: any, children: any) => (
+      <h3 className="text-2xl font-display font-bold text-light mt-10 mb-4">{children}</h3>
+    ),
+    // Listes
+    [BLOCKS.UL_LIST]: (node: any, children: any) => (
+      <ul className="mb-6 space-y-2 list-disc list-inside text-light/80">{children}</ul>
+    ),
+    [BLOCKS.OL_LIST]: (node: any, children: any) => (
+      <ol className="mb-6 space-y-2 list-decimal list-inside text-light/80">{children}</ol>
+    ),
+    // Citations
+    [BLOCKS.QUOTE]: (node: any, children: any) => (
+      <blockquote className="border-l-4 border-primary pl-6 py-4 my-8 bg-primary/5 rounded-r-lg">
+        <div className="text-light/90 italic">{children}</div>
+      </blockquote>
+    ),
+    // Images intégrées
+    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+      const { file, title } = node.data.target.fields
+      return (
+        <div className="my-8 rounded-xl overflow-hidden">
+          <Image
+            src={`https:${file.url}`}
+            alt={title || ''}
+            width={file.details.image.width}
+            height={file.details.image.height}
+            className="w-full h-auto"
+          />
+        </div>
+      )
+    },
+    // Liens
+    [INLINES.HYPERLINK]: (node: any, children: any) => (
+      <a
+        href={node.data.uri}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary hover:text-primary-light underline transition-colors"
+      >
+        {children}
+      </a>
+    ),
+  },
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug]
+/**
+ * Page d'article de blog individuel
+ */
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = await getBlogPostBySlug(params.slug)
 
   if (!post) {
     notFound()
   }
 
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all mb-8">
-          <ArrowLeft className="w-5 h-5" />
-          Retour au blog
-        </Link>
+    <div className="min-h-screen bg-dark">
+      {/* Hero avec image de couverture */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Image de fond */}
+        {post.fields.coverImage && (
+          <div className="absolute inset-0">
+            <Image
+              src={`https:${post.fields.coverImage.fields.file.url}`}
+              alt={post.fields.coverImage.fields.title || post.fields.title}
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/80 to-dark" />
+          </div>
+        )}
 
-        <article>
-          <header className="mb-12">
-            <div className="flex items-center gap-4 text-sm text-light/60 mb-4">
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/30">
-                {post.category}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            {/* Bouton retour */}
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-light/60 hover:text-primary transition-colors mb-8"
+            >
+              <ArrowLeft size={20} />
+              Retour au blog
+            </Link>
+
+            {/* Catégorie */}
+            {post.fields.category && (
+              <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full mb-6">
+                {post.fields.category}
               </span>
-              <div className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
-                <time>{new Date(post.date).toLocaleDateString('fr-FR')}</time>
-              </div>
-              <div className="flex items-center gap-1">
-                <User className="w-4 h-4" />
-                <span>{post.author}</span>
-              </div>
-            </div>
+            )}
 
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {post.title}
+            {/* Titre */}
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-light mb-6">
+              {post.fields.title}
             </h1>
-          </header>
 
-          <div 
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:font-display prose-headings:font-bold
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-light/80 prose-p:leading-relaxed
-              prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-light prose-strong:font-semibold
-              prose-ul:text-light/80 prose-ol:text-light/80
-              prose-li:my-2
-              prose-code:text-primary prose-code:bg-primary/10 prose-code:px-2 prose-code:py-1 prose-code:rounded"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-
-          <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="card-glass p-8 text-center">
-              <h3 className="text-2xl font-display font-bold mb-4">
-                Cet article vous a été utile ?
-              </h3>
-              <p className="text-light/70 mb-6">
-                Découvrez comment nous pouvons vous aider à développer votre activité
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="btn-primary">
-                  Discutons de votre projet
-                </Link>
-                <Link href="/abonnements" className="btn-secondary">
-                  Voir nos abonnements
-                </Link>
-              </div>
+            {/* Meta */}
+            <div className="flex flex-wrap items-center gap-6 text-light/60">
+              {post.fields.author && (
+                <div className="flex items-center gap-2">
+                  <User size={20} />
+                  <span>{post.fields.author}</span>
+                </div>
+              )}
+              {post.fields.publishDate && (
+                <div className="flex items-center gap-2">
+                  <Calendar size={20} />
+                  <span>
+                    {new Date(post.fields.publishDate).toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </section>
+
+      {/* Contenu de l'article */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            {/* Image principale (si pas déjà en hero) */}
+            {post.fields.coverImage && (
+              <div className="relative aspect-video rounded-2xl overflow-hidden mb-12 border border-light/10">
+                <Image
+                  src={`https:${post.fields.coverImage.fields.file.url}`}
+                  alt={post.fields.coverImage.fields.title || post.fields.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
+
+            {/* Contenu Rich Text */}
+            <div className="prose prose-invert prose-lg max-w-none">
+              {documentToReactComponents(post.fields.content, renderOptions)}
+            </div>
+
+            {/* Tags */}
+            {post.fields.tags && post.fields.tags.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-light/10">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <Tag className="text-primary" size={20} />
+                  {post.fields.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-dark-surface border border-light/10 rounded-full text-sm text-light/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* CTA */}
+            <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30 rounded-2xl text-center">
+              <h3 className="text-2xl font-display font-bold text-light mb-4">
+                Vous avez un projet ?
+              </h3>
+              <p className="text-light/70 mb-6">
+                Discutons ensemble de vos besoins et trouvons la meilleure solution
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-light 
+                         text-white rounded-lg transition-colors font-semibold"
+              >
+                Nous contacter
+                <ArrowLeft size={20} className="rotate-180" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
+
+// Revalidation toutes les heures
+export const revalidate = 3600
