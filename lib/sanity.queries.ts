@@ -65,6 +65,60 @@ export interface SiteSettings {
   }
 }
 
+export interface HomePage {
+  _id: string
+  heroTitle: string
+  heroSubtitle: string
+  heroButtonText: string
+  heroButtonLink: string
+  heroImage?: any
+  aboutTitle: string
+  aboutContent: string
+  aboutImage?: any
+  stat1Value?: string
+  stat1Label?: string
+  stat2Value?: string
+  stat2Label?: string
+  stat3Value?: string
+  stat3Label?: string
+  ctaTitle?: string
+  ctaSubtitle?: string
+  ctaButtonText?: string
+  ctaButtonLink?: string
+}
+
+export interface Service {
+  _id: string
+  title: string
+  slug: { current: string }
+  icon?: string
+  price: string
+  excerpt: string
+  coverImage: any
+  description: any[]
+  features: string[]
+  ctaText: string
+  ctaLink: string
+  order: number
+  visible: boolean
+}
+
+export interface TeamMember {
+  _id: string
+  name: string
+  role: string
+  photo: any
+  bio?: string
+  socialLinks?: {
+    linkedin?: string
+    twitter?: string
+    github?: string
+    email?: string
+  }
+  order: number
+  visible: boolean
+}
+
 // ============================================
 // REQUÊTES BLOG
 // ============================================
@@ -221,4 +275,120 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
     query,
     revalidate: 3600 // Cache de 1 heure
   })
+}
+
+// ============================================
+// REQUÊTES HOME PAGE
+// ============================================
+
+/**
+ * Récupère le contenu de la page d'accueil
+ */
+export async function getHomePage(): Promise<HomePage | null> {
+  const query = `*[_type == "homePage"][0] {
+    _id,
+    heroTitle,
+    heroSubtitle,
+    heroButtonText,
+    heroButtonLink,
+    heroImage,
+    aboutTitle,
+    aboutContent,
+    aboutImage,
+    stat1Value,
+    stat1Label,
+    stat2Value,
+    stat2Label,
+    stat3Value,
+    stat3Label,
+    ctaTitle,
+    ctaSubtitle,
+    ctaButtonText,
+    ctaButtonLink
+  }`
+  
+  return sanityFetch<HomePage | null>({ 
+    query,
+    revalidate: 3600
+  })
+}
+
+// ============================================
+// REQUÊTES SERVICES
+// ============================================
+
+/**
+ * Récupère tous les services visibles
+ */
+export async function getAllServices(): Promise<Service[]> {
+  const query = `*[_type == "service" && visible == true] | order(order asc) {
+    _id,
+    title,
+    slug,
+    icon,
+    price,
+    excerpt,
+    coverImage,
+    description,
+    features,
+    ctaText,
+    ctaLink,
+    order
+  }`
+  
+  return sanityFetch<Service[]>({ query })
+}
+
+/**
+ * Récupère un service par son slug
+ */
+export async function getServiceBySlug(slug: string): Promise<Service | null> {
+  const query = `*[_type == "service" && slug.current == $slug && visible == true][0] {
+    _id,
+    title,
+    slug,
+    icon,
+    price,
+    excerpt,
+    coverImage,
+    description,
+    features,
+    ctaText,
+    ctaLink
+  }`
+  
+  return sanityFetch<Service | null>({ 
+    query, 
+    params: { slug } 
+  })
+}
+
+/**
+ * Récupère tous les slugs des services (pour generateStaticParams)
+ */
+export async function getAllServiceSlugs(): Promise<string[]> {
+  const query = `*[_type == "service" && visible == true].slug.current`
+  
+  return sanityFetch<string[]>({ query })
+}
+
+// ============================================
+// REQUÊTES ÉQUIPE
+// ============================================
+
+/**
+ * Récupère tous les membres de l'équipe visibles
+ */
+export async function getAllTeamMembers(): Promise<TeamMember[]> {
+  const query = `*[_type == "teamMember" && visible == true] | order(order asc) {
+    _id,
+    name,
+    role,
+    photo,
+    bio,
+    socialLinks,
+    order
+  }`
+  
+  return sanityFetch<TeamMember[]>({ query })
 }
