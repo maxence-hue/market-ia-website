@@ -13,6 +13,7 @@ interface OfferSectionProps {
   references: { name: string; result: string }[]
   servicePage: string
   imageUrl?: string
+  illustration?: React.ReactNode
   reversed?: boolean
 }
 
@@ -25,6 +26,7 @@ export function OfferSection({
   references,
   servicePage,
   imageUrl,
+  illustration,
   reversed = false,
 }: OfferSectionProps) {
   return (
@@ -98,7 +100,9 @@ export function OfferSection({
           >
             <div className="relative glass rounded-2xl overflow-hidden p-2 group hover:border-primary/60 transition-all">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              {imageUrl ? (
+              {illustration ? (
+                illustration
+              ) : imageUrl ? (
                 <img
                   src={imageUrl}
                   alt={title}

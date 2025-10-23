@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { ArrowRight, Check, Sparkles, TrendingUp, Shield, Clock, Users, Globe, Zap, Star, GraduationCap } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { OfferSection } from '@/components/OfferSection'
-import { useEffect, useState } from 'react'
-import { client } from '@/lib/sanity.client'
-import type { HomePage as HomePageType } from '@/lib/sanity.queries'
+import { WebsiteIllustration } from '@/components/illustrations/WebsiteIllustration'
+import { AutomationIllustration } from '@/components/illustrations/AutomationIllustration'
+import { FormationIllustration } from '@/components/illustrations/FormationIllustration'
 
 const offers = [
   {
@@ -74,32 +74,6 @@ const offers = [
 
 
 export default function Home() {
-  // État pour le contenu Sanity
-  const [homeData, setHomeData] = useState<HomePageType | null>(null)
-
-  // Fetch du contenu Sanity
-  useEffect(() => {
-    const fetchHomeData = async () => {
-      try {
-        const data = await client.fetch<HomePageType>(`*[_type == "homePage"][0]`)
-        setHomeData(data)
-      } catch (error) {
-        console.log('Pas de contenu Sanity, utilisation du contenu par défaut')
-      }
-    }
-    fetchHomeData()
-  }, [])
-
-  // Contenu par défaut (fallback)
-  const heroTitle = homeData?.heroTitle || "L'alliance parfaite entre humain et intelligence artificielle."
-  const heroSubtitle = homeData?.heroSubtitle || "Des sites, automatisations et formations qui travaillent à votre place"
-  const stat1Value = homeData?.stat1Value || "500+"
-  const stat1Label = homeData?.stat1Label || "Projets réalisés"
-  const stat2Value = homeData?.stat2Value || "98%"
-  const stat2Label = homeData?.stat2Label || "Satisfaction client"
-  const stat3Value = homeData?.stat3Value || "24/7"
-  const stat3Label = homeData?.stat3Label || "Support disponible"
-
   return (
     <>
       {/* Hero Section - Nouveau design Figma */}
@@ -129,24 +103,32 @@ export default function Home() {
               <span className="text-sm font-medium text-light">+200 entreprises nous font confiance</span>
             </motion.div>
 
-            {/* Titre principal - MODIFIABLE VIA SANITY */}
+            {/* Titre principal */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight text-light"
+              className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight"
             >
-              {heroTitle}
+              L&apos;alliance parfaite entre{' '}
+              <span className="bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
+                humain
+              </span>
+              {' '}et{' '}
+              <span className="bg-gradient-to-r from-primary-light via-primary to-primary-dark bg-clip-text text-transparent">
+                intelligence artificielle
+              </span>
+              .
             </motion.h1>
 
-            {/* Sous-titre - MODIFIABLE VIA SANITY */}
+            {/* Sous-titre */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-light/70 mb-12 max-w-3xl mx-auto"
             >
-              {heroSubtitle}
+              Des sites, automatisations et formations qui travaillent à votre place
             </motion.p>
 
             {/* CTAs */}
@@ -171,7 +153,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Stats - MODIFIABLES VIA SANITY */}
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -180,18 +162,18 @@ export default function Home() {
             >
               <div className="card-glass p-6">
                 <TrendingUp className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-4xl font-display font-bold text-light mb-2">{stat1Value}</div>
-                <div className="text-light/70">{stat1Label}</div>
+                <div className="text-4xl font-display font-bold text-light mb-2">500+</div>
+                <div className="text-light/70">Projets réalisés</div>
               </div>
               <div className="card-glass p-6">
                 <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-4xl font-display font-bold text-light mb-2">{stat2Value}</div>
-                <div className="text-light/70">{stat2Label}</div>
+                <div className="text-4xl font-display font-bold text-light mb-2">98%</div>
+                <div className="text-light/70">Satisfaction client</div>
               </div>
               <div className="card-glass p-6">
                 <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-4xl font-display font-bold text-light mb-2">{stat3Value}</div>
-                <div className="text-light/70">{stat3Label}</div>
+                <div className="text-4xl font-display font-bold text-light mb-2">24/7</div>
+                <div className="text-light/70">Support disponible</div>
               </div>
             </motion.div>
           </motion.div>
@@ -238,6 +220,7 @@ export default function Home() {
             { name: 'Julie Martin, Consultante', result: '40 leads qualifiés par mois' },
           ]}
           servicePage="/services/site-web"
+          illustration={<WebsiteIllustration />}
         />
 
         <OfferSection
@@ -258,6 +241,7 @@ export default function Home() {
             { name: 'David M., E-commerce', result: 'ROI de 400% en 6 mois' },
           ]}
           servicePage="/services/automatisations"
+          illustration={<AutomationIllustration />}
           reversed
         />
 
@@ -279,6 +263,7 @@ export default function Home() {
             { name: 'Emma Petit, Marketing', result: 'Productivité x3 avec l\'IA' },
           ]}
           servicePage="/services/formations"
+          illustration={<FormationIllustration />}
         />
       </div>
 
