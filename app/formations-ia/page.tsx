@@ -137,9 +137,10 @@ export default function FormationsIA() {
       <section className="py-24 bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
@@ -180,9 +181,10 @@ export default function FormationsIA() {
       <section id="formations" className="py-24">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="max-w-5xl mx-auto"
           >
             <div className="bg-dark-surface/90 backdrop-blur-sm border-2 border-primary/40 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-xl">
@@ -278,9 +280,10 @@ export default function FormationsIA() {
       <section className="py-24 bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="max-w-6xl mx-auto"
           >
             <div className="bg-dark-surface/90 backdrop-blur-sm border-2 border-primary/40 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-xl">
@@ -448,9 +451,10 @@ export default function FormationsIA() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
@@ -491,9 +495,10 @@ export default function FormationsIA() {
       <section className="py-24 bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
@@ -534,9 +539,10 @@ export default function FormationsIA() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
@@ -565,8 +571,8 @@ export default function FormationsIA() {
                   </tr>
                   <tr className="border-b border-primary/10">
                     <td className="p-4 md:p-6 font-bold text-primary">Lieu</td>
-                    <td className="p-4 md:p-6 text-light/90">Brignoles, Hyères, Toulon, Draguignan</td>
-                    <td className="p-4 md:p-6 text-light/90">Brignoles ou Toulon</td>
+                    <td className="p-4 md:p-6 text-light/90">Dans tout le Var</td>
+                    <td className="p-4 md:p-6 text-light/90">Dans tout le Var</td>
                   </tr>
                   <tr className="border-b border-primary/10">
                     <td className="p-4 md:p-6 font-bold text-primary">Tarif</td>
@@ -608,9 +614,10 @@ export default function FormationsIA() {
       <section id="inscription" className="py-24 bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
@@ -797,9 +804,10 @@ export default function FormationsIA() {
       <section className="py-24 bg-dark-surface">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="card-glass p-12 text-center max-w-4xl mx-auto relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />

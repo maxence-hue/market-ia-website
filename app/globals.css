@@ -62,9 +62,13 @@
   }
 }
 
-/* Performance optimizations */
+/* Performance optimizations - Prevent layout shifts */
 * {
   will-change: auto;
+}
+
+html, body {
+  overscroll-behavior: none;
 }
 
 /* Smooth animations with GPU acceleration */
@@ -74,6 +78,17 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Prevent layout shift on scroll animations */
+section {
+  contain: layout style paint;
+}
+
+/* Optimize Framer Motion animations */
+[data-projection-id] {
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 /* Animations */
