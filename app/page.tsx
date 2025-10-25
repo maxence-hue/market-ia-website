@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Check, Sparkles, TrendingUp, Shield, Clock, Users, Globe, Zap, Star, GraduationCap } from 'lucide-react'
+import { ArrowRight, Check, Sparkles, TrendingUp, Shield, Clock, Users, Globe, Zap, Star, GraduationCap, Rocket } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { OfferSection } from '@/components/OfferSection'
 import { WebsiteIllustration } from '@/components/illustrations/WebsiteIllustration'
@@ -203,24 +203,24 @@ export default function Home() {
         </div>
 
         <OfferSection
-          icon={Globe}
-          title="Sites Web Personnalisés"
-          description="Créez une présence en ligne qui convertit. Nos sites web sur-mesure allient design moderne et performance technique pour transformer vos visiteurs en clients fidèles."
-          startingPrice="490"
+          icon={GraduationCap}
+          title="Formations IA & Digital"
+          description="Devenez autonome avec l'IA. Nos formations pratiques vous permettent de maîtriser les outils IA et digitaux pour développer votre activité sans dépendre de personne."
+          startingPrice="290"
           benefits={[
-            'Design 100% personnalisé reflétant votre identité',
-            'Optimisation SEO pour être visible sur Google',
-            'Responsive sur tous les appareils (mobile, tablette, desktop)',
-            'Temps de chargement ultra-rapide pour une meilleure expérience',
-            'Formulaires de contact et intégrations sur-mesure',
+            'Formation 100% pratique avec cas réels',
+            'Accès à vie aux contenus et mises à jour',
+            'Groupe privé et support personnalisé',
+            'Certificat de réussite',
+            'Templates et outils prêts à l\'emploi',
           ]}
           references={[
-            { name: 'Sophie Durand, E-commerce', result: '+250% de conversions en 3 mois' },
-            { name: 'Marc Lefebvre, Coach', result: '1er sur Google en 6 semaines' },
-            { name: 'Julie Martin, Consultante', result: '40 leads qualifiés par mois' },
+            { name: 'Marie Laurent, Entrepreneure', result: 'Site créé en autonomie en 1 semaine' },
+            { name: 'David Chen, Consultant', result: '5 automatisations déployées' },
+            { name: 'Emma Petit, Marketing', result: 'Productivité x3 avec l\'IA' },
           ]}
-          servicePage="/services/site-web"
-          illustration={<WebsiteIllustration />}
+          servicePage="/services/formations"
+          illustration={<FormationIllustration />}
         />
 
         <OfferSection
@@ -246,27 +246,6 @@ export default function Home() {
         />
 
         <OfferSection
-          icon={GraduationCap}
-          title="Formations IA & Digital"
-          description="Devenez autonome avec l'IA. Nos formations pratiques vous permettent de maîtriser les outils IA et digitaux pour développer votre activité sans dépendre de personne."
-          startingPrice="290"
-          benefits={[
-            'Formation 100% pratique avec cas réels',
-            'Accès à vie aux contenus et mises à jour',
-            'Groupe privé et support personnalisé',
-            'Certificat de réussite',
-            'Templates et outils prêts à l\'emploi',
-          ]}
-          references={[
-            { name: 'Marie Laurent, Entrepreneure', result: 'Site créé en autonomie en 1 semaine' },
-            { name: 'David Chen, Consultant', result: '5 automatisations déployées' },
-            { name: 'Emma Petit, Marketing', result: 'Productivité x3 avec l\'IA' },
-          ]}
-          servicePage="/services/formations"
-          illustration={<FormationIllustration />}
-        />
-
-        <OfferSection
           icon={Star}
           title="SaaS Personnalisé"
           description="Transformez votre entreprise avec votre propre SaaS sur mesure. Automatisez vos processus, centralisez vos données, hébergé en Europe avec IA intégrée."
@@ -285,7 +264,49 @@ export default function Home() {
           ]}
           servicePage="/services/saas-personnalise"
           illustration={<AutomationIllustration />}
+        />
+
+        <OfferSection
+          icon={Globe}
+          title="Sites Web Personnalisés"
+          description="Créez une présence en ligne qui convertit. Nos sites web sur-mesure allient design moderne et performance technique pour transformer vos visiteurs en clients fidèles."
+          startingPrice="99"
+          benefits={[
+            'Design 100% personnalisé reflétant votre identité',
+            'Optimisation SEO pour être visible sur Google',
+            'Responsive sur tous les appareils (mobile, tablette, desktop)',
+            'Temps de chargement ultra-rapide pour une meilleure expérience',
+            'Formules par abonnement dès 99€/mois',
+          ]}
+          references={[
+            { name: 'Sophie Durand, E-commerce', result: '+250% de conversions en 3 mois' },
+            { name: 'Marc Lefebvre, Coach', result: '1er sur Google en 6 semaines' },
+            { name: 'Julie Martin, Consultante', result: '40 leads qualifiés par mois' },
+          ]}
+          servicePage="/services/site-internet"
+          illustration={<WebsiteIllustration />}
           reversed
+        />
+
+        <OfferSection
+          icon={Rocket}
+          title="Landing Page IA"
+          description="Une page conçue pour convertir. Optimisation automatique, A/B testing IA, livrée en 72h."
+          startingPrice="199"
+          benefits={[
+            'Conception IA et structure optimale',
+            'Design Webflow ou Next.js responsive',
+            'Optimisation SEO et conversion',
+            'Livrée en 72h, prête pour vos campagnes',
+            'Intégrations CRM et tracking disponibles',
+          ]}
+          references={[
+            { name: 'StartupY', result: '+37% de leads générés' },
+            { name: 'AgenceX', result: 'Taux de conversion x2' },
+            { name: 'E-commerceZ', result: '150 leads/mois' },
+          ]}
+          servicePage="/services/landing-page-ia"
+          illustration={<AutomationIllustration />}
         />
       </div>
 

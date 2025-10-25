@@ -44,14 +44,6 @@ export default function Header() {
                   className="absolute top-full left-0 pt-2 w-72"
                 >
                   <div className="bg-[#1C1C1E]/95 backdrop-blur-xl border border-primary/30 rounded-xl p-2 shadow-glow">
-                    <Link href="/services/site-internet" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Site Internet</div>
-                      <div className="text-xs text-light/60">à partir de 99 €/mois</div>
-                    </Link>
-                    <Link href="/services/landing-pages" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Landing Pages</div>
-                      <div className="text-xs text-light/60">à partir de 199 €</div>
-                    </Link>
                     <Link href="/formations-ia" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">Formation IA Var</div>
                       <div className="text-xs text-light/60">Dans tout le Var</div>
@@ -63,6 +55,14 @@ export default function Header() {
                     <Link href="/services/saas-personnalise" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">SaaS Personnalisé</div>
                       <div className="text-xs text-light/60">Logiciel sur mesure</div>
+                    </Link>
+                    <Link href="/services/site-internet" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Site Internet</div>
+                      <div className="text-xs text-light/60">à partir de 99 €/mois</div>
+                    </Link>
+                    <Link href="/services/landing-page-ia" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Landing Page IA</div>
+                      <div className="text-xs text-light/60">à partir de 199 €</div>
                     </Link>
                   </div>
                 </div>
@@ -96,12 +96,6 @@ export default function Header() {
               Accueil
             </Link>
             <div className="space-y-2 pl-4">
-              <Link href="/services/site-internet" className="block text-light/80 hover:text-primary transition-colors">
-                Site Internet
-              </Link>
-              <Link href="/services/landing-pages" className="block text-light/80 hover:text-primary transition-colors">
-                Landing Pages
-              </Link>
               <Link href="/formations-ia" className="block text-light/80 hover:text-primary transition-colors">
                 Formation IA Var
               </Link>
@@ -110,6 +104,12 @@ export default function Header() {
               </Link>
               <Link href="/services/saas-personnalise" className="block text-light/80 hover:text-primary transition-colors">
                 SaaS Personnalisé
+              </Link>
+              <Link href="/services/site-internet" className="block text-light/80 hover:text-primary transition-colors">
+                Site Internet
+              </Link>
+              <Link href="/services/landing-page-ia" className="block text-light/80 hover:text-primary transition-colors">
+                Landing Page IA
               </Link>
             </div>
             <Link href="/blog" className="block text-light hover:text-primary transition-colors">
