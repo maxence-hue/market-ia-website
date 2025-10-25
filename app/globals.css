@@ -9,12 +9,18 @@
     box-sizing: border-box;
   }
   
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-dark text-light font-sans antialiased;
     font-weight: 200;
     letter-spacing: -0.015em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -56,18 +62,33 @@
   }
 }
 
+/* Performance optimizations */
+* {
+  will-change: auto;
+}
+
+/* Smooth animations with GPU acceleration */
+.animate-float,
+[class*="motion-"],
+[class*="transition-"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translate3d(0, -20px, 0);
   }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Glassmorphism effect - Plus transparent */

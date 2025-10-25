@@ -52,9 +52,9 @@ export default function Header() {
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">Landing Pages</div>
                       <div className="text-xs text-light/60">à partir de 199 €</div>
                     </Link>
-                    <Link href="/services/formation-ia" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
-                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Formation IA</div>
-                      <div className="text-xs text-light/60">3 jours - Finançable</div>
+                    <Link href="/formations-ia" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">Formation IA Var</div>
+                      <div className="text-xs text-light/60">Dans tout le Var</div>
                     </Link>
                     <Link href="/services/saas-automatisations" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">SaaS & Automatisations</div>
@@ -98,8 +98,8 @@ export default function Header() {
               <Link href="/services/landing-pages" className="block text-light/80 hover:text-primary transition-colors">
                 Landing Pages
               </Link>
-              <Link href="/services/formation-ia" className="block text-light/80 hover:text-primary transition-colors">
-                Formation IA
+              <Link href="/formations-ia" className="block text-light/80 hover:text-primary transition-colors">
+                Formation IA Var
               </Link>
               <Link href="/services/saas-automatisations" className="block text-light/80 hover:text-primary transition-colors">
                 SaaS & Automatisations
