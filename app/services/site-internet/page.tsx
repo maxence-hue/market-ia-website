@@ -144,7 +144,7 @@ export default function SiteInternet() {
             <div className="bg-primary/10 border-2 border-primary rounded-2xl p-8 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
               <p className="text-2xl font-bold text-light">
-                "Mis en ligne en <span className="text-primary">10 jours ouvrés</span> ou 1 mois offert."
+                &ldquo;Mis en ligne en <span className="text-primary">10 jours ouvrés</span> ou 1 mois offert.&rdquo;
               </p>
             </div>
           </motion.div>
