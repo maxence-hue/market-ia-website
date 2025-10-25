@@ -30,18 +30,18 @@ const offers = [
     image: '/images/web-design.jpg',
   },
   {
-    title: 'Automatisations & Agents IA',
-    price: 'Sur devis',
-    description: 'Gagnez jusqu\'à 20h par semaine en automatisant vos tâches répétitives. Guide complet des meilleurs outils et stratégies d\'automatisation.',
+    title: 'Automatisations IA',
+    price: 'Dès 390€',
+    description: 'Des workflows IA intelligents qui connectent vos outils, envoient vos messages, gèrent vos clients et remplissent vos bases de données — automatiquement.',
     features: [
-      'Audit complet de vos processus actuels',
-      'Identification des tâches automatisables',
-      'Mise en place d\'automatisations sur-mesure',
-      'Formation de votre équipe aux nouveaux outils',
-      'Support continu et optimisations',
+      'Workflows intelligents sur-mesure',
+      'Connexion de tous vos outils (Make, Zapier, n8n)',
+      'Automatisation marketing, vente et admin',
+      'Support client automatisé avec IA',
+      'Démo interactive en temps réel',
     ],
     icon: Zap,
-    href: '/services/automatisations',
+    href: '/services/automatisations-ia',
     results: [
       { name: 'Thomas B., Agence', result: '15h/semaine économisées' },
       { name: 'Laura K., SaaS', result: '80% de tâches automatisées' },
@@ -225,22 +225,22 @@ export default function Home() {
 
         <OfferSection
           icon={Zap}
-          title="Automatisations & Agents IA"
-          description="Gagnez jusqu'à 20h par semaine en automatisant vos tâches répétitives. Guide complet des meilleurs outils et stratégies d'automatisation."
-          startingPrice="790"
+          title="Automatisations IA"
+          description="Des workflows IA intelligents qui automatisent vos tâches pendant que vous travaillez"
+          startingPrice="390"
           benefits={[
-            'Audit complet de vos processus actuels',
-            'Identification des tâches automatisables',
-            'Mise en place d\'automatisations sur-mesure',
-            'Formation de votre équipe aux nouveaux outils',
-            'Support continu et optimisations',
+            'Workflows intelligents sur-mesure (Make, Zapier, n8n)',
+            'Connexion automatique de tous vos outils',
+            'Automatisation marketing, vente et admin',
+            'Support client avec IA',
+            'Démo interactive en temps réel',
           ]}
           references={[
             { name: 'Thomas B., Agence', result: '15h/semaine économisées' },
             { name: 'Laura K., SaaS', result: '80% de tâches automatisées' },
             { name: 'David M., E-commerce', result: 'ROI de 400% en 6 mois' },
           ]}
-          servicePage="/services/automatisations"
+          servicePage="/services/automatisations-ia"
           illustration={<AutomationIllustration />}
           reversed
         />
