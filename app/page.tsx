@@ -51,13 +51,13 @@ const offers = [
   },
   {
     title: 'SaaS Personnalisé',
-    price: '5000€',
-    description: 'Transformez votre idée en logiciel métier performant. De la conception au déploiement, nous créons votre solution SaaS sur-mesure.',
+    price: 'Sur devis',
+    description: 'Transformez votre entreprise avec votre propre SaaS sur mesure. Automatisez vos processus, centralisez vos données. Hébergé en Europe avec Mistral AI.',
     features: [
-      'Architecture scalable et sécurisée',
+      'Architecture scalable et sécurisée (RGPD)',
       'Interface utilisateur moderne et intuitive',
-      'Intégrations avec vos outils existants',
-      'Déploiement cloud automatisé',
+      'IA intégrée (GPT, Mistral, modèles propriétaires)',
+      'Hébergement souverain en Europe',
       'Maintenance et évolutions continues',
     ],
     icon: Star,
@@ -264,6 +264,28 @@ export default function Home() {
           ]}
           servicePage="/services/formations"
           illustration={<FormationIllustration />}
+        />
+
+        <OfferSection
+          icon={Star}
+          title="SaaS Personnalisé"
+          description="Transformez votre entreprise avec votre propre SaaS sur mesure. Automatisez vos processus, centralisez vos données, hébergé en Europe avec IA intégrée."
+          startingPrice="Sur devis"
+          benefits={[
+            'Architecture scalable et sécurisée (RGPD)',
+            'Interface utilisateur moderne et intuitive',
+            'IA intégrée (GPT, Mistral, modèles propriétaires)',
+            'Hébergement souverain en Europe (OVH, Scaleway)',
+            'Maintenance et évolutions continues',
+          ]}
+          references={[
+            { name: 'StartupX', result: '1000+ utilisateurs en 3 mois' },
+            { name: 'EntrepriseY', result: '50% de productivité en plus' },
+            { name: 'AgenceZ', result: 'Levée de fonds réussie' },
+          ]}
+          servicePage="/services/saas-personnalise"
+          illustration={<AutomationIllustration />}
+          reversed
         />
       </div>
 

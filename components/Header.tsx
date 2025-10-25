@@ -60,6 +60,10 @@ export default function Header() {
                       <div className="font-semibold text-light group-hover:text-primary transition-colors">Automatisations IA</div>
                       <div className="text-xs text-light/60">Workflows intelligents</div>
                     </Link>
+                    <Link href="/services/saas-personnalise" className="group block px-4 py-3 hover:bg-primary/20 rounded-lg transition-all">
+                      <div className="font-semibold text-light group-hover:text-primary transition-colors">SaaS Personnalisé</div>
+                      <div className="text-xs text-light/60">Logiciel sur mesure</div>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -103,6 +107,9 @@ export default function Header() {
               </Link>
               <Link href="/services/automatisations-ia" className="block text-light/80 hover:text-primary transition-colors">
                 Automatisations IA
+              </Link>
+              <Link href="/services/saas-personnalise" className="block text-light/80 hover:text-primary transition-colors">
+                SaaS Personnalisé
               </Link>
             </div>
             <Link href="/blog" className="block text-light hover:text-primary transition-colors">
