@@ -147,14 +147,23 @@ export default defineType({
       of: [{ type: 'string' }],
       options: {
         list: [
+          // Catégories générales
           { title: 'Tutoriels', value: 'tutoriels' },
           { title: 'Actualités', value: 'actualites' },
           { title: 'Guides', value: 'guides' },
           { title: 'IA', value: 'ia' },
           { title: 'Développement', value: 'developpement' },
           { title: 'Marketing', value: 'marketing' },
+          
+          // Services Market-IA
+          { title: '📚 Formation IA', value: 'formation-ia' },
+          { title: '⚡ Automatisations IA', value: 'automatisations-ia' },
+          { title: '💎 SaaS Personnalisé', value: 'saas-personnalise' },
+          { title: '🌐 Site Internet', value: 'site-internet' },
+          { title: '🚀 Landing Page IA', value: 'landing-page-ia' },
         ],
       },
+      description: 'Sélectionnez une ou plusieurs catégories (générales ou services)',
     }),
 
     // SEO
