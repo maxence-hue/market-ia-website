@@ -13,6 +13,10 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   // Récupération des articles depuis Sanity
   const posts = await getAllBlogPosts()
+  
+  // Debug : afficher dans les logs serveur
+  console.log('📝 Nombre d\'articles récupérés:', posts.length)
+  console.log('📝 Articles:', posts.map(p => ({ titre: p.titre, publie: p.publie })))
 
   return (
     <div className="min-h-screen bg-dark">

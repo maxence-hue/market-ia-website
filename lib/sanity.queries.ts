@@ -73,7 +73,8 @@ export interface SiteSettings {
  * Récupère tous les articles de blog publiés
  */
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const query = `*[_type == "blogPost" && publie == true] | order(datePublication desc) {
+  // TEMPORAIRE : Récupère TOUS les articles pour debug (même non publiés)
+  const query = `*[_type == "blogPost"] | order(datePublication desc) {
     _id,
     titre,
     slug,
@@ -82,10 +83,12 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
     datePublication,
     auteur,
     categories,
-    seo
+    seo,
+    publie
   }`
   
-  return sanityFetch<BlogPost[]>({ query })
+  // Désactive complètement le cache pour le debug
+  return sanityFetch<BlogPost[]>({ query, revalidate: 0 })
 }
 
 /**
