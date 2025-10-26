@@ -6,6 +6,7 @@
 import blogPost from './blogPost'
 import gallery from './gallery'
 import siteSettings from './siteSettings'
+import customComponent from './customComponent'
 
 export const schemaTypes = [
   // Articles de blog
@@ -16,4 +17,7 @@ export const schemaTypes = [
   
   // Paramètres du site
   siteSettings,
+  
+  // Composants personnalisés
+  customComponent,
 ]

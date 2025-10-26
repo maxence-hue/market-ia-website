@@ -1,6 +1,7 @@
 import { PortableText as PortableTextComponent } from '@portabletext/react'
 import Image from 'next/image'
 import { urlForImage } from '@/lib/sanity.image'
+import { componentMapping } from '@/lib/componentMapping'
 
 /**
  * Composant pour afficher le contenu riche de Sanity
@@ -96,6 +97,34 @@ const components = {
           )}
         </figure>
       )
+    },
+
+    // Composants React personnalisés
+    customComponent: ({ value }: any) => {
+      const Component = componentMapping[value.componentType]
+      
+      if (!Component) {
+        console.warn(`Composant "${value.componentType}" non trouvé dans componentMapping`)
+        return (
+          <div className="my-8 p-4 bg-yellow-500/20 border border-yellow-500 rounded-lg">
+            <p className="text-yellow-300">
+              ⚠️ Composant "{value.componentType}" non disponible
+            </p>
+          </div>
+        )
+      }
+
+      // Parser les données JSON si présentes
+      let customData = {}
+      if (value.customData) {
+        try {
+          customData = JSON.parse(value.customData)
+        } catch (e) {
+          console.error('Erreur parsing JSON customData:', e)
+        }
+      }
+
+      return <Component {...customData} />
     },
   },
 

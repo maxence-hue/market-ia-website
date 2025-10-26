@@ -118,6 +118,10 @@ export default defineType({
             },
           ],
         },
+        // Composants React personnalisés
+        {
+          type: 'customComponent',
+        },
       ],
       validation: (Rule) => Rule.required(),
     }),
