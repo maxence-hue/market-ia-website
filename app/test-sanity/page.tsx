@@ -52,7 +52,7 @@ export default async function TestSanityPage() {
         {!error && (
           <div className="bg-green-500/20 border border-green-500 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold mb-4 text-green-400">✅ Connexion Réussie</h2>
-            <p className="text-green-300">Nombre d'articles trouvés : <strong>{posts.length}</strong></p>
+            <p className="text-green-300">Nombre d&apos;articles trouvés : <strong>{posts.length}</strong></p>
           </div>
         )}
 
@@ -79,10 +79,10 @@ export default async function TestSanityPage() {
         <div className="mt-8 bg-blue-500/20 border border-blue-500 p-6 rounded-lg">
           <h2 className="text-2xl font-bold mb-4 text-blue-400">💡 Instructions</h2>
           <ol className="list-decimal list-inside space-y-2 text-blue-300">
-            <li>Si tu vois "NON CONFIGURÉ", ajoute les variables d'environnement</li>
+            <li>Si tu vois &quot;NON CONFIGURÉ&quot;, ajoute les variables d&apos;environnement</li>
             <li>Si tu vois une erreur, vérifie que le Project ID est correct</li>
             <li>Si tu vois 0 articles, crée un article dans Sanity Studio</li>
-            <li>Si l'article n'est pas publié, coche "Publié" dans Sanity</li>
+            <li>Si l&apos;article n&apos;est pas publié, coche &quot;Publié&quot; dans Sanity</li>
           </ol>
         </div>
       </div>
