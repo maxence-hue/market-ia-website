@@ -108,7 +108,7 @@ const components = {
         return (
           <div className="my-8 p-4 bg-yellow-500/20 border border-yellow-500 rounded-lg">
             <p className="text-yellow-300">
-              ⚠️ Composant "{value.componentType}" non disponible
+              ⚠️ Composant &quot;{value.componentType}&quot; non disponible
             </p>
           </div>
         )
