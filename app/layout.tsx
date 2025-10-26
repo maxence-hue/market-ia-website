@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { CustomCursor } from '@/components/CustomCursor'
 import { ParticleBackground } from '@/components/ParticleBackground'
 import { FloatingOrbs } from '@/components/FloatingOrbs'
 
@@ -38,7 +37,6 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col relative overflow-x-hidden bg-[#0F0F10]">
-        <CustomCursor />
         <FloatingOrbs />
         <ParticleBackground />
         <div className="relative z-10">

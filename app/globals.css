@@ -197,17 +197,6 @@ h1, h2 {
   text-shadow: 0 0 30px rgba(123, 97, 255, 0.2);
 }
 
-/* Hide default cursor on desktop */
-@media (min-width: 768px) {
-  * {
-    cursor: none !important;
-  }
-
-  a, button, [role="button"] {
-    cursor: none !important;
-  }
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
