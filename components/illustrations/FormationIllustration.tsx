@@ -4,7 +4,7 @@ import {
   Brain,
   Cpu,
   MessageSquare,
-  Image,
+  Image as ImageIcon,
   TrendingUp,
   Target,
   GraduationCap,
@@ -99,7 +99,7 @@ export function FormationIllustration() {
           {/* Module 4 */}
           <div className="bg-white/5 border border-white/10 rounded-lg p-3 hover:border-violet-500/50 transition-all group">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center mb-2 shadow-lg shadow-violet-500/30">
-              <Image className="w-4 h-4 text-white" />
+              <ImageIcon className="w-4 h-4 text-white" />
             </div>
             <h4 className="text-white mb-0.5 text-xs">
               Computer Vision

@@ -5,8 +5,6 @@ import Header from './Header'
 import Footer from './Footer'
 import { ParticleBackground } from './ParticleBackground'
 import { FloatingOrbs } from './FloatingOrbs'
-import ThemeToggle from './ThemeToggle'
-import { ThemeProvider } from '@/contexts/ThemeContext'
 
 /**
  * Composant qui affiche Header/Footer sauf sur /admin
@@ -22,7 +20,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
 
   // Pages normales : avec header, footer et effets
   return (
-    <ThemeProvider>
+    <>
       <FloatingOrbs />
       <ParticleBackground />
       <div className="relative z-10">
@@ -32,7 +30,6 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
         </main>
         <Footer />
       </div>
-      <ThemeToggle />
-    </ThemeProvider>
+    </>
   )
 }

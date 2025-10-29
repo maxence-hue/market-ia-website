@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import ConditionalLayout from '@/components/ConditionalLayout'
+import ClientProviders from '@/components/ClientProviders'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -34,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col relative overflow-x-hidden bg-[#0F0F10]">
-        <ConditionalLayout>
-          {children}
-        </ConditionalLayout>
+        <ClientProviders>
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
+        </ClientProviders>
       </body>
     </html>
   )
