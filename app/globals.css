@@ -244,9 +244,20 @@ h1, h2 {
   --border-color-dark: #E0D2C0;
 }
 
-.light-mode body {
-  background: #FFFFFF;
-  color: var(--text-primary);
+.light-mode,
+.light-mode body,
+.light-mode main,
+.light-mode section,
+.light-mode div[class*="container"],
+.light-mode > div {
+  background: #FFFFFF !important;
+  color: var(--text-primary) !important;
+}
+
+/* Forcer tous les gradients radiaux sombres en clair */
+.light-mode div[style*="radial-gradient"],
+.light-mode div[class*="bg-gradient"] {
+  background: transparent !important;
 }
 
 .light-mode .bg-dark,
@@ -260,12 +271,13 @@ h1, h2 {
   border-color: var(--border-color) !important;
 }
 
-.light-mode .text-light {
+.light-mode .text-light,
+.light-mode .text-white {
   color: var(--text-primary) !important;
 }
 
-.light-mode .text-light\/80 {
-  color: var(--text-secondary) !important;
+.light-mode .text-light\/90 {
+  color: var(--text-primary) !important;
 }
 
 .light-mode .text-light\/70 {
@@ -274,6 +286,21 @@ h1, h2 {
 
 .light-mode .text-light\/60 {
   color: var(--text-tertiary) !important;
+}
+
+/* Convertir TOUS les textes violets/bleus en doré */
+.light-mode .text-violet-400,
+.light-mode .text-violet-500,
+.light-mode .text-violet-600,
+.light-mode .text-purple-400,
+.light-mode .text-purple-500,
+.light-mode .text-blue-400,
+.light-mode .text-blue-500,
+.light-mode .text-blue-600,
+.light-mode span[class*="text-violet"],
+.light-mode span[class*="text-purple"],
+.light-mode span[class*="text-blue"] {
+  color: var(--accent-gold) !important;
 }
 
 /* Gradient doré élégant pour le mode jour */
@@ -287,7 +314,10 @@ h1, h2 {
 /* Boutons et éléments primaires en doré */
 .light-mode .bg-primary,
 .light-mode .btn-primary,
-.light-mode button[class*="bg-primary"] {
+.light-mode button[class*="bg-primary"],
+.light-mode .from-primary,
+.light-mode .to-primary-light,
+.light-mode .bg-gradient-to-br {
   background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%) !important;
   color: white !important;
   box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
@@ -299,7 +329,9 @@ h1, h2 {
   box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
-.light-mode .text-primary {
+.light-mode .text-primary,
+.light-mode .hover\:text-primary:hover,
+.light-mode .group-hover\:text-primary {
   color: var(--accent-gold) !important;
 }
 
@@ -321,10 +353,17 @@ h1, h2 {
   border-color: var(--border-color-dark) !important;
 }
 
-/* Illustrations mode jour - FOND BLANC */
-.light-mode [class*="Illustration"] > div {
+/* Illustrations - fond blanc pur au lieu de noir */
+.light-mode [class*="Illustration"],
+.light-mode [class*="Illustration"] > div:first-child {
   background: white !important;
-  border: 1px solid var(--border-color);
+}
+
+/* Forcer TOUS les éléments des illustrations en blanc */
+.light-mode [class*="Illustration"] div[class*="bg-[#0"],
+.light-mode [class*="Illustration"] [class*="rounded-xl"],
+.light-mode [class*="Illustration"] > div {
+  background-color: white !important;
 }
 
 .light-mode [class*="Illustration"] .text-white {
@@ -353,9 +392,20 @@ h1, h2 {
 .light-mode [class*="Illustration"] .bg-violet-950\/50,
 .light-mode [class*="Illustration"] .bg-pink-950\/50,
 .light-mode [class*="Illustration"] .bg-violet-950\/30,
-.light-mode [class*="Illustration"] .bg-pink-950\/30 {
+.light-mode [class*="Illustration"] .bg-pink-950\/30,
+.light-mode [class*="Illustration"] [class*="bg-violet"],
+.light-mode [class*="Illustration"] [class*="bg-pink"],
+.light-mode [class*="Illustration"] [class*="bg-purple"] {
   background: rgba(212, 165, 116, 0.08) !important;
   border-color: rgba(212, 165, 116, 0.25) !important;
+}
+
+/* Convertir TOUTES les bordures violettes en doré */
+.light-mode [class*="border-violet"],
+.light-mode [class*="border-purple"],
+.light-mode [class*="border-pink"],
+.light-mode [class*="border-blue"] {
+  border-color: var(--accent-gold) !important;
 }
 
 /* Icônes dorées au lieu de violet/rose/bleu */
@@ -406,8 +456,15 @@ h1, h2 {
 }
 
 /* Glow doré */
-.light-mode .shadow-glow {
-  box-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
+.light-mode .shadow-glow,
+.light-mode .shadow-glow-lg {
+  box-shadow: 0 0 30px rgba(212, 165, 116, 0.4) !important;
+}
+
+/* Forcer tous les backgrounds avec opacité */
+.light-mode .bg-primary\/20,
+.light-mode .bg-primary\/10 {
+  background: rgba(212, 165, 116, 0.1) !important;
 }
 
 .light-mode h1, 
@@ -438,6 +495,18 @@ h1, h2 {
   border-color: var(--border-color) !important;
 }
 
+/* Dropdown menu en mode jour */
+.light-mode .bg-\[#1C1C1E\]\/95,
+.light-mode .bg-\[#1C1C1E\],
+.light-mode header div[class*="bg-[#"] {
+  background: white !important;
+  border-color: var(--border-color) !important;
+}
+
+.light-mode .hover\:bg-primary\/20:hover {
+  background: var(--bg-surface) !important;
+}
+
 /* Liens et hover */
 .light-mode a:not(.btn-primary):not([class*="bg-"]) {
   color: var(--accent-gold);
@@ -447,10 +516,18 @@ h1, h2 {
   color: var(--accent-gold-dark);
 }
 
-/* Supprimer TOUS les fonds sombres */
+/* Supprimer TOUS les fonds sombres et gris */
 .light-mode .bg-\[#0a0a1a\],
 .light-mode .bg-\[#1e1e1e\],
-.light-mode .bg-dark-lighter {
+.light-mode .bg-\[#0F0F10\],
+.light-mode .bg-dark-lighter,
+.light-mode .bg-gray-900,
+.light-mode .bg-gray-800,
+.light-mode .bg-slate-900,
+.light-mode .bg-slate-800,
+.light-mode div[class*="bg-[#"],
+.light-mode div[style*="background: #0"],
+.light-mode div[style*="background:#0"] {
   background: white !important;
 }
 
