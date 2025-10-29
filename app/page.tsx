@@ -310,6 +310,134 @@ export default function Home() {
         />
       </div>
 
+      {/* Section Qui sommes-nous */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
+              Qui <span className="gradient-text">sommes-nous</span> ?
+            </h2>
+            <p className="text-xl text-light/70 max-w-3xl mx-auto">
+              Une équipe de 3 co-fondateurs passionnés, experts dans leurs domaines, 
+              unis pour propulser votre business avec l&apos;IA
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Maxence */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+                <img
+                  src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/image-maxence-vKxVHfCCQzpRh1TXxE6kWbmoXRGPPl.jpg"
+                  alt="Maxence Alehause"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Maxence Alehause
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Stratégie & Management
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Issu d&apos;une école de commerce, Maxence est expert en vente, finance, 
+                stratégie d&apos;entreprise et management. Il transforme votre vision 
+                en stratégie concrète pour maximiser la productivité et la croissance.
+              </p>
+            </motion.div>
+
+            {/* Hugo */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+                <img
+                  src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/portrait-hugo-dyxNs8VAjJQMlHGmzTnqeb44lNpjd9.jpg"
+                  alt="Hugo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Hugo
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Marketing & Design
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Expert en marketing digital, photographie, montage vidéo et UI/UX design. 
+                Hugo crée des expériences visuelles captivantes qui convertissent vos 
+                visiteurs en clients fidèles.
+              </p>
+            </motion.div>
+
+            {/* Benoit */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+            >
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+                <img
+                  src="https://framerusercontent.com/images/wf7MIq4YOerrqKHiX9ybOtRHm8.jpg?width=393&height=392"
+                  alt="Benoit"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Benoit
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Expert IA & Formateur
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Spécialiste de l&apos;intelligence artificielle et formateur passionné. 
+                Benoit développe des solutions IA sur-mesure et transmet son expertise 
+                pour rendre l&apos;IA accessible à tous.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* CTA sous l'équipe */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <p className="text-lg text-light/60 mb-6">
+              Une équipe complémentaire pour un accompagnement complet
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 btn-secondary px-8 py-4"
+            >
+              En savoir plus sur notre histoire
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="py-24">
         <div className="container mx-auto px-4">

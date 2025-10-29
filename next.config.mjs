@@ -19,6 +19,15 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.public.blob.vercel-storage.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fm7yortwrlfmgjdb.public.blob.vercel-storage.com',
+      },
     ],
     
     // Formats d'images modernes (WebP et AVIF)
