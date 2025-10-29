@@ -244,21 +244,25 @@ h1, h2 {
   --border-color-dark: #E0D2C0;
 }
 
-.light-mode,
-.light-mode body,
-.light-mode main,
-.light-mode section,
-.light-mode div[class*="container"],
-.light-mode > div {
+.light-mode {
   background: #FFFFFF !important;
+}
+
+.light-mode body,
+.light-mode body.bg-\[#0F0F10\] {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   color: var(--text-primary) !important;
 }
 
-/* Forcer tous les gradients radiaux sombres en clair */
-.light-mode div[style*="radial-gradient"],
-.light-mode div[class*="bg-gradient"] {
+.light-mode main,
+.light-mode section {
   background: transparent !important;
+  color: var(--text-primary) !important;
 }
+
+/* IMPORTANT: Ne PAS rendre les orbes transparents */
+/* Les orbes utilisent la classe .orb-gradient qui a déjà son style */
 
 .light-mode .bg-dark,
 .light-mode .bg-\[#0F0F10\] {
@@ -360,10 +364,13 @@ h1, h2 {
 }
 
 /* Forcer TOUS les éléments des illustrations en blanc */
+.light-mode [class*="Illustration"] > div:first-child,
 .light-mode [class*="Illustration"] div[class*="bg-[#0"],
-.light-mode [class*="Illustration"] [class*="rounded-xl"],
-.light-mode [class*="Illustration"] > div {
+.light-mode [class*="Illustration"] div[class*="bg-[#1"],
+.light-mode [class*="Illustration"] div[class*="bg-[#2"],
+.light-mode [class*="Illustration"] [class*="rounded-xl"]:first-child {
   background-color: white !important;
+  background-image: none !important;
 }
 
 .light-mode [class*="Illustration"] .text-white {
@@ -516,19 +523,23 @@ h1, h2 {
   color: var(--accent-gold-dark);
 }
 
-/* Supprimer TOUS les fonds sombres et gris */
+/* Supprimer TOUS les fonds sombres et gris - TRÈS IMPORTANT */
 .light-mode .bg-\[#0a0a1a\],
 .light-mode .bg-\[#1e1e1e\],
 .light-mode .bg-\[#0F0F10\],
+.light-mode .bg-\[#1C1C1E\],
+.light-mode .bg-\[#1C1C1E\]\/95,
 .light-mode .bg-dark-lighter,
 .light-mode .bg-gray-900,
 .light-mode .bg-gray-800,
 .light-mode .bg-slate-900,
 .light-mode .bg-slate-800,
-.light-mode div[class*="bg-[#"],
 .light-mode div[style*="background: #0"],
-.light-mode div[style*="background:#0"] {
+.light-mode div[style*="background:#0"],
+.light-mode div[style*="background: #1"],
+.light-mode div[style*="background:#1"] {
   background: white !important;
+  background-color: white !important;
 }
 
 /* Transitions douces */
@@ -545,7 +556,8 @@ h1, h2 {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0) 70%);
 }
 
-/* Mode Jour - Orbes dorés */
+/* Mode Jour - Orbes dorés plus visibles */
 .light-mode .orb-gradient {
-  background: radial-gradient(circle, rgba(212, 165, 116, 0.4) 0%, rgba(232, 196, 160, 0.2) 30%, rgba(212, 165, 116, 0) 70%);
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.25) 0%, rgba(232, 196, 160, 0.15) 30%, rgba(212, 165, 116, 0.05) 60%, rgba(212, 165, 116, 0) 70%) !important;
+  opacity: 1 !important;
 }
