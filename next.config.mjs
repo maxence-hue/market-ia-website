@@ -23,9 +23,6 @@ const nextConfig = {
     // Tailles d'images pour les composants
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     
-    // Qualité par défaut (80 = bon compromis poids/qualité)
-    quality: 80,
-    
     // Durée de cache (30 jours)
     minimumCacheTTL: 60 * 60 * 24 * 30,
     
