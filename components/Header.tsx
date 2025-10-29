@@ -1,15 +1,43 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY < 10) {
+        // Toujours visible en haut de page
+        setIsVisible(true)
+      } else if (currentScrollY < lastScrollY) {
+        // Scroll vers le haut - afficher le menu
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scroll vers le bas et pas en haut de page - cacher le menu
+        setIsVisible(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', controlNavbar)
+    return () => window.removeEventListener('scroll', controlNavbar)
+  }, [lastScrollY])
 
   return (
-    <header className="sticky top-0 z-[100] bg-dark/95 backdrop-blur-lg border-b border-white/10">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-[100] bg-dark/95 backdrop-blur-lg border-b border-white/10 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}

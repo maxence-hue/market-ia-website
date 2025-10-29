@@ -1,7 +1,11 @@
+'use client'
+
 import { PortableText as PortableTextComponent } from '@portabletext/react'
 import Image from 'next/image'
 import { urlForImage } from '@/lib/sanity.image'
 import { componentMapping } from '@/lib/componentMapping'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 /**
  * Composant pour afficher le contenu riche de Sanity
@@ -129,21 +133,32 @@ const components = {
 
     // Blocs de code avec coloration syntaxique
     code: ({ value }: any) => {
+      const language = value.language || 'text'
+      const code = value.code || ''
+      
       return (
-        <div className="my-8 rounded-xl overflow-hidden border border-primary/30">
+        <div className="my-8 rounded-xl overflow-hidden border border-primary/30 not-prose">
           {value.filename && (
             <div className="bg-dark-surface px-4 py-2 border-b border-primary/30 text-sm text-light/60">
               📄 {value.filename}
             </div>
           )}
-          <pre className="bg-[#1e1e1e] p-6 overflow-x-auto">
-            <code className={`language-${value.language || 'text'} text-sm`}>
-              {value.code}
-            </code>
-          </pre>
+          <SyntaxHighlighter
+            language={language}
+            style={vscDarkPlus}
+            customStyle={{
+              margin: 0,
+              padding: '1.5rem',
+              fontSize: '0.875rem',
+              background: '#1e1e1e',
+            }}
+            showLineNumbers
+          >
+            {code}
+          </SyntaxHighlighter>
           {value.language && (
             <div className="bg-dark-surface px-4 py-2 border-t border-primary/30 text-xs text-primary">
-              {value.language.toUpperCase()}
+              {language.toUpperCase()}
             </div>
           )}
         </div>

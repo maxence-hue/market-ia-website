@@ -1,4 +1,3 @@
-import TeamMember from '@/components/TeamMember'
 import { Target, Heart, Sparkles, TrendingUp } from 'lucide-react'
 
 export default function AboutPage() {
@@ -107,27 +106,75 @@ export default function AboutPage() {
         {/* Team */}
         <div className="mb-16">
           <h2 className="text-3xl font-display font-bold mb-12 text-center">
-            L&apos;<span className="gradient-text">Équipe</span>
+            Les <span className="gradient-text">Co-fondateurs</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TeamMember
-              name="Maxence Alehause"
-              role="Fondateur & Directeur Technique"
-              description="Expert en développement web et IA, passionné par l'automatisation et l'innovation"
-              photo="/images/team/maxence.jpg"
-            />
-            <TeamMember
-              name="Marie-Christine"
-              role="Administration & Relation Client"
-              description="Gestion administrative et point de contact privilégié pour nos clients"
-              photo="/images/team/marie.jpg"
-            />
-            <TeamMember
-              name="Réseau de partenaires"
-              role="Développeurs & Designers IA"
-              description="Équipe étendue de spécialistes pour répondre à tous vos besoins"
-              photo="/images/team/team.jpg"
-            />
+          <p className="text-xl text-light/70 max-w-3xl mx-auto text-center mb-12">
+            Une équipe de 3 experts passionnés, complémentaires dans leurs domaines, 
+            unis pour propulser votre business avec l&apos;IA
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="card-glass p-8 text-center group hover:border-primary/50 transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
+                <img
+                  src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/image-maxence-vKxVHfCCQzpRh1TXxE6kWbmoXRGPPl.jpg"
+                  alt="Maxence Alehause"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Maxence Alehause
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Stratégie & Management
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Issu d&apos;une école de commerce, Maxence est expert en vente, finance, 
+                stratégie d&apos;entreprise et management. Il transforme votre vision 
+                en stratégie concrète pour maximiser la productivité et la croissance.
+              </p>
+            </div>
+
+            <div className="card-glass p-8 text-center group hover:border-primary/50 transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
+                <img
+                  src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/portrait-hugo-dyxNs8VAjJQMlHGmzTnqeb44lNpjd9.jpg"
+                  alt="Hugo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Hugo
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Marketing & Design
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Expert en marketing digital, photographie, montage vidéo et UI/UX design. 
+                Hugo crée des expériences visuelles captivantes qui convertissent vos 
+                visiteurs en clients fidèles.
+              </p>
+            </div>
+
+            <div className="card-glass p-8 text-center group hover:border-primary/50 transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
+                <img
+                  src="https://framerusercontent.com/images/wf7MIq4YOerrqKHiX9ybOtRHm8.jpg?width=393&height=392"
+                  alt="Benoit"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-display font-bold text-light mb-2">
+                Benoit
+              </h3>
+              <p className="text-primary font-semibold mb-4">
+                Co-fondateur • Expert IA & Formateur
+              </p>
+              <p className="text-light/70 leading-relaxed">
+                Spécialiste de l&apos;intelligence artificielle et formateur passionné. 
+                Benoit développe des solutions IA sur-mesure et transmet son expertise 
+                pour rendre l&apos;IA accessible à tous.
+              </p>
+            </div>
           </div>
         </div>
 
