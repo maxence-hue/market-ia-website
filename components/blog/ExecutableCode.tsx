@@ -45,7 +45,7 @@ export default function ExecutableCode({ html, jsx, css }: ExecutableCodeProps) 
       console.error('Erreur lors de l\'exécution du JSX:', error)
       return (
         <div className="card-glass p-6 my-8 border-l-4 border-red-500">
-          <p className="text-red-400 font-semibold mb-2">❌ Erreur d'exécution du code</p>
+          <p className="text-red-400 font-semibold mb-2">❌ Erreur d&apos;exécution du code</p>
           <p className="text-light/60 text-sm">Le code JSX fourni contient une erreur.</p>
         </div>
       )
