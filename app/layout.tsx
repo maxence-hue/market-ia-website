@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import { ParticleBackground } from '@/components/ParticleBackground'
-import { FloatingOrbs } from '@/components/FloatingOrbs'
+import ConditionalLayout from '@/components/ConditionalLayout'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -37,15 +34,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col relative overflow-x-hidden bg-[#0F0F10]">
-        <FloatingOrbs />
-        <ParticleBackground />
-        <div className="relative z-10">
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <ConditionalLayout>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   )

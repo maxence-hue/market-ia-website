@@ -40,8 +40,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 //   }))
 // }
 
-// Revalidation à la demande (ISR)
-export const revalidate = 0 // Revalidation à chaque requête pour voir les changements immédiatement
+// Force le rendu dynamique - pas de cache du tout
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 /**
  * Page d'article de blog individuel
