@@ -227,21 +227,21 @@ h1, h2 {
 }
 
 /* ========================================
-   MODE JOUR - Thème Bleu Moderne
+   MODE JOUR - Thème Doré Élégant
    ======================================== */
 .light-mode {
   /* Variables de couleurs pour le mode jour */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F8FAFC;
-  --bg-surface: #F1F5F9;
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-tertiary: #64748B;
-  --accent-blue: #3B82F6;
-  --accent-blue-light: #60A5FA;
-  --accent-blue-dark: #2563EB;
-  --border-color: #E2E8F0;
-  --border-color-dark: #CBD5E1;
+  --bg-secondary: #FFFBF5;
+  --bg-surface: #FFF8EF;
+  --text-primary: #1A1512;
+  --text-secondary: #6B5D4F;
+  --text-tertiary: #8B7C6A;
+  --accent-gold: #D4A574;
+  --accent-gold-light: #E8C4A0;
+  --accent-gold-dark: #B8884F;
+  --border-color: #F0E6D8;
+  --border-color-dark: #E0D2C0;
 }
 
 .light-mode body {
@@ -276,36 +276,36 @@ h1, h2 {
   color: var(--text-tertiary) !important;
 }
 
-/* Gradient bleu moderne pour le mode jour */
+/* Gradient doré élégant pour le mode jour */
 .light-mode .gradient-text {
-  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Boutons et éléments primaires en bleu */
+/* Boutons et éléments primaires en doré */
 .light-mode .bg-primary,
 .light-mode .btn-primary,
 .light-mode button[class*="bg-primary"] {
-  background: var(--accent-blue) !important;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%) !important;
   color: white !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
 }
 
 .light-mode .bg-primary:hover,
 .light-mode .btn-primary:hover {
-  background: var(--accent-blue-dark) !important;
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 100%) !important;
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
 }
 
 .light-mode .text-primary {
-  color: var(--accent-blue) !important;
+  color: var(--accent-gold) !important;
 }
 
 .light-mode .border-primary,
 .light-mode .border-primary\/30 {
-  border-color: var(--accent-blue) !important;
+  border-color: var(--accent-gold) !important;
 }
 
 /* Cards avec effet moderne */
@@ -349,44 +349,46 @@ h1, h2 {
   border-color: var(--border-color) !important;
 }
 
-/* Convertir les fonds violets/roses des illustrations en bleu */
+/* Convertir les fonds violets/roses des illustrations en doré */
 .light-mode [class*="Illustration"] .bg-violet-950\/50,
 .light-mode [class*="Illustration"] .bg-pink-950\/50,
 .light-mode [class*="Illustration"] .bg-violet-950\/30,
 .light-mode [class*="Illustration"] .bg-pink-950\/30 {
-  background: rgba(59, 130, 246, 0.05) !important;
-  border-color: rgba(59, 130, 246, 0.2) !important;
+  background: rgba(212, 165, 116, 0.08) !important;
+  border-color: rgba(212, 165, 116, 0.25) !important;
 }
 
-/* Icônes bleues au lieu de violet/rose */
+/* Icônes dorées au lieu de violet/rose/bleu */
 .light-mode [class*="Illustration"] .text-violet-400,
 .light-mode [class*="Illustration"] .text-pink-400,
 .light-mode [class*="Illustration"] .text-blue-400,
 .light-mode [class*="Illustration"] .text-violet-500,
 .light-mode [class*="Illustration"] .from-violet-500,
 .light-mode [class*="Illustration"] .from-pink-500 {
-  color: var(--accent-blue) !important;
+  color: var(--accent-gold) !important;
 }
 
 .light-mode [class*="Illustration"] .bg-violet-500,
-.light-mode [class*="Illustration"] .bg-pink-500 {
-  background: var(--accent-blue) !important;
+.light-mode [class*="Illustration"] .bg-pink-500,
+.light-mode [class*="Illustration"] .to-violet-600,
+.light-mode [class*="Illustration"] .to-pink-600 {
+  background: var(--accent-gold) !important;
 }
 
 .light-mode [class*="Illustration"] .bg-gradient-to-br {
-  background: var(--accent-blue) !important;
+  background: linear-gradient(to bottom right, var(--accent-gold), var(--accent-gold-light)) !important;
 }
 
-/* Supprimer les glows violets */
+/* Supprimer les glows violets/roses */
 .light-mode [class*="Illustration"] .shadow-violet-500\/30,
 .light-mode [class*="Illustration"] .shadow-pink-500\/30 {
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.25) !important;
 }
 
-/* Barres de progression en bleu */
+/* Barres de progression en doré */
 .light-mode [class*="Illustration"] .bg-violet-500,
 .light-mode [class*="Illustration"] .bg-violet-600 {
-  background: var(--accent-blue) !important;
+  background: var(--accent-gold) !important;
 }
 
 /* Texte vert reste vert (success) */
@@ -403,9 +405,9 @@ h1, h2 {
   color: #F59E0B !important;
 }
 
-/* Glow bleu */
+/* Glow doré */
 .light-mode .shadow-glow {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 30px rgba(212, 165, 116, 0.4);
 }
 
 .light-mode h1, 
@@ -420,12 +422,12 @@ h1, h2 {
 }
 
 .light-mode::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
+  background: var(--accent-gold);
   border-radius: 5px;
 }
 
 .light-mode::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-blue-dark);
+  background: var(--accent-gold-dark);
 }
 
 /* Header et Footer mode jour */
@@ -438,11 +440,11 @@ h1, h2 {
 
 /* Liens et hover */
 .light-mode a:not(.btn-primary):not([class*="bg-"]) {
-  color: var(--accent-blue);
+  color: var(--accent-gold);
 }
 
 .light-mode a:not(.btn-primary):not([class*="bg-"]):hover {
-  color: var(--accent-blue-dark);
+  color: var(--accent-gold-dark);
 }
 
 /* Supprimer TOUS les fonds sombres */
@@ -455,4 +457,18 @@ h1, h2 {
 /* Transitions douces */
 .light-mode * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========================================
+   Orbes et Particules Adaptables
+   ======================================== */
+
+/* Mode Nuit - Orbes blancs */
+.orb-gradient {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* Mode Jour - Orbes dorés */
+.light-mode .orb-gradient {
+  background: radial-gradient(circle, rgba(212, 165, 116, 0.4) 0%, rgba(232, 196, 160, 0.2) 30%, rgba(212, 165, 116, 0) 70%);
 }

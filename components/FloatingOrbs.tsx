@@ -42,13 +42,12 @@ export function FloatingOrbs() {
         return (
           <motion.div
             key={orb.id}
-            className="absolute rounded-full"
+            className="absolute rounded-full orb-gradient"
             style={{
               left: `${orb.x}%`,
               top: `${orb.y}%`,
               width: orb.size,
               height: orb.size,
-              background: 'radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0) 70%)',
               filter: 'blur(50px)',
             }}
             animate={{
