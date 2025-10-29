@@ -73,5 +73,5 @@ export default async function BlogPage() {
   )
 }
 
-// Rendu dynamique pour l'instant (avant configuration Sanity)
-export const dynamic = 'force-dynamic'
+// Revalidation à chaque requête pour voir les nouveaux articles immédiatement
+export const revalidate = 0
