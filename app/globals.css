@@ -227,23 +227,25 @@ h1, h2 {
 }
 
 /* ========================================
-   MODE JOUR - Thème Blanc et Doré
+   MODE JOUR - Thème Bleu Moderne
    ======================================== */
 .light-mode {
   /* Variables de couleurs pour le mode jour */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F8F7F4;
-  --bg-surface: #FEFDFB;
-  --text-primary: #1A1A1A;
-  --text-secondary: #4A4A4A;
-  --accent-gold: #D4AF37;
-  --accent-gold-light: #F4D03F;
-  --accent-gold-dark: #B8960F;
-  --border-color: rgba(212, 175, 55, 0.2);
+  --bg-secondary: #F8FAFC;
+  --bg-surface: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #64748B;
+  --accent-blue: #3B82F6;
+  --accent-blue-light: #60A5FA;
+  --accent-blue-dark: #2563EB;
+  --border-color: #E2E8F0;
+  --border-color-dark: #CBD5E1;
 }
 
 .light-mode body {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 100%);
+  background: #FFFFFF;
   color: var(--text-primary);
 }
 
@@ -252,7 +254,8 @@ h1, h2 {
   background: var(--bg-primary) !important;
 }
 
-.light-mode .bg-dark-surface {
+.light-mode .bg-dark-surface,
+.light-mode .bg-dark-surface\/50 {
   background: var(--bg-surface) !important;
   border-color: var(--border-color) !important;
 }
@@ -261,87 +264,154 @@ h1, h2 {
   color: var(--text-primary) !important;
 }
 
-.light-mode .text-light\/80,
-.light-mode .text-light\/70,
-.light-mode .text-light\/60 {
+.light-mode .text-light\/80 {
   color: var(--text-secondary) !important;
 }
 
-/* Gradient doré pour le mode jour */
+.light-mode .text-light\/70 {
+  color: var(--text-secondary) !important;
+}
+
+.light-mode .text-light\/60 {
+  color: var(--text-tertiary) !important;
+}
+
+/* Gradient bleu moderne pour le mode jour */
 .light-mode .gradient-text {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Boutons et éléments primaires en doré */
+/* Boutons et éléments primaires en bleu */
 .light-mode .bg-primary,
-.light-mode .btn-primary {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%) !important;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+.light-mode .btn-primary,
+.light-mode button[class*="bg-primary"] {
+  background: var(--accent-blue) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .light-mode .bg-primary:hover,
 .light-mode .btn-primary:hover {
-  background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 100%) !important;
-  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+  background: var(--accent-blue-dark) !important;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .light-mode .text-primary {
-  color: var(--accent-gold) !important;
+  color: var(--accent-blue) !important;
 }
 
-.light-mode .border-primary {
-  border-color: var(--accent-gold) !important;
+.light-mode .border-primary,
+.light-mode .border-primary\/30 {
+  border-color: var(--accent-blue) !important;
 }
 
-/* Cards avec effet verre doré */
+/* Cards avec effet moderne */
 .light-mode .card-glass {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(10px);
+  background: white !important;
+  backdrop-filter: none;
   border: 1px solid var(--border-color) !important;
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Illustrations mode jour */
+.light-mode .card-glass:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-color: var(--border-color-dark) !important;
+}
+
+/* Illustrations mode jour - FOND BLANC */
 .light-mode [class*="Illustration"] > div {
-  background: linear-gradient(135deg, #FEFDFB 0%, #F8F7F4 100%) !important;
+  background: white !important;
+  border: 1px solid var(--border-color);
 }
 
 .light-mode [class*="Illustration"] .text-white {
   color: var(--text-primary) !important;
 }
 
-.light-mode [class*="Illustration"] .text-gray-400,
-.light-mode [class*="Illustration"] .text-gray-500 {
+.light-mode [class*="Illustration"] .text-gray-400 {
   color: var(--text-secondary) !important;
 }
 
-.light-mode [class*="Illustration"] .bg-white\/5 {
-  background: rgba(212, 175, 55, 0.1) !important;
+.light-mode [class*="Illustration"] .text-gray-500 {
+  color: var(--text-tertiary) !important;
+}
+
+.light-mode [class*="Illustration"] .bg-white\/5,
+.light-mode [class*="Illustration"] .bg-white\/10 {
+  background: var(--bg-surface) !important;
   border-color: var(--border-color) !important;
 }
 
-.light-mode [class*="Illustration"] .bg-violet-950\/50,
-.light-mode [class*="Illustration"] .bg-pink-950\/50 {
-  background: rgba(212, 175, 55, 0.15) !important;
+.light-mode [class*="Illustration"] .border-white\/10 {
+  border-color: var(--border-color) !important;
 }
 
+/* Convertir les fonds violets/roses des illustrations en bleu */
+.light-mode [class*="Illustration"] .bg-violet-950\/50,
+.light-mode [class*="Illustration"] .bg-pink-950\/50,
+.light-mode [class*="Illustration"] .bg-violet-950\/30,
+.light-mode [class*="Illustration"] .bg-pink-950\/30 {
+  background: rgba(59, 130, 246, 0.05) !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Icônes bleues au lieu de violet/rose */
 .light-mode [class*="Illustration"] .text-violet-400,
 .light-mode [class*="Illustration"] .text-pink-400,
-.light-mode [class*="Illustration"] .text-blue-400 {
-  color: var(--accent-gold) !important;
+.light-mode [class*="Illustration"] .text-blue-400,
+.light-mode [class*="Illustration"] .text-violet-500,
+.light-mode [class*="Illustration"] .from-violet-500,
+.light-mode [class*="Illustration"] .from-pink-500 {
+  color: var(--accent-blue) !important;
 }
 
-/* Glow doré */
+.light-mode [class*="Illustration"] .bg-violet-500,
+.light-mode [class*="Illustration"] .bg-pink-500 {
+  background: var(--accent-blue) !important;
+}
+
+.light-mode [class*="Illustration"] .bg-gradient-to-br {
+  background: var(--accent-blue) !important;
+}
+
+/* Supprimer les glows violets */
+.light-mode [class*="Illustration"] .shadow-violet-500\/30,
+.light-mode [class*="Illustration"] .shadow-pink-500\/30 {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Barres de progression en bleu */
+.light-mode [class*="Illustration"] .bg-violet-500,
+.light-mode [class*="Illustration"] .bg-violet-600 {
+  background: var(--accent-blue) !important;
+}
+
+/* Texte vert reste vert (success) */
+.light-mode [class*="Illustration"] .text-green-400 {
+  color: #10B981 !important;
+}
+
+.light-mode [class*="Illustration"] .bg-green-500 {
+  background: #10B981 !important;
+}
+
+/* Texte jaune reste jaune (warning) */
+.light-mode [class*="Illustration"] .text-yellow-400 {
+  color: #F59E0B !important;
+}
+
+/* Glow bleu */
 .light-mode .shadow-glow {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
 }
 
 .light-mode h1, 
 .light-mode h2 {
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  text-shadow: none;
+  color: var(--text-primary);
 }
 
 /* Scrollbar mode jour */
@@ -350,20 +420,36 @@ h1, h2 {
 }
 
 .light-mode::-webkit-scrollbar-thumb {
-  background: var(--accent-gold);
+  background: var(--accent-blue);
   border-radius: 5px;
 }
 
 .light-mode::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold-light);
+  background: var(--accent-blue-dark);
 }
 
 /* Header et Footer mode jour */
 .light-mode header,
 .light-mode footer {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(10px);
   border-color: var(--border-color) !important;
+}
+
+/* Liens et hover */
+.light-mode a:not(.btn-primary):not([class*="bg-"]) {
+  color: var(--accent-blue);
+}
+
+.light-mode a:not(.btn-primary):not([class*="bg-"]):hover {
+  color: var(--accent-blue-dark);
+}
+
+/* Supprimer TOUS les fonds sombres */
+.light-mode .bg-\[#0a0a1a\],
+.light-mode .bg-\[#1e1e1e\],
+.light-mode .bg-dark-lighter {
+  background: white !important;
 }
 
 /* Transitions douces */
