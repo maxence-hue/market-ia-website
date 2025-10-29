@@ -251,12 +251,12 @@ saas-personnalise-dashboard.jpg
 
 ### 3. ✅ Formats Optimaux
 
-| Type d'Image | Format | Poids Max |
-|--------------|--------|-----------|
-| Photos | **WebP** ou JPEG | < 200 KB |
-| Illustrations | **WebP** ou PNG | < 100 KB |
-| Logos | **SVG** ou PNG | < 50 KB |
-| Icônes | **SVG** | < 10 KB |
+| Type d'Image | Format | Poids Recommandé | Poids Max |
+|--------------|--------|------------------|-----------|
+| Photos | **WebP** ou JPEG | < 500 KB | 10 MB |
+| Illustrations | **WebP** ou PNG | < 300 KB | 10 MB |
+| Logos | **SVG** ou PNG | < 100 KB | 2 MB |
+| Icônes | **SVG** | < 20 KB | 500 KB |
 
 ---
 
@@ -391,12 +391,12 @@ Vérifie :
 [ ] Texte alternatif descriptif sur toutes les images
 [ ] Noms de fichiers avec mots-clés (tirets)
 [ ] Format WebP ou AVIF
-[ ] Poids < 200 KB par image
+[ ] Poids optimisé (idéalement < 500 KB, max 10 MB)
 [ ] Dimensions adaptées à l'usage
 [ ] Lazy loading activé (sauf hero)
 [ ] Responsive (srcset automatique)
 [ ] CDN activé (Sanity ou Vercel)
-[ ] Compression optimale (quality: 80)
+[ ] Compression optimale
 [ ] Sitemap images généré
 ```
 

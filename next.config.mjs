@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Augmenter la taille max des uploads (10 MB)
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    },
+  },
+  
   images: {
     // Domaines autorisés pour les images externes
     remotePatterns: [

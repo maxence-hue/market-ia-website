@@ -24,11 +24,14 @@ export default function UploadImagesPage() {
 
     try {
       const uploadPromises = Array.from(files).map(async (file) => {
-        // Créer un nom de fichier SEO-friendly
+        // Créer un nom de fichier SEO-friendly (plus permissif)
         const seoFilename = file.name
           .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^a-z0-9.-]/g, '')
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Supprime les accents
+          .replace(/\s+/g, '-') // Espaces en tirets
+          .replace(/[^a-z0-9._-]/g, '') // Garde lettres, chiffres, points, tirets
+          .replace(/-+/g, '-') // Évite les tirets multiples
+          .replace(/^-|-$/g, '') // Supprime tirets au début/fin
 
         const response = await fetch(`/api/upload-image?filename=${seoFilename}`, {
           method: 'POST',
@@ -86,7 +89,7 @@ export default function UploadImagesPage() {
                 Cliquez pour uploader des images
               </span>
               <span className="text-light/60 text-sm mb-4">
-                Formats : JPG, PNG, WebP, SVG (max 4.5 MB par fichier)
+                Formats : JPG, PNG, WebP, SVG, GIF (max 10 MB par fichier)
               </span>
               <input
                 type="file"
@@ -205,7 +208,7 @@ export default function UploadImagesPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold">✓</span>
-                <span><strong>Poids</strong> : Maximum 200 KB par image (utilisez TinyPNG pour compresser)</span>
+                <span><strong>Poids</strong> : Idéalement &lt; 500 KB pour des performances optimales (max 10 MB accepté)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold">✓</span>
