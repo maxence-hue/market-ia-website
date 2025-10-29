@@ -164,6 +164,24 @@ const components = {
         </div>
       )
     },
+
+    // Embed Code - HTML/JSX exécutable (comme Webflow)
+    embedCode: ({ value }: any) => {
+      const html = value?.html || ''
+      const css = value?.css || ''
+      
+      return (
+        <div className="my-8">
+          {css && (
+            <style dangerouslySetInnerHTML={{ __html: css }} />
+          )}
+          <div 
+            dangerouslySetInnerHTML={{ __html: html }}
+            className="executable-code-container"
+          />
+        </div>
+      )
+    },
   },
 
   // Listes

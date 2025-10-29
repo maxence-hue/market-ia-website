@@ -149,6 +149,40 @@ export default defineType({
             withFilename: true,
           },
         },
+        // Embed Code - Code HTML/JSX exécutable (comme Webflow)
+        {
+          type: 'object',
+          name: 'embedCode',
+          title: '💻 Embed Code',
+          icon: () => '💻',
+          fields: [
+            {
+              name: 'html',
+              title: 'Code HTML',
+              type: 'text',
+              rows: 10,
+              description: 'Collez votre code HTML ici (sera exécuté sur la page)',
+            },
+            {
+              name: 'css',
+              title: 'CSS Personnalisé (optionnel)',
+              type: 'text',
+              rows: 5,
+              description: 'CSS additionnel pour styliser votre code',
+            },
+          ],
+          preview: {
+            select: {
+              html: 'html',
+            },
+            prepare({ html }) {
+              return {
+                title: '💻 Embed Code',
+                subtitle: html ? `${html.substring(0, 50)}...` : 'Code HTML personnalisé',
+              }
+            },
+          },
+        },
       ],
       validation: (Rule) => Rule.required(),
     }),
