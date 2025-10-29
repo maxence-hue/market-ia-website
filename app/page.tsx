@@ -184,18 +184,19 @@ export default function Home() {
       <div id="offres">
         <div className="text-center py-20 px-4">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-4xl md:text-6xl font-display font-bold mb-4"
           >
             Nos <span className="gradient-text">Offres</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay: 0.05 }}
             className="text-xl text-light/70 max-w-3xl mx-auto"
           >
             Des solutions complètes pour propulser votre business dans l&apos;ère de l&apos;IA
@@ -316,9 +317,10 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
@@ -333,17 +335,22 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Maxence */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0.05
+              }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-colors duration-300 will-change-transform"
             >
-              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
                 <img
                   src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/image-maxence-vKxVHfCCQzpRh1TXxE6kWbmoXRGPPl.jpg"
                   alt="Maxence Alehause"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-2xl font-display font-bold text-light mb-2">
@@ -361,17 +368,22 @@ export default function Home() {
 
             {/* Hugo */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0.1
+              }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-colors duration-300 will-change-transform"
             >
-              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
                 <img
                   src="https://fm7yortwrlfmgjdb.public.blob.vercel-storage.com/portrait-hugo-dyxNs8VAjJQMlHGmzTnqeb44lNpjd9.jpg"
                   alt="Hugo"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-2xl font-display font-bold text-light mb-2">
@@ -389,17 +401,22 @@ export default function Home() {
 
             {/* Benoit */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="card-glass p-8 text-center group hover:border-primary/50 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0.15
+              }}
+              className="card-glass p-8 text-center group hover:border-primary/50 transition-colors duration-300 will-change-transform"
             >
-              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-all">
+              <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors duration-300">
                 <img
                   src="https://framerusercontent.com/images/wf7MIq4YOerrqKHiX9ybOtRHm8.jpg?width=393&height=392"
                   alt="Benoit"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-2xl font-display font-bold text-light mb-2">
@@ -418,10 +435,14 @@ export default function Home() {
 
           {/* CTA sous l'équipe */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ 
+              duration: 0.5, 
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.2
+            }}
             className="text-center mt-12"
           >
             <p className="text-lg text-light/60 mb-6">
@@ -442,10 +463,11 @@ export default function Home() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="card-glass p-12 text-center max-w-4xl mx-auto relative overflow-hidden"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="card-glass p-12 text-center max-w-4xl mx-auto relative overflow-hidden will-change-transform"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />
             <div className="relative z-10">

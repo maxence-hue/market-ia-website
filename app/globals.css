@@ -12,6 +12,9 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    /* Optimisation performance scroll */
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 80px;
   }
   
   body {
@@ -21,6 +24,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* Optimisation des repaints et reflows */
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Optimisation performance globale */
+  img {
+    content-visibility: auto;
+    contain: layout style paint;
   }
 
   h1, h2, h3, h4, h5, h6 {
