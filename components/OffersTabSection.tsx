@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { WebsiteIllustration } from './illustrations/WebsiteIllustration'
 import { AutomationIllustration } from './illustrations/AutomationIllustration'
 import { FormationIllustration } from './illustrations/FormationIllustration'
+import { SaasIllustration } from './illustrations/SaasIllustration'
+import { LandingPageIllustration } from './illustrations/LandingPageIllustration'
 
 interface Offer {
   id: string
@@ -82,7 +84,7 @@ const offers: Offer[] = [
       { name: 'AgenceZ', result: 'Levée de fonds' },
     ],
     servicePage: '/services/saas-personnalise',
-    illustration: <AutomationIllustration />,
+    illustration: <SaasIllustration />,
   },
   {
     id: 'site-web',
@@ -124,7 +126,7 @@ const offers: Offer[] = [
       { name: 'E-commerceZ', result: '150 leads/mois' },
     ],
     servicePage: '/services/landing-page-ia',
-    illustration: <AutomationIllustration />,
+    illustration: <LandingPageIllustration />,
   },
 ]
 
@@ -246,7 +248,7 @@ export function OffersTabSection() {
 
               {/* Right: Illustration */}
               <div className="order-1 lg:order-2 flex items-center justify-center">
-                <div className="w-full max-w-md">
+                <div className="w-full max-w-xl lg:max-w-2xl">
                   {currentOffer.illustration}
                 </div>
               </div>

@@ -225,3 +225,148 @@ h1, h2 {
 ::-webkit-scrollbar-thumb:hover {
   background: #9B87FF;
 }
+
+/* ========================================
+   MODE JOUR - Thème Blanc et Doré
+   ======================================== */
+.light-mode {
+  /* Variables de couleurs pour le mode jour */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F7F4;
+  --bg-surface: #FEFDFB;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #F4D03F;
+  --accent-gold-dark: #B8960F;
+  --border-color: rgba(212, 175, 55, 0.2);
+}
+
+.light-mode body {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 100%);
+  color: var(--text-primary);
+}
+
+.light-mode .bg-dark,
+.light-mode .bg-\[#0F0F10\] {
+  background: var(--bg-primary) !important;
+}
+
+.light-mode .bg-dark-surface {
+  background: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+}
+
+.light-mode .text-light {
+  color: var(--text-primary) !important;
+}
+
+.light-mode .text-light\/80,
+.light-mode .text-light\/70,
+.light-mode .text-light\/60 {
+  color: var(--text-secondary) !important;
+}
+
+/* Gradient doré pour le mode jour */
+.light-mode .gradient-text {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Boutons et éléments primaires en doré */
+.light-mode .bg-primary,
+.light-mode .btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%) !important;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.light-mode .bg-primary:hover,
+.light-mode .btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 100%) !important;
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+}
+
+.light-mode .text-primary {
+  color: var(--accent-gold) !important;
+}
+
+.light-mode .border-primary {
+  border-color: var(--accent-gold) !important;
+}
+
+/* Cards avec effet verre doré */
+.light-mode .card-glass {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+}
+
+/* Illustrations mode jour */
+.light-mode [class*="Illustration"] > div {
+  background: linear-gradient(135deg, #FEFDFB 0%, #F8F7F4 100%) !important;
+}
+
+.light-mode [class*="Illustration"] .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light-mode [class*="Illustration"] .text-gray-400,
+.light-mode [class*="Illustration"] .text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+.light-mode [class*="Illustration"] .bg-white\/5 {
+  background: rgba(212, 175, 55, 0.1) !important;
+  border-color: var(--border-color) !important;
+}
+
+.light-mode [class*="Illustration"] .bg-violet-950\/50,
+.light-mode [class*="Illustration"] .bg-pink-950\/50 {
+  background: rgba(212, 175, 55, 0.15) !important;
+}
+
+.light-mode [class*="Illustration"] .text-violet-400,
+.light-mode [class*="Illustration"] .text-pink-400,
+.light-mode [class*="Illustration"] .text-blue-400 {
+  color: var(--accent-gold) !important;
+}
+
+/* Glow doré */
+.light-mode .shadow-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.light-mode h1, 
+.light-mode h2 {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Scrollbar mode jour */
+.light-mode::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.light-mode::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 5px;
+}
+
+.light-mode::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-light);
+}
+
+/* Header et Footer mode jour */
+.light-mode header,
+.light-mode footer {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-color: var(--border-color) !important;
+}
+
+/* Transitions douces */
+.light-mode * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
