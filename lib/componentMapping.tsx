@@ -1,7 +1,7 @@
 import { CTABanner } from '@/components/blog/CTABanner'
 import { FAQ } from '@/components/blog/FAQ'
 import ArticleSummary from '@/components/blog/ArticleSummary'
-import CustomCode from '@/components/blog/CustomCode'
+import ExecutableCode from '@/components/blog/ExecutableCode'
 
 /**
  * Mapping des composants React pour Sanity
@@ -11,7 +11,7 @@ export const componentMapping: Record<string, React.ComponentType<any>> = {
   ctaBanner: CTABanner,
   faq: FAQ,
   articleSummary: ArticleSummary,
-  customCode: CustomCode,
+  executableCode: ExecutableCode,
   // Ajoutez d'autres composants ici au fur et à mesure
   // programmeFormation: ProgrammeFormation,
   // etc.
