@@ -122,6 +122,33 @@ export default defineType({
         {
           type: 'customComponent',
         },
+        // Blocs de code avec coloration syntaxique
+        {
+          type: 'code',
+          title: 'Bloc de Code',
+          options: {
+            language: 'javascript',
+            languageAlternatives: [
+              { title: 'JavaScript', value: 'javascript' },
+              { title: 'TypeScript', value: 'typescript' },
+              { title: 'HTML', value: 'html' },
+              { title: 'CSS', value: 'css' },
+              { title: 'Python', value: 'python' },
+              { title: 'JSON', value: 'json' },
+              { title: 'Bash', value: 'bash' },
+              { title: 'SQL', value: 'sql' },
+              { title: 'PHP', value: 'php' },
+              { title: 'Ruby', value: 'ruby' },
+              { title: 'Go', value: 'go' },
+              { title: 'Rust', value: 'rust' },
+              { title: 'Java', value: 'java' },
+              { title: 'C#', value: 'csharp' },
+              { title: 'Swift', value: 'swift' },
+              { title: 'Kotlin', value: 'kotlin' },
+            ],
+            withFilename: true,
+          },
+        },
       ],
       validation: (Rule) => Rule.required(),
     }),

@@ -126,6 +126,29 @@ const components = {
 
       return <Component {...customData} />
     },
+
+    // Blocs de code avec coloration syntaxique
+    code: ({ value }: any) => {
+      return (
+        <div className="my-8 rounded-xl overflow-hidden border border-primary/30">
+          {value.filename && (
+            <div className="bg-dark-surface px-4 py-2 border-b border-primary/30 text-sm text-light/60">
+              📄 {value.filename}
+            </div>
+          )}
+          <pre className="bg-[#1e1e1e] p-6 overflow-x-auto">
+            <code className={`language-${value.language || 'text'} text-sm`}>
+              {value.code}
+            </code>
+          </pre>
+          {value.language && (
+            <div className="bg-dark-surface px-4 py-2 border-t border-primary/30 text-xs text-primary">
+              {value.language.toUpperCase()}
+            </div>
+          )}
+        </div>
+      )
+    },
   },
 
   // Listes
