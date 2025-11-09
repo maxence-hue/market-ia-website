@@ -60,17 +60,13 @@ export function ConversionBlock() {
                 size="lg" 
                 variant="outline"
                 className="px-8 py-6 text-lg bg-transparent text-white border-white hover:bg-white/10"
-                asChild
+                onClick={() => {
+                  trackLead();
+                  window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
+                }}
+                data-cta="conversion-calendly"
               >
-                <a 
-                  href="https://calendly.com/maxence-marketia/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  data-cta="conversion-calendly"
-                  onClick={() => trackLead()}
-                >
-                  Prendre RDV (15 min)
-                </a>
+                Prendre RDV (15 min)
               </Button>
             </div>
           </div>

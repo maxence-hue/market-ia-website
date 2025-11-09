@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
@@ -11,9 +12,14 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
+              <Image
+                src="/logo-marketia-white.png"
+                alt="Market-IA"
+                width={40}
+                height={40}
+                className="object-contain"
+                loading="lazy"
+              />
               <span className="text-xl font-display font-bold gradient-text">Market-IA</span>
             </div>
             <p className="text-light/70 text-sm mb-4">
@@ -113,13 +119,13 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-light/70">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
-                <a href="tel:+33123456789" className="hover:text-primary transition-colors">
-                  +33 1 23 45 67 89
+                <a href="tel:0618180598" className="hover:text-primary transition-colors">
+                  06 18 18 05 98
                 </a>
               </li>
               <li className="flex items-start gap-2 text-light/70">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Paris, France</span>
+                <span>Toulon, France</span>
               </li>
             </ul>
           </div>

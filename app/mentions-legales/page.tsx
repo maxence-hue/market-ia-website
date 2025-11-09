@@ -13,9 +13,9 @@ export default function MentionsLegalesPage() {
               <strong>Market-IA</strong><br />
               Entreprise individuelle<br />
               SIRET : [À compléter]<br />
-              Adresse : Paris, France<br />
+              Adresse : Toulon, France<br />
               Email : contact@market-ia.fr<br />
-              Téléphone : +33 1 23 45 67 89
+              Téléphone : 06 18 18 05 98
             </p>
           </section>
 

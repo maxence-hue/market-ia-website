@@ -275,16 +275,15 @@ export function RegistrationFormContent() {
               : "Nous vous contacterons dès qu'une nouvelle session sera programmée. Vous pouvez aussi réserver un créneau d'échange :"}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <a 
-                href="https://calendly.com/maxence-marketia/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                data-cta="thankyou-calendly"
-                onClick={() => trackLead()}
-              >
-                Prendre RDV (15 min)
-              </a>
+            <Button 
+              size="lg"
+              onClick={() => {
+                trackLead();
+                window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
+              }}
+              data-cta="thankyou-calendly"
+            >
+              Prendre RDV (15 min)
             </Button>
             <Button size="lg" variant="outline" onClick={handleReset}>
               Nouvelle inscription

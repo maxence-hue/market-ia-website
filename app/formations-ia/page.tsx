@@ -471,8 +471,6 @@ export default function FormationsIA() {
               { icon: Target, title: 'Exercices pratiques IA', description: 'Formation IA Var adaptée à votre métier et besoins réels' },
               { icon: Zap, title: 'Démonstrations live', description: 'Outils IA présentés et manipulés en temps réel' },
               { icon: BookOpen, title: 'Cas d\'entreprises Var', description: 'Études de cas issues d\'entreprises locales du Var' },
-              { icon: Users, title: 'Ressources formation IA', description: 'Fiches et templates fournis pour application immédiate' },
-              { icon: Shield, title: 'Support formation', description: 'Accompagnement après votre formation IA Var' },
             ].map((method, index) => (
               <motion.div
                 key={index}

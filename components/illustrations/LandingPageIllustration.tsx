@@ -41,15 +41,15 @@ export function LandingPageIllustration() {
         {/* Landing Page Mockup */}
         <div className="flex-1 flex flex-col gap-3">
           {/* Hero Section Mock */}
-          <div className="bg-gradient-to-br from-violet-950/30 to-pink-950/30 border border-violet-500/30 rounded-lg p-4">
+          <div className="bg-white/5 border border-white/10 rounded-lg p-4">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-violet-600 flex items-center justify-center shadow-lg shadow-pink-500/30">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-lg shadow-pink-500/30">
                   <Sparkles className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <div className="text-white text-xs font-bold">Votre Titre Accrocheur</div>
-                  <div className="text-gray-500 text-[10px]">Sous-titre percutant</div>
+                  <div className="text-gray-400 text-[10px]">Sous-titre percutant</div>
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@ export function LandingPageIllustration() {
               </div>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-lg p-3 group hover:border-violet-500/50 transition-all">
+            <div className="bg-white/5 border border-white/10 rounded-lg p-3 group hover:border-pink-500/50 transition-all">
               <div className="flex items-center gap-1.5 mb-2">
                 <Target className="w-3.5 h-3.5 text-violet-400" />
                 <span className="text-gray-400 text-[10px]">Conversion</span>
@@ -115,14 +115,14 @@ export function LandingPageIllustration() {
           </div>
 
           {/* Speed Badge */}
-          <div className="bg-gradient-to-r from-violet-950/30 to-pink-950/30 border border-pink-500/30 rounded-lg p-2 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-pink-950/30 to-violet-950/30 border border-pink-500/30 rounded-lg p-2 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-full bg-pink-500/20 flex items-center justify-center">
                 <Rocket className="w-3.5 h-3.5 text-pink-400" />
               </div>
               <div>
                 <div className="text-pink-400 text-[10px] font-semibold">Livraison Express</div>
-                <div className="text-gray-500 text-[9px]">Votre page en 72h maximum</div>
+                <div className="text-gray-400 text-[9px]">Votre page en 72h maximum</div>
               </div>
             </div>
             <div className="flex items-center gap-0.5">

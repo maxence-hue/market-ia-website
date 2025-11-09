@@ -1,3 +1,5 @@
+"use client";
+
 import { Calendar, MapPin, Euro, Sparkles } from "lucide-react";
 import { Button } from "@/components/landing-4h/ui/button";
 import { Badge } from "@/components/landing-4h/ui/badge";
@@ -85,17 +87,13 @@ export function Hero() {
               <Button 
                 size="lg" 
                 className="px-8 py-6 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all w-full sm:w-auto"
-                asChild
+                onClick={() => {
+                  trackLead();
+                  window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
+                }}
+                data-cta="hero-calendly"
               >
-                <a 
-                  href="https://calendly.com/maxence-marketia/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  data-cta="hero-calendly"
-                  onClick={() => trackLead()}
-                >
-                  Prendre RDV (15 min)
-                </a>
+                Prendre RDV (15 min)
               </Button>
             </div>
           </div>

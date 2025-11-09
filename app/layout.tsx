@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   description: 'Abonnements tout-inclus pour votre site web professionnel. Création, hébergement, maintenance et évolutions. Automatisations IA sur mesure.',
   keywords: ['site web abonnement', 'automatisation IA', 'marketing automation', 'création site web', 'SaaS personnalisé'],
   authors: [{ name: 'Maxence Alehause' }],
+  icons: {
+    icon: '/logo-marketia-white.png',
+    shortcut: '/logo-marketia-white.png',
+    apple: '/logo-marketia-white.png',
+  },
   openGraph: {
     title: 'Market-IA | Sites Web & Automatisations IA',
     description: 'Abonnements tout-inclus pour votre site web professionnel',

@@ -139,7 +139,7 @@ export default function ConfidentialitePage() {
             </p>
             <p className="mt-2">
               <strong>Email :</strong> contact@market-ia.fr<br />
-              <strong>Adresse :</strong> Market-IA, Paris, France
+              <strong>Adresse :</strong> Market-IA, Toulon, France
             </p>
             <p className="mt-3">
               Vous avez également le droit de déposer une réclamation auprès de la CNIL 

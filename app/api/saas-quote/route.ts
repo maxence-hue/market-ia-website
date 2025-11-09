@@ -1,31 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const DEFAULT_CONTACT_WEBHOOK = 'https://adsolar.app.n8n.cloud/webhook-test/3a780463-bb30-4848-8d77-995ccb8d056a'
+const DEFAULT_WEBHOOK = 'https://adsolar.app.n8n.cloud/webhook-test/3a780463-bb30-4848-8d77-995ccb8d056a'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     
-    // Webhook Zapier/n8n URL from environment variable (override) or fallback to default n8n webhook
+    // Webhook n8n URL from environment variable or fallback to default
     const webhookUrl =
       process.env.N8N_CONTACT_WEBHOOK ||
       process.env.ZAPIER_WEBHOOK_URL ||
-      process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL ||
-      DEFAULT_CONTACT_WEBHOOK
+      DEFAULT_WEBHOOK
     
-    if (!webhookUrl) {
-      console.warn('No webhook URL configured')
-    }
-
     // Prepare data
     const data = {
       ...body,
       timestamp: new Date().toISOString(),
       source: 'market-ia-website',
-      type: 'contact',
+      type: 'saas-quote',
+      formType: 'SaaS Personnalisé',
     }
 
-    // Send to webhook if configured
+    // Send to webhook
     if (webhookUrl) {
       await fetch(webhookUrl, {
         method: 'POST',
@@ -37,18 +33,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Log for development
-    console.log('Contact form submission:', {
+    console.log('SaaS quote submission:', {
       email: body.email,
-      service: body.service,
+      company: body.companyName,
       timestamp: data.timestamp,
     })
 
     return NextResponse.json({ 
       success: true,
-      message: 'Votre message a été envoyé avec succès'
+      message: 'Votre demande de devis SaaS a été envoyée avec succès'
     })
   } catch (error) {
-    console.error('Error processing contact form:', error)
+    console.error('Error processing SaaS quote:', error)
     return NextResponse.json(
       { success: false, error: 'Une erreur est survenue' },
       { status: 500 }

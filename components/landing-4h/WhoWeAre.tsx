@@ -87,17 +87,13 @@ export function WhoWeAre() {
             <Button 
               size="lg" 
               className="px-8 py-6 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-              asChild
+              onClick={() => {
+                trackLead();
+                window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
+              }}
+              data-cta="whoweare-calendly"
             >
-              <a 
-                href="https://calendly.com/maxence-marketia/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                data-cta="whoweare-calendly"
-                onClick={() => trackLead()}
-              >
-                Prendre RDV (15 min)
-              </a>
+              Prendre RDV (15 min)
             </Button>
           </div>
         </div>

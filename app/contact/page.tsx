@@ -26,8 +26,8 @@ export default function ContactPage() {
           <div className="card-glass p-8 text-center">
             <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
             <h3 className="font-display font-bold text-xl mb-2">Téléphone</h3>
-            <a href="tel:+33123456789" className="text-light/70 hover:text-primary transition-colors">
-              +33 1 23 45 67 89
+            <a href="tel:0618180598" className="text-light/70 hover:text-primary transition-colors">
+              06 18 18 05 98
             </a>
           </div>
 
@@ -35,7 +35,7 @@ export default function ContactPage() {
             <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
             <h3 className="font-display font-bold text-xl mb-2">Adresse</h3>
             <p className="text-light/70">
-              Paris, France
+              Toulon, France
             </p>
           </div>
         </div>

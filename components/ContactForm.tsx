@@ -13,7 +13,10 @@ const contactSchema = z.object({
   phone: z.string().min(10, 'Numéro de téléphone invalide').optional(),
   service: z.string().min(1, 'Veuillez sélectionner un service'),
   budget: z.string().optional(),
-  message: z.string().min(10, 'Le message doit contenir au moins 10 caractères'),
+  message: z.preprocess(
+    (val) => (typeof val === 'string' && val.trim() === '' ? undefined : val),
+    z.string().min(10, 'Le message doit contenir au moins 10 caractères').optional()
+  ),
   rgpd: z.boolean().refine((val) => val === true, {
     message: 'Vous devez accepter la politique de confidentialité',
   }),
@@ -160,7 +163,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-light mb-2 text-sm font-medium">
-          Message *
+          Message (optionnel)
         </label>
         <textarea
           {...register('message')}

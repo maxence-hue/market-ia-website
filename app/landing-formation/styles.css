@@ -1,0 +1,375 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RESET COMPLET ISOLÉ - Uniquement pour la landing page */
+#landing-formation-isolated {
+  /* Isolation complète du contexte CSS */
+  all: initial;
+  contain: layout style;
+  display: block;
+}
+
+#landing-formation-isolated *,
+#landing-formation-isolated *::before,
+#landing-formation-isolated *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Variables de couleurs scopées à la landing page */
+#landing-formation-isolated {
+  --lf-primary: #7B61FF;
+  --lf-primary-light: #9B87FF;
+  --lf-primary-dark: #5B41DF;
+  --lf-background: #ffffff;
+  --lf-foreground: #09090b;
+  --lf-light: #f8fafc;
+  --lf-muted: #f1f5f9;
+  --lf-muted-foreground: #64748b;
+  --lf-accent: #7B61FF;
+  --lf-accent-foreground: #ffffff;
+  --lf-destructive: #ef4444;
+  --lf-border: #e2e8f0;
+  --lf-input: #e2e8f0;
+  --lf-ring: #7B61FF;
+  --lf-card: #ffffff;
+  --lf-card-foreground: #09090b;
+}
+
+/* Corps de la landing page */
+.landing-formation-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+#landing-formation-isolated {
+  background-color: var(--lf-background);
+  color: var(--lf-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Typographie isolée */
+#landing-formation-isolated h1,
+#landing-formation-isolated h2,
+#landing-formation-isolated h3,
+#landing-formation-isolated h4,
+#landing-formation-isolated h5,
+#landing-formation-isolated h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--lf-foreground);
+}
+
+#landing-formation-isolated h1 {
+  font-size: 3.75rem;
+}
+
+#landing-formation-isolated h2 {
+  font-size: 2.25rem;
+}
+
+#landing-formation-isolated h3 {
+  font-size: 1.875rem;
+}
+
+#landing-formation-isolated p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Classes utilitaires réécrites avec namespace */
+#landing-formation-isolated .text-primary {
+  color: var(--lf-primary) !important;
+}
+
+#landing-formation-isolated .text-muted-foreground {
+  color: var(--lf-muted-foreground) !important;
+}
+
+#landing-formation-isolated .bg-primary {
+  background-color: var(--lf-primary) !important;
+}
+
+#landing-formation-isolated .bg-white {
+  background-color: #ffffff !important;
+}
+
+#landing-formation-isolated .bg-muted {
+  background-color: var(--lf-muted) !important;
+}
+
+/* Boutons isolés */
+#landing-formation-isolated button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--lf-primary);
+  color: white;
+}
+
+#landing-formation-isolated button:hover {
+  opacity: 0.9;
+}
+
+#landing-formation-isolated button:focus-visible {
+  outline: 2px solid var(--lf-primary);
+  outline-offset: 2px;
+}
+
+#landing-formation-isolated button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Inputs isolés */
+#landing-formation-isolated input,
+#landing-formation-isolated textarea,
+#landing-formation-isolated select {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--lf-border);
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--lf-foreground);
+}
+
+#landing-formation-isolated input:focus,
+#landing-formation-isolated textarea:focus,
+#landing-formation-isolated select:focus {
+  outline: none;
+  border-color: var(--lf-primary);
+  box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.1);
+}
+
+/* Cards isolées */
+#landing-formation-isolated .card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--lf-border);
+  background-color: var(--lf-card);
+  padding: 1.5rem;
+}
+
+/* Dialog/Modal totalement isolé */
+#landing-formation-isolated [role="dialog"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-height: 95vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background: white !important;
+  z-index: 10000 !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 95vw !important;
+  max-width: 600px !important;
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #landing-formation-isolated [role="dialog"] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+  
+  #landing-formation-isolated h1 {
+    font-size: 2.5rem;
+  }
+  
+  #landing-formation-isolated h2 {
+    font-size: 1.875rem;
+  }
+}
+
+/* Overlay isolé */
+#landing-formation-isolated [data-state="open"] > div[data-radix-dialog-overlay] {
+  position: fixed !important;
+  inset: 0 !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  z-index: 9999 !important;
+}
+
+/* Select dropdown isolé */
+#landing-formation-isolated [role="listbox"],
+#landing-formation-isolated [data-radix-select-content] {
+  position: absolute !important;
+  z-index: 10001 !important;
+  background: white !important;
+  border: 1px solid var(--lf-border) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Sections de la landing page */
+#landing-formation-isolated section {
+  position: relative;
+  width: 100%;
+  padding: 4rem 1rem;
+}
+
+/* Hero section spécifique */
+#landing-formation-isolated .hero-section {
+  background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 50%, #faf5ff 100%);
+  padding: 6rem 1rem;
+}
+
+/* Containers */
+#landing-formation-isolated .max-w-7xl {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Flexbox utilities isolés */
+#landing-formation-isolated .flex {
+  display: flex !important;
+}
+
+#landing-formation-isolated .flex-col {
+  flex-direction: column !important;
+}
+
+#landing-formation-isolated .items-center {
+  align-items: center !important;
+}
+
+#landing-formation-isolated .justify-center {
+  justify-content: center !important;
+}
+
+#landing-formation-isolated .justify-between {
+  justify-content: space-between !important;
+}
+
+#landing-formation-isolated .gap-4 {
+  gap: 1rem !important;
+}
+
+#landing-formation-isolated .gap-6 {
+  gap: 1.5rem !important;
+}
+
+/* Spacing utilities isolés */
+#landing-formation-isolated .mt-4 {
+  margin-top: 1rem !important;
+}
+
+#landing-formation-isolated .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+#landing-formation-isolated .py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+#landing-formation-isolated .px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Grid isolé */
+#landing-formation-isolated .grid {
+  display: grid !important;
+}
+
+#landing-formation-isolated .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 768px) {
+  #landing-formation-isolated .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  #landing-formation-isolated .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Badge/Pills isolés */
+#landing-formation-isolated .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(123, 97, 255, 0.1);
+  color: var(--lf-primary);
+}
+
+/* Animations isolées */
+@keyframes lf-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#landing-formation-isolated .animate-fade-in {
+  animation: lf-fade-in 0.5s ease-out;
+}
+
+/* S'assurer que rien ne déborde */
+#landing-formation-isolated {
+  overflow-x: hidden;
+}
+
+#landing-formation-isolated * {
+  max-width: 100%;
+}
+
+/* Réinitialisation des styles Tailwind qui pourraient interférer */
+#landing-formation-isolated .min-h-screen {
+  min-height: 100vh !important;
+}
+
+/* Fix pour les icônes */
+#landing-formation-isolated svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* S'assurer que les couleurs de texte sont correctes */
+#landing-formation-isolated,
+#landing-formation-isolated * {
+  color: inherit;
+}
+
+#landing-formation-isolated a {
+  color: var(--lf-primary);
+  text-decoration: none;
+}
+
+#landing-formation-isolated a:hover {
+  text-decoration: underline;
+}

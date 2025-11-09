@@ -187,7 +187,7 @@ export function OffersTabSection() {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="max-w-6xl mx-auto"
           >
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left: Content */}
               <div className="order-2 lg:order-1">
                 {/* Price Badge */}
@@ -248,7 +248,7 @@ export function OffersTabSection() {
 
               {/* Right: Illustration */}
               <div className="order-1 lg:order-2 flex items-center justify-center">
-                <div className="w-full max-w-xl lg:max-w-2xl">
+                <div className="w-full max-w-2xl xl:max-w-3xl transform lg:translate-x-6">
                   {currentOffer.illustration}
                 </div>
               </div>
