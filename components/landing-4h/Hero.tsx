@@ -2,6 +2,7 @@ import { Calendar, MapPin, Euro, Sparkles } from "lucide-react";
 import { Button } from "@/components/landing-4h/ui/button";
 import { Badge } from "@/components/landing-4h/ui/badge";
 import { RegistrationFormContent } from "./RegistrationFormContent";
+import { trackLead } from "./MetaPixel";
 
 export function Hero() {
   return (
@@ -91,6 +92,7 @@ export function Hero() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   data-cta="hero-calendly"
+                  onClick={() => trackLead()}
                 >
                   Prendre RDV (15 min)
                 </a>

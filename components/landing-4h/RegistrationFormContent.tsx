@@ -12,6 +12,7 @@ import { Progress } from "@/components/landing-4h/ui/progress";
 import { Minus, Plus } from "lucide-react";
 import { Card } from "@/components/landing-4h/ui/card";
 import { SuccessIllustration } from "@/components/landing-4h/illustrations/SuccessIllustration";
+import { trackLead } from "./MetaPixel";
 
 type FormData = {
   // Step 1
@@ -280,6 +281,7 @@ export function RegistrationFormContent() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 data-cta="thankyou-calendly"
+                onClick={() => trackLead()}
               >
                 Prendre RDV (15 min)
               </a>

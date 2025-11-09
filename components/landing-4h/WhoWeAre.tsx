@@ -1,8 +1,11 @@
+"use client";
+
 import { Button } from "@/components/landing-4h/ui/button";
 import { Card } from "@/components/landing-4h/ui/card";
 import { Users } from "lucide-react";
 import { ImageWithFallback } from "@/components/landing-4h/figma/ImageWithFallback";
 import { CirclePattern } from "@/components/landing-4h/illustrations/DecorativePattern";
+import { trackLead } from "./MetaPixel";
 
 export function WhoWeAre() {
   const team = [
@@ -91,6 +94,7 @@ export function WhoWeAre() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 data-cta="whoweare-calendly"
+                onClick={() => trackLead()}
               >
                 Prendre RDV (15 min)
               </a>

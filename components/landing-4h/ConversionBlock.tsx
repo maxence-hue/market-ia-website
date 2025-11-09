@@ -3,6 +3,7 @@
 import { Button } from "@/components/landing-4h/ui/button";
 import { Card } from "@/components/landing-4h/ui/card";
 import { Rocket, Sparkles, Zap, Target } from "lucide-react";
+import { trackLead } from "./MetaPixel";
 
 export function ConversionBlock() {
   const scrollToForm = () => {
@@ -66,6 +67,7 @@ export function ConversionBlock() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   data-cta="conversion-calendly"
+                  onClick={() => trackLead()}
                 >
                   Prendre RDV (15 min)
                 </a>
