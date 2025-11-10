@@ -50,9 +50,17 @@ export function MetaPixel() {
   );
 }
 
-// Fonction helper pour tracker la conversion
+// Fonction helper pour tracker une vraie conversion (inscription formulaire)
 export function trackLead() {
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq("track", "Lead");
+  }
+}
+
+// Fonction pour tracker le clic sur Calendly (pas une conversion)
+export function trackCalendlyClick() {
+  if (typeof window !== "undefined" && window.fbq) {
+    // Utiliser un événement personnalisé ou "Schedule" pour indiquer l'intention
+    window.fbq("trackCustom", "CalendlyClick");
   }
 }

@@ -12,7 +12,7 @@ import { Progress } from "@/components/landing-4h/ui/progress";
 import { Minus, Plus } from "lucide-react";
 import { Card } from "@/components/landing-4h/ui/card";
 import { SuccessIllustration } from "@/components/landing-4h/illustrations/SuccessIllustration";
-import { trackLead } from "./MetaPixel";
+import { trackLead, trackCalendlyClick } from "./MetaPixel";
 
 type FormData = {
   // Step 1
@@ -207,20 +207,16 @@ export function RegistrationFormContent() {
       
       console.log("✅ Données envoyées avec succès au webhook");
       
-      // Déclencher l'événement de conversion Meta Pixel
-      if (window.fbq) {
-        window.fbq('track', 'Lead');
-        console.log("📊 Meta Pixel Lead event tracked");
-      }
+      // Déclencher l'événement de conversion Meta Pixel (vraie conversion = inscription)
+      trackLead();
+      console.log("📊 Meta Pixel Lead event tracked");
       
       setShowSuccess(true);
     } catch (error) {
       console.error("❌ Erreur lors de l'envoi au webhook:", error);
       // Même en cas d'erreur, on affiche le succès pour ne pas bloquer l'utilisateur
-      if (window.fbq) {
-        window.fbq('track', 'Lead');
-        console.log("📊 Meta Pixel Lead event tracked (malgré erreur webhook)");
-      }
+      trackLead();
+      console.log("📊 Meta Pixel Lead event tracked (malgré erreur webhook)");
       setShowSuccess(true);
     }
   };
@@ -278,7 +274,7 @@ export function RegistrationFormContent() {
             <Button 
               size="lg"
               onClick={() => {
-                trackLead();
+                trackCalendlyClick();
                 window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
               }}
               data-cta="thankyou-calendly"

@@ -4,7 +4,7 @@ import { Calendar, MapPin, Euro, Sparkles } from "lucide-react";
 import { Button } from "@/components/landing-4h/ui/button";
 import { Badge } from "@/components/landing-4h/ui/badge";
 import { RegistrationFormContent } from "./RegistrationFormContent";
-import { trackLead } from "./MetaPixel";
+import { trackCalendlyClick } from "./MetaPixel";
 
 export function Hero() {
   return (
@@ -88,7 +88,7 @@ export function Hero() {
                 size="lg" 
                 className="px-8 py-6 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all w-full sm:w-auto"
                 onClick={() => {
-                  trackLead();
+                  trackCalendlyClick();
                   window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
                 }}
                 data-cta="hero-calendly"

@@ -5,7 +5,7 @@ import { Card } from "@/components/landing-4h/ui/card";
 import { Users } from "lucide-react";
 import { ImageWithFallback } from "@/components/landing-4h/figma/ImageWithFallback";
 import { CirclePattern } from "@/components/landing-4h/illustrations/DecorativePattern";
-import { trackLead } from "./MetaPixel";
+import { trackCalendlyClick } from "./MetaPixel";
 
 export function WhoWeAre() {
   const team = [
@@ -88,7 +88,7 @@ export function WhoWeAre() {
               size="lg" 
               className="px-8 py-6 text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
               onClick={() => {
-                trackLead();
+                trackCalendlyClick();
                 window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
               }}
               data-cta="whoweare-calendly"

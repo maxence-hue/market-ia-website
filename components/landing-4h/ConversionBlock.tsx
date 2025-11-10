@@ -3,7 +3,7 @@
 import { Button } from "@/components/landing-4h/ui/button";
 import { Card } from "@/components/landing-4h/ui/card";
 import { Rocket, Sparkles, Zap, Target } from "lucide-react";
-import { trackLead } from "./MetaPixel";
+import { trackCalendlyClick } from "./MetaPixel";
 
 export function ConversionBlock() {
   const scrollToForm = () => {
@@ -61,7 +61,7 @@ export function ConversionBlock() {
                 variant="outline"
                 className="px-8 py-6 text-lg bg-transparent text-white border-white hover:bg-white/10"
                 onClick={() => {
-                  trackLead();
+                  trackCalendlyClick();
                   window.open("https://calendly.com/maxence-marketia/30min", "_blank", "noopener,noreferrer");
                 }}
                 data-cta="conversion-calendly"
