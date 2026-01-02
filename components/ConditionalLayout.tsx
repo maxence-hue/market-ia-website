@@ -7,7 +7,7 @@ import { ParticleBackground } from './ParticleBackground'
 import { FloatingOrbs } from './FloatingOrbs'
 
 /**
- * Composant qui affiche Header/Footer sauf sur /admin, /chat-assistant, /inscription et /landing-formation
+ * Composant qui affiche Header/Footer sauf sur /admin, /chat-assistant, /inscription, /landing-formation et /formationcpf1
  */
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -15,8 +15,9 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const isChatAssistant = pathname?.startsWith('/chat-assistant')
   const isInscription = pathname?.startsWith('/inscription')
   const isLandingFormation = pathname?.startsWith('/landing-formation')
+  const isFormationCPF1 = pathname?.startsWith('/formationcpf1')
 
-  if (isAdmin || isChatAssistant || isInscription || isLandingFormation) {
+  if (isAdmin || isChatAssistant || isInscription || isLandingFormation || isFormationCPF1) {
     // Admin, Chat ou Landing Pages : pas de header/footer, juste le contenu
     return <>{children}</>
   }
