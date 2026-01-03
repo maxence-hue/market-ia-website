@@ -276,7 +276,7 @@ function Hero() {
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight"><span className="text-white">Maîtrisez l&apos;IA Générative</span><br /><span className="text-[#00D4FF]">en 3 jours</span></motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="text-[#94A3B8] text-base md:text-lg mb-8 max-w-2xl mx-auto">21 heures de formation intensive pour créer des contenus professionnels avec l&apos;intelligence artificielle</motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-wrap justify-center gap-3 mb-8"><InfoBadge icon="📍" text="Toulon" /><InfoBadge icon="📅" text="20-22 Janvier" /><InfoBadge icon="💰" text="CPF : reste 102€" /></motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="mb-4"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Commencer le questionnaire →</Button></motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="mb-4"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je me forme à l&apos;IA →</Button></motion.div>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.6 }} className="text-[#94A3B8] text-sm flex items-center justify-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#00E676]" />Places limitées à 8 personnes</motion.p>
       </div>
     </section>
@@ -285,9 +285,9 @@ function Hero() {
 
 function Problems() {
   const painPoints = [
-    { icon: <XCircle className="w-8 h-8 text-[#FF5252]" />, title: "Vos résultats sont décevants", description: "ChatGPT vous donne des réponses génériques qui ne correspondent pas à vos besoins" },
-    { icon: <AlertTriangle className="w-8 h-8 text-yellow-400" />, title: "Vous avez peur des risques", description: "RGPD, droits d'auteur, confidentialité... Vous ne savez pas ce qui est autorisé" },
-    { icon: <Clock className="w-8 h-8 text-orange-400" />, title: "Vous perdez du temps", description: "Au lieu de gagner en productivité, vous passez des heures à reformuler vos demandes" }
+    { icon: <XCircle className="w-8 h-8 text-[#FF5252]" />, title: "Des résultats frustrants", description: "Vos prompts génèrent du contenu plat, sans personnalité. Vous savez que l'IA peut faire mieux, mais comment ?" },
+    { icon: <AlertTriangle className="w-8 h-8 text-yellow-400" />, title: "La peur de mal faire", description: "Droits d'auteur, données confidentielles, IA Act... Un faux pas peut coûter cher à votre entreprise." },
+    { icon: <Clock className="w-8 h-8 text-orange-400" />, title: "Un temps précieux gaspillé", description: "Vous reformulez 10 fois vos demandes. L'IA devait vous faire gagner du temps, pas vous en faire perdre." }
   ]
   return (
     <Section dark><SectionTitle>Vous utilisez l&apos;IA mais...</SectionTitle>
@@ -296,7 +296,7 @@ function Problems() {
           <Card className="h-full text-center"><div className="mb-4 flex justify-center">{point.icon}</div><h3 className="text-lg font-bold text-white mb-3">{point.title}</h3><p className="text-[#94A3B8] text-sm">{point.description}</p></Card>
         </motion.div>
       ))}</div>
-      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Revenir au questionnaire →</Button></div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je passe à l&apos;IA →</Button></div>
     </Section>
   )
 }
@@ -316,7 +316,7 @@ function Transformation() {
           <ul className="space-y-3">{afterItems.map((item, index) => (<li key={index} className="flex items-start gap-3 text-white"><Check className="w-5 h-5 text-[#00E676] flex-shrink-0 mt-0.5" /><span>{item}</span></li>))}</ul>
         </motion.div>
       </div>
-      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Faire le questionnaire →</Button></div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je me forme à l&apos;IA →</Button></div>
     </Section>
   )
 }
@@ -337,13 +337,13 @@ function Programme() {
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mt-12">
         <Card className="p-6 text-center border border-[#00D4FF]/30 max-w-2xl mx-auto"><div className="flex items-center justify-center gap-3"><GraduationCap className="w-8 h-8 text-[#00D4FF]" /><p className="text-white font-semibold">À l&apos;issue : Certification RS6776 - Création de contenus par IA générative</p></div></Card>
       </motion.div>
-      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Revenir au questionnaire →</Button></div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je veux cette certification →</Button></div>
     </Section>
   )
 }
 
 function Tools() {
-  const tools = [{ name: "ChatGPT-4o", icon: "🤖", tag: "Texte" }, { name: "Claude 3.5", icon: "🧠", tag: "Analyse" }, { name: "Gemini 2.0", icon: "✨", tag: "Multimodal" }, { name: "Copilot Pro", icon: "🚀", tag: "Productivité" }, { name: "DALL·E 3", icon: "🎨", tag: "Images" }, { name: "Midjourney", icon: "🌈", tag: "Création" }, { name: "Sora", icon: "🎬", tag: "Vidéo" }, { name: "Firefly", icon: "🔥", tag: "Adobe" }]
+  const tools = [{ name: "ChatGPT-4o", icon: "🤖", tag: "Texte" }, { name: "Claude 3.5", icon: "🧠", tag: "Analyse" }, { name: "Gemini 3 Pro", icon: "✨", tag: "Multimodal" }, { name: "Mistral IA", icon: "🚀", tag: "Français" }, { name: "DALL·E 3", icon: "🎨", tag: "Images" }, { name: "Midjourney", icon: "🌈", tag: "Création" }, { name: "Sora", icon: "🎬", tag: "Vidéo" }, { name: "Firefly", icon: "🔥", tag: "Adobe" }]
   return (
     <Section><SectionTitle subtitle="Maîtrisez les outils IA les plus performants de 2025">Les outils que vous maîtriserez</SectionTitle>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">{tools.map((tool, index) => (
@@ -351,7 +351,7 @@ function Tools() {
           <span className="text-3xl mb-2 block">{tool.icon}</span><span className="text-white font-semibold block">{tool.name}</span><span className="text-xs text-[#00D4FF]/70 mt-1 block">{tool.tag}</span>
         </motion.div>
       ))}</div>
-      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Faire le questionnaire →</Button></div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je maîtrise ces outils →</Button></div>
     </Section>
   )
 }
@@ -370,7 +370,7 @@ function Benefits() {
           <Card className="h-full"><div className="flex items-start gap-4"><div className="flex-shrink-0 p-3 rounded-xl bg-white/5">{benefit.icon}</div><div><h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3><p className="text-[#94A3B8] text-sm">{benefit.description}</p></div></div></Card>
         </motion.div>
       ))}</div>
-      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Revenir au questionnaire →</Button></div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je booste ma productivité →</Button></div>
     </Section>
   )
 }
@@ -386,11 +386,11 @@ function Pricing() {
             <div className="mb-4"><span className="text-[#94A3B8] line-through text-lg">3 500€</span></div>
             <div className="text-5xl font-extrabold text-white mb-2">3 180€<span className="text-lg font-normal text-[#94A3B8]"> TTC</span></div>
             <motion.div initial={{ scale: 0.95 }} whileInView={{ scale: 1 }} viewport={{ once: true }} className="bg-[#00E676]/10 border border-[#00E676]/30 rounded-xl p-4 mt-6 mb-6">
-              <div className="flex items-center justify-center gap-2 mb-2"><Lightbulb className="w-5 h-5 text-[#00E676]" /><span className="font-semibold text-[#00E676]">Finançable à 100% par votre CPF</span></div>
+              <div className="flex items-center justify-center gap-2 mb-2"><Lightbulb className="w-5 h-5 text-[#00E676]" /><span className="font-semibold text-[#00E676]">Finançable à 98% par votre CPF</span></div>
               <p className="text-white text-2xl font-bold">Reste à charge : 102,23€</p>
             </motion.div>
             <ul className="space-y-3 text-left mb-8">{includes.map((item, index) => (<li key={index} className="flex items-center gap-3 text-white"><Check className="w-5 h-5 text-[#00E676] flex-shrink-0" /><span>{item}</span></li>))}</ul>
-            <div className="space-y-3"><Button href="#questionnaire" size="full">Faire le questionnaire →</Button><Button href="https://www.moncompteformation.gouv.fr" variant="outline" size="full">Vérifier mon éligibilité CPF →</Button></div>
+            <div className="space-y-3"><Button href="#questionnaire" size="full">Je réserve ma place →</Button><Button href="https://www.moncompteformation.gouv.fr" variant="outline" size="full">Vérifier mon éligibilité CPF →</Button></div>
             <div className="mt-6 flex items-center justify-center gap-2 text-[#94A3B8] text-sm"><Shield className="w-4 h-4" /><span>Organisme certifié Qualiopi</span></div>
           </div>
         </div>
@@ -406,7 +406,7 @@ function Urgency() {
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-4xl mx-auto text-center relative z-10">
         <div className="flex items-center justify-center gap-2 mb-4"><Clock className="w-6 h-6 text-white" /><span className="text-white font-bold text-lg">Session du 20-22 janvier 2025</span></div>
         <motion.div initial={{ scale: 0.9 }} whileInView={{ scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center gap-2 mb-6"><Users className="w-5 h-5 text-white/80" /><span className="text-white/90 text-lg">Plus que <strong className="text-white">3 places</strong> disponibles</span></motion.div>
-        <Button href="#questionnaire" variant="secondary" size="lg">Réserver ma place maintenant</Button>
+        <Button href="#questionnaire" variant="secondary" size="lg">Je saisis cette opportunité →</Button>
       </motion.div>
     </section>
   )
@@ -462,7 +462,7 @@ function StickyFooter() {
     <div className="fixed bottom-0 left-0 right-0 md:hidden bg-[#0a1628]/95 backdrop-blur-lg border-t border-white/10 px-4 py-3 z-50">
       <div className="flex items-center justify-between gap-4">
         <div className="text-sm"><span className="text-[#94A3B8]">Reste à payer</span><p className="text-white font-bold">102€</p></div>
-        <Button href="#questionnaire" size="md" className="flex-1 max-w-[200px]">Questionnaire →</Button>
+        <Button href="#questionnaire" size="md" className="flex-1 max-w-[200px]">Je m&apos;inscris →</Button>
       </div>
     </div>
   )
