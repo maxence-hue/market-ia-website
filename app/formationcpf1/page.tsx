@@ -323,17 +323,69 @@ function Transformation() {
 
 function Programme() {
   const programmeData = [
-    { day: "JOUR 1", title: "Comprendre & Maîtriser", color: "#7C4DFF", modules: ["Introduction à l'IA Générative (3h)", "Prompt Engineering (3h)", "Sécurité & Confidentialité (1h)"] },
-    { day: "JOUR 2", title: "Optimiser & Conformer", color: "#00E676", modules: ["Accessibilité & Inclusion (2h)", "Optimisation des contenus (3h)", "Conformité RGPD & IA Act (2h)"] },
-    { day: "JOUR 3", title: "Créer & Produire", color: "#FF9800", modules: ["Rédaction assistée par IA (3h)", "Création visuelle avec IA (2h)", "IA & Productivité (2h)"] }
+    { 
+      day: "JOUR 1", 
+      title: "Comprendre & Maîtriser", 
+      color: "#7C4DFF", 
+      modules: [
+        { name: "Module 1 – Introduction à l'IA Générative (3h)", details: ["Définition, évolution et panorama des outils", "ChatGPT, Gemini, Copilot, Firefly...", "Identification des tâches automatisables"] },
+        { name: "Module 2 – Prompt Engineering (3h)", details: ["Structure d'un prompt efficace (rôle, cible, objectif, format)", "Techniques avancées d'optimisation", "Études de cas comparatifs"] },
+        { name: "Module 3 – Sécurité & Confidentialité (1h)", details: ["Risques et enjeux", "Méthodes d'anonymisation", "Bonnes pratiques"] }
+      ]
+    },
+    { 
+      day: "JOUR 2", 
+      title: "Optimiser & Conformer", 
+      color: "#00E676", 
+      modules: [
+        { name: "Module 4 – Accessibilité & Inclusion (2h)", details: ["Bases de l'accessibilité numérique", "Adaptations pour différents handicaps", "Contenus inclusifs"] },
+        { name: "Module 5 – Optimisation des contenus (3h)", details: ["Affinage des prompts", "Respect des contraintes métier", "Relecture critique"] },
+        { name: "Module 6 – Conformité RGPD & IA Act (2h)", details: ["Textes réglementaires européens", "Identification des biais", "Bonnes pratiques de conformité"] }
+      ]
+    },
+    { 
+      day: "JOUR 3", 
+      title: "Créer & Produire", 
+      color: "#FF9800", 
+      modules: [
+        { name: "Module 7 – Rédaction assistée par IA (3h)", details: ["Génération et structuration de contenus", "Adaptation du ton et du style", "Workflows de production"] },
+        { name: "Module 8 – Création visuelle avec IA (2h)", details: ["DALL·E, Midjourney, Firefly", "Prompts visuels efficaces", "Retouche et édition"] },
+        { name: "Module 9 – IA & Productivité (2h)", details: ["Automatisation des tâches répétitives", "Intégration dans vos outils existants", "Plan d'action personnalisé"] }
+      ]
+    }
   ]
   return (
     <Section id="programme" dark><SectionTitle>Le programme de vos 3 jours</SectionTitle>
-      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">{programmeData.map((day, index) => (
-        <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-          <Card className="h-full"><div className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: day.color }}>{day.day}</div><h3 className="text-lg font-bold text-white mb-4">{day.title}</h3><ul className="space-y-2">{day.modules.map((module, i) => (<li key={i} className="flex items-start gap-2 text-[#94A3B8] text-sm"><Check className="w-4 h-4 text-[#00D4FF] flex-shrink-0 mt-0.5" /><span>{module}</span></li>))}</ul></Card>
-        </motion.div>
-      ))}</div>
+      <div className="space-y-8 max-w-4xl mx-auto">
+        {programmeData.map((day, index) => (
+          <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full" style={{ backgroundColor: day.color }} />
+              <div className="pl-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full" style={{ backgroundColor: `${day.color}20`, color: day.color }}>{day.day}</span>
+                  <h3 className="text-xl font-bold text-white">{day.title}</h3>
+                </div>
+                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 space-y-6">
+                  {day.modules.map((module, i) => (
+                    <div key={i}>
+                      <h4 className="text-[#00D4FF] font-semibold mb-2">{module.name}</h4>
+                      <ul className="space-y-1 pl-4">
+                        {module.details.map((detail, j) => (
+                          <li key={j} className="flex items-start gap-2 text-[#94A3B8] text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ backgroundColor: day.color }} />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mt-12">
         <Card className="p-6 text-center border border-[#00D4FF]/30 max-w-2xl mx-auto"><div className="flex items-center justify-center gap-3"><GraduationCap className="w-8 h-8 text-[#00D4FF]" /><p className="text-white font-semibold">À l&apos;issue : Certification RS6776 - Création de contenus par IA générative</p></div></Card>
       </motion.div>
@@ -371,6 +423,91 @@ function Benefits() {
         </motion.div>
       ))}</div>
       <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je booste ma productivité →</Button></div>
+    </Section>
+  )
+}
+
+function Trainer() {
+  const testimonials = [
+    { stars: 5, quote: "Formation exceptionnelle ! J'utilise désormais l'IA quotidiennement et j'ai gagné un temps considérable.", author: "Marie D.", role: "Responsable Communication - PME Var" },
+    { stars: 5, quote: "Enfin une formation qui va au-delà des bases. La méthode SavoirIA® est vraiment efficace.", author: "Thomas L.", role: "Manager - Groupe industriel" }
+  ]
+  return (
+    <Section pattern>
+      <SectionTitle>Votre expert IA</SectionTitle>
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto">
+        <Card className="p-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00D4FF]/30 flex-shrink-0">
+              <img src="https://framerusercontent.com/images/wf7MIq4YOerrqKHiX9ybOtRHm8.jpg?width=393&height=392" alt="Benoît Souffes" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-white mb-1">Benoît Souffes</h3>
+              <p className="text-[#00D4FF] text-sm mb-3">Directeur Général Market-IA • Formateur certifié SavoirIA®</p>
+              <p className="text-[#94A3B8] text-sm mb-4">Expert en Intelligence Artificielle et transformation digitale, Benoît accompagne les entreprises du Var et de la région PACA dans leur adoption des outils IA. Passionné par la pédagogie et l&apos;innovation.</p>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm text-[#94A3B8] mb-4">
+                <span className="flex items-center gap-1"><Users className="w-4 h-4" />+500 professionnels formés</span>
+                <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-400" />4.9/5 de satisfaction</span>
+              </div>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#00E676]/10 border border-[#00E676]/30 text-[#00E676]">Certifié Qualiopi</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#00D4FF]/10 border border-[#00D4FF]/30 text-[#00D4FF]">EXPERT IA</span>
+                <a href="https://www.linkedin.com/in/benoitsouffes" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-[#94A3B8] hover:text-[#00D4FF] hover:border-[#00D4FF]/30 transition-colors flex items-center gap-1"><Linkedin className="w-3 h-3" />LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </motion.div>
+      <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-8">
+        {testimonials.map((t, index) => (
+          <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+            <Card className="h-full">
+              <div className="flex gap-1 mb-3">{[...Array(t.stars)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}</div>
+              <p className="text-white italic mb-4">&quot;{t.quote}&quot;</p>
+              <p className="text-white font-semibold">{t.author}</p>
+              <p className="text-[#94A3B8] text-sm">{t.role}</p>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je rejoins les 500+ formés →</Button></div>
+    </Section>
+  )
+}
+
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const faqs = [
+    { q: "Faut-il des connaissances techniques préalables ?", a: "Non, la formation est accessible à tous. Nous partons des bases et progressons ensemble. Seule une aisance avec l'outil informatique est recommandée." },
+    { q: "Comment utiliser mon CPF pour financer cette formation ?", a: "Rendez-vous sur moncompteformation.gouv.fr, recherchez 'SavoirIA' ou le code RS6776, et inscrivez-vous directement. Nous vous accompagnons dans les démarches si besoin." },
+    { q: "Pourquoi reste-t-il 102€ à ma charge ?", a: "Le reste à charge de 102,23€ est obligatoire depuis mai 2024 pour toutes les formations CPF. C'est le montant minimum légal." },
+    { q: "La formation est-elle vraiment en présentiel ?", a: "Oui, 100% présentiel à Toulon. C'est un choix pédagogique : les échanges en direct et la pratique encadrée sont essentiels pour maîtriser l'IA." },
+    { q: "Que se passe-t-il si je rate l'examen de certification ?", a: "Vous pouvez repasser l'examen gratuitement. Le taux de réussite est de 98% grâce à notre accompagnement personnalisé." },
+    { q: "Puis-je annuler mon inscription ?", a: "Oui, annulation gratuite jusqu'à 14 jours avant le début de la formation. Consultez nos CGV pour plus de détails." },
+    { q: "Quel matériel dois-je apporter ?", a: "Un ordinateur portable avec un navigateur récent. Nous fournissons les accès aux outils IA pendant la formation." },
+    { q: "Y aura-t-il d'autres sessions après janvier ?", a: "Oui, nous organisons des sessions régulières. Inscrivez-vous au questionnaire pour être informé des prochaines dates." }
+  ]
+  return (
+    <Section dark>
+      <SectionTitle subtitle="Tout ce que vous devez savoir avant de vous inscrire">Questions fréquentes</SectionTitle>
+      <div className="max-w-3xl mx-auto space-y-3">
+        {faqs.map((faq, index) => (
+          <motion.div key={index} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: index * 0.05 }}>
+            <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full text-left bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 flex items-center justify-between hover:bg-white/10 transition-colors">
+              <span className="text-white font-medium pr-4">{faq.q}</span>
+              <ChevronRight className={`w-5 h-5 text-[#00D4FF] flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-90' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {openIndex === index && (
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
+                  <div className="p-4 text-[#94A3B8] text-sm">{faq.a}</div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </div>
+      <div className="mt-10 flex justify-center"><Button href="#questionnaire" size="full" className="max-w-md mx-auto">Je lance mon projet IA →</Button></div>
     </Section>
   )
 }
@@ -478,7 +615,9 @@ export default function FormationCPF1() {
       <Programme />
       <Tools />
       <Benefits />
+      <Trainer />
       <Pricing />
+      <FAQ />
       <Urgency />
       <Footer />
       <StickyFooter />
