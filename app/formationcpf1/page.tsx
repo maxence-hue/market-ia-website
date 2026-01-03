@@ -77,9 +77,8 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
 }
 
 function Section({ children, id, dark, pattern, className = '' }: { children: React.ReactNode; id?: string; dark?: boolean; pattern?: boolean; className?: string }) {
-  const bgPattern = pattern ? "bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:24px_24px]" : ""
   return (
-    <section id={id} className={`py-16 px-4 md:px-6 ${dark ? 'bg-[#0f1f35]' : 'bg-[#0a1628]'} ${bgPattern} ${className}`}>
+    <section id={id} className={`py-16 px-4 md:px-6 ${dark ? 'bg-[#0f1f35]' : 'bg-[#0a1628]'} ${pattern ? 'dot-pattern' : ''} ${className}`}>
       <div className="max-w-6xl mx-auto">{children}</div>
     </section>
   )
@@ -165,7 +164,7 @@ function QualificationQuiz() {
   const stepTitle = ['Objectif', 'Profil', 'Financement', 'Coordonnées'][step]
 
   return (
-    <section id="questionnaire" className="py-14 md:py-20 px-6 bg-gradient-to-b from-[#0f1f35] to-[#0a1628] bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:24px_24px] relative overflow-hidden">
+    <section id="questionnaire" className="py-14 md:py-20 px-6 bg-gradient-to-b from-[#0f1f35] to-[#0a1628] dot-pattern relative overflow-hidden">
       <div className="absolute top-10 right-0 w-96 h-96 bg-[#7C4DFF]/15 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 left-0 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-3xl" />
       <div className="max-w-4xl mx-auto relative z-10">
@@ -263,7 +262,7 @@ function QualificationQuiz() {
 
 function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 py-12 bg-gradient-to-b from-[#0f1f35] to-[#0a1628] bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:24px_24px] relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center px-6 py-12 bg-gradient-to-b from-[#0f1f35] to-[#0a1628] dot-pattern relative overflow-hidden">
       <div className="absolute top-20 right-0 w-96 h-96 bg-[#7C4DFF]/20 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-0 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-3xl" />
       <div className="max-w-4xl mx-auto text-center relative z-10">
