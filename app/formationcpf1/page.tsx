@@ -13,16 +13,69 @@ const WEBHOOK_URL = 'https://adsolar.app.n8n.cloud/webhook-test/bf10f266-a132-41
 const META_PIXEL_ID = '842886014751419'
 
 // Meta Pixel tracking functions
+type FbqFunction = (...args: unknown[]) => void
+type WindowWithFbq = Window & { fbq?: FbqFunction }
+
 function trackEvent(event: string, params?: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === 'function') {
-    (window as Window & { fbq: (...args: unknown[]) => void }).fbq('track', event, params)
+  if (typeof window !== 'undefined' && typeof (window as WindowWithFbq).fbq === 'function') {
+    (window as WindowWithFbq).fbq!('track', event, params)
   }
 }
 
 function trackCustomEvent(event: string, params?: Record<string, unknown>) {
-  if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === 'function') {
-    (window as Window & { fbq: (...args: unknown[]) => void }).fbq('trackCustom', event, params)
+  if (typeof window !== 'undefined' && typeof (window as WindowWithFbq).fbq === 'function') {
+    (window as WindowWithFbq).fbq!('trackCustom', event, params)
   }
+}
+
+// Send user data to Meta for Advanced Matching
+interface LeadUserData {
+  email?: string
+  phone?: string
+  firstName?: string
+  lastName?: string
+  city?: string
+}
+
+function trackLeadWithUserData(userData: LeadUserData, eventParams?: Record<string, unknown>) {
+  if (typeof window === 'undefined') return
+  const fbq = (window as WindowWithFbq).fbq
+  if (typeof fbq !== 'function') return
+  
+  // Format phone number for Meta (remove spaces, add country code if needed)
+  let phoneFormatted = ''
+  if (userData.phone) {
+    const cleaned = userData.phone.replace(/[\s\-().]/g, '')
+    if (cleaned.startsWith('0')) {
+      phoneFormatted = '33' + cleaned.slice(1)
+    } else if (cleaned.startsWith('+33')) {
+      phoneFormatted = cleaned.slice(1)
+    } else {
+      phoneFormatted = cleaned
+    }
+  }
+  
+  // Build user data object for Advanced Matching
+  const userDataForMeta: Record<string, string> = { country: 'fr' }
+  
+  if (userData.email) {
+    userDataForMeta.em = userData.email.toLowerCase().trim()
+  }
+  if (phoneFormatted) {
+    userDataForMeta.ph = phoneFormatted
+  }
+  if (userData.firstName) {
+    userDataForMeta.fn = userData.firstName.toLowerCase().trim()
+  }
+  if (userData.lastName) {
+    userDataForMeta.ln = userData.lastName.toLowerCase().trim()
+  }
+  if (userData.city) {
+    userDataForMeta.ct = userData.city.toLowerCase().trim().replace(/\s/g, '')
+  }
+  
+  // Send Lead event with user data
+  fbq('track', 'Lead', eventParams, { userData: userDataForMeta })
 }
 
 function MetaPixel() {
@@ -210,19 +263,35 @@ function QualificationQuiz() {
         await fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: form })
       }
       setIsSuccess(true)
-      // Track successful lead submission
-      trackEvent('Lead', { 
-        content_name: 'Formation CPF IA', 
-        content_category: 'Formation',
-        value: 3180,
-        currency: 'EUR'
-      })
+      // Track successful lead submission with user data for Advanced Matching
+      trackLeadWithUserData(
+        {
+          email: String(answers.email),
+          phone: String(answers.phone),
+          firstName: String(answers.firstName),
+          lastName: String(answers.lastName),
+          city: String(answers.city)
+        },
+        { 
+          content_name: 'Formation CPF IA', 
+          content_category: 'Formation',
+          value: 3180,
+          currency: 'EUR'
+        }
+      )
       trackEvent('CompleteRegistration', {
         content_name: 'Quiz Qualification',
         status: temperature,
         value: score
       })
-      trackCustomEvent('QuizCompleted', { score, temperature, funding: answers.funding })
+      trackCustomEvent('QuizCompleted', { 
+        score, 
+        temperature, 
+        funding: answers.funding,
+        city: answers.city,
+        objective: answers.objective,
+        role: answers.role
+      })
     } catch {
       setSubmitError("Impossible d'envoyer vos réponses. Vous pouvez nous appeler directement.")
     } finally {
