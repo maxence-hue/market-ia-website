@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Script from 'next/script'
 import { 
   ChevronRight, ChevronLeft, Check, Phone, Mail, MapPin, Clock, Users, Award, 
   Shield, Star, ArrowLeft, Send, Loader2, AlertTriangle, CheckCircle2, XCircle,
@@ -9,6 +10,50 @@ import {
 } from 'lucide-react'
 
 const WEBHOOK_URL = 'https://adsolar.app.n8n.cloud/webhook-test/bf10f266-a132-41c2-bcd7-cce7b916b26d'
+const META_PIXEL_ID = '842886014751419'
+
+// Meta Pixel tracking functions
+function trackEvent(event: string, params?: Record<string, unknown>) {
+  if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === 'function') {
+    (window as Window & { fbq: (...args: unknown[]) => void }).fbq('track', event, params)
+  }
+}
+
+function trackCustomEvent(event: string, params?: Record<string, unknown>) {
+  if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === 'function') {
+    (window as Window & { fbq: (...args: unknown[]) => void }).fbq('trackCustom', event, params)
+  }
+}
+
+function MetaPixel() {
+  return (
+    <>
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '${META_PIXEL_ID}');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+      <noscript>
+        <img 
+          height="1" 
+          width="1" 
+          style={{ display: 'none' }}
+          src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          alt=""
+        />
+      </noscript>
+    </>
+  )
+}
 
 function getUtmParams() {
   if (typeof window === 'undefined') return {}
@@ -134,7 +179,18 @@ function QualificationQuiz() {
     return false
   }, [answers, step])
 
-  const next = () => { if (isStepValid) setStep(s => Math.min(totalSteps - 1, s + 1)) }
+  const next = () => { 
+    if (isStepValid) {
+      const nextStep = Math.min(totalSteps - 1, step + 1)
+      setStep(nextStep)
+      // Track quiz step progression
+      const stepNames = ['Objectif', 'Profil', 'Financement', 'Coordonnees']
+      trackCustomEvent('QuizStepCompleted', { step: step + 1, stepName: stepNames[step] })
+      if (nextStep === 1) trackEvent('ViewContent', { content_name: 'Quiz Step 2 - Profil' })
+      if (nextStep === 2) trackEvent('ViewContent', { content_name: 'Quiz Step 3 - Financement' })
+      if (nextStep === 3) trackEvent('InitiateCheckout', { content_name: 'Quiz Step 4 - Coordonnees' })
+    }
+  }
   const prev = () => setStep(s => Math.max(0, s - 1))
 
   const submit = async () => {
@@ -154,6 +210,19 @@ function QualificationQuiz() {
         await fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: form })
       }
       setIsSuccess(true)
+      // Track successful lead submission
+      trackEvent('Lead', { 
+        content_name: 'Formation CPF IA', 
+        content_category: 'Formation',
+        value: 3180,
+        currency: 'EUR'
+      })
+      trackEvent('CompleteRegistration', {
+        content_name: 'Quiz Qualification',
+        status: temperature,
+        value: score
+      })
+      trackCustomEvent('QuizCompleted', { score, temperature, funding: answers.funding })
     } catch {
       setSubmitError("Impossible d'envoyer vos réponses. Vous pouvez nous appeler directement.")
     } finally {
@@ -607,21 +676,24 @@ function StickyFooter() {
 
 export default function FormationCPF1() {
   return (
-    <div className="min-h-screen bg-[#0a1628]" style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
-      <QualificationQuiz />
-      <Hero />
-      <Problems />
-      <Transformation />
-      <Programme />
-      <Tools />
-      <Benefits />
-      <Trainer />
-      <Pricing />
-      <FAQ />
-      <Urgency />
-      <Footer />
-      <StickyFooter />
-      <div className="h-20 md:hidden" />
-    </div>
+    <>
+      <MetaPixel />
+      <div className="min-h-screen bg-[#0a1628]" style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
+        <QualificationQuiz />
+        <Hero />
+        <Problems />
+        <Transformation />
+        <Programme />
+        <Tools />
+        <Benefits />
+        <Trainer />
+        <Pricing />
+        <FAQ />
+        <Urgency />
+        <Footer />
+        <StickyFooter />
+        <div className="h-20 md:hidden" />
+      </div>
+    </>
   )
 }
